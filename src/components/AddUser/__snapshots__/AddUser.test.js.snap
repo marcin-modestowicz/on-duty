@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddUser component should render with button disabled 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <select
+    onChange={[Function]}
+    value="Resident"
+  >
+    <option
+      key="RESIDENT"
+      value="Resident"
+    >
+      Resident
+    </option>
+    <option
+      key="DOCTOR"
+      value="Doctor"
+    >
+      Doctor
+    </option>
+    <option
+      key="SPECIALIST"
+      value="Specialist"
+    >
+      Specialist
+    </option>
+  </select>
+  <button
+    disabled={true}
+    onClick={[Function]}
+  >
+    Add User
+  </button>
+</div>
+`;
+
+exports[`AddUser component should render with button enabled 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="Marty McFly"
+  />
+  <select
+    onChange={[Function]}
+    value="Resident"
+  >
+    <option
+      key="RESIDENT"
+      value="Resident"
+    >
+      Resident
+    </option>
+    <option
+      key="DOCTOR"
+      value="Doctor"
+    >
+      Doctor
+    </option>
+    <option
+      key="SPECIALIST"
+      value="Specialist"
+    >
+      Specialist
+    </option>
+  </select>
+  <button
+    disabled={false}
+    onClick={[Function]}
+  >
+    Add User
+  </button>
+</div>
+`;

@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 5em;
+  height: 5em;
+  margin: 1px;
+  border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}

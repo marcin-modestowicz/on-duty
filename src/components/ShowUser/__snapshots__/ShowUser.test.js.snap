@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowUser component should render 1`] = `
+<div>
+  <header>
+    <h3>
+      Marty McFly
+    </h3>
+    <h4>
+      Resident
+    </h4>
+  </header>
+  <AvailabilityCalendar
+    calendar={
+      AvailabilityCalendar {
+        "days": Array [
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+          Availability {
+            "index": 0,
+          },
+        ],
+      }
+    }
+  />
+</div>
+`;

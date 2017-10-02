@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailabilityCalendar component should render 1`] = `
+<div
+  className="root"
+>
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="0"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="1"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="2"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="3"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="4"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="5"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="6"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="7"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="8"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="9"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="10"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="11"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="12"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="13"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="14"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="15"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="16"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="17"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="18"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="19"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="20"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="21"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="22"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="23"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="24"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="25"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="26"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="27"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="28"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="29"
+  />
+  <CalendarDay
+    availability={
+      Availability {
+        "index": 0,
+      }
+    }
+    key="30"
+  />
+</div>
+`;
