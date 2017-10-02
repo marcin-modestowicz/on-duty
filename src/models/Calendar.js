@@ -1,22 +1,37 @@
 // @flow
-export type DayStatus = "free" | "keen" | "busy";
+import { observable, computed, action } from "mobx";
+import type User from "./User";
+import Availability, { AVAILABILITY_STATUSES } from "./Availability";
+import Shift from "./Shift";
 
-class Day {
-  status: DayStatus = "free";
+export function daysInCurrentMonth() {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
 
-  setStatus = (status: DayStatus) => {
-    this.status = status;
-  };
+  return new Date(year, month, 0).getDate();
 }
 
-class Calendar {
-  days: Day[];
+export class ShiftCalendar {
+  days: Shift[] = [];
 
-  constructor() {
-    for (let days = 0; days < 31; days += 1) {
-      this.days.push(new Day());
+  constructor(shifts: User[][]) {
+    const maxDay = daysInCurrentMonth();
+
+    for (let day = 1; day <= maxDay; day += 1) {
+      this.days.push(new Shift(shifts[day - 1]));
     }
   }
 }
 
-export default Calendar;
+export class AvailabilityCalendar {
+  days: Availability[] = [];
+
+  constructor() {
+    const maxDay = daysInCurrentMonth();
+
+    for (let day = 1; day <= maxDay; day += 1) {
+      this.days.push(new Availability());
+    }
+  }
+}

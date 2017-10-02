@@ -1,5 +1,5 @@
 {
-  "name": "moviedb",
+  "name": "onduty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,6 +27,8 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "^21.1.0",
+    "mobx": "^3.3.0",
+    "mobx-react": "^4.3.3",
     "node-sass-chokidar": "^0.0.3",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -40,6 +42,7 @@
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
+    "uuid": "^3.1.0",
     "webpack": "3.5.1",
     "webpack-dev-server": "2.7.1",
     "webpack-manifest-plugin": "1.2.1",
