@@ -1,7 +1,11 @@
 // @flow
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import type Availability from "../../models/Availability";
+import classnames from "classnames";
+import type Availability, {
+  AvailabilityStatus
+} from "../../models/Availability";
+import { AVAILABILITY_STATUSES } from "../../models/Availability";
 import styles from "./AvailabilityCalendar.scss";
 
 type Props = {
@@ -14,15 +18,29 @@ class CalendarDay extends Component<Props> {
     this.props.availability.toggle();
   };
 
+  getClassName(status: AvailabilityStatus): string {
+    switch (status) {
+      case AVAILABILITY_STATUSES.KEEN:
+        return "keen";
+      case AVAILABILITY_STATUSES.BUSY:
+        return "busy";
+      default:
+        return "free";
+    }
+  }
+
   render() {
+    const status = this.props.availability.status;
+    const className = this.getClassName(status);
+
     return (
       <div
-        className={styles.day}
+        className={classnames(styles.day, styles[className])}
         role="button"
         title="Click to toggle availability"
         onClick={this.handleClick}
       >
-        {this.props.availability.status}
+        {status}
       </div>
     );
   }

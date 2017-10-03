@@ -10,4 +10,16 @@
   border: 1px solid black;
   cursor: pointer;
   user-select: none;
+
+  &.free {
+    background-color: yellow;
+  }
+
+  &.keen {
+    background-color: green;
+  }
+
+  &.busy {
+    background-color: red;
+  }
 }
