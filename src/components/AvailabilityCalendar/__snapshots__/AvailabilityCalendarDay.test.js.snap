@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailabilityCalendarDay component should render 1`] = `
+<div
+  className="day free"
+  onClick={[Function]}
+  role="button"
+  title="Click to toggle availability"
+>
+  Free
+</div>
+`;
