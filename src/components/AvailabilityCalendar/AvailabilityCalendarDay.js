@@ -6,44 +6,57 @@ import type Availability, {
   AvailabilityStatus
 } from "../../models/Availability";
 import { AVAILABILITY_STATUSES } from "../../models/Availability";
-import styles from "./AvailabilityCalendar.scss";
+import styles from "./AvailabilityCalendarDay.scss";
 
 type Props = {
+  day: number,
   availability: Availability
 };
 
 @observer
-class CalendarDay extends Component<Props> {
+class AvailabilityCalendarDay extends Component<Props> {
+  statuses: AvailabilityStatus[] = [
+    AVAILABILITY_STATUSES.FREE,
+    AVAILABILITY_STATUSES.KEEN,
+    AVAILABILITY_STATUSES.BUSY
+  ];
+
   handleClick = () => {
     this.props.availability.toggle();
   };
 
-  getClassName(status: AvailabilityStatus): string {
-    switch (status) {
-      case AVAILABILITY_STATUSES.KEEN:
-        return "keen";
-      case AVAILABILITY_STATUSES.BUSY:
-        return "busy";
-      default:
-        return "free";
-    }
+  renderDayContent(status: string) {
+    return (
+      <div key={status} className={classnames(styles.day, styles[status])}>
+        <div className={styles.dayName}>Monday</div>
+        <div className={styles.dayNum}>{this.props.day}</div>
+      </div>
+    );
   }
 
   render() {
     const status = this.props.availability.status;
-    const className = this.getClassName(status);
+    const isFreeActive = status === AVAILABILITY_STATUSES.FREE;
+    const isKeenActive = status === AVAILABILITY_STATUSES.KEEN;
+    const isBusyActive = status === AVAILABILITY_STATUSES.BUSY;
 
     return (
       <div
-        className={classnames(styles.day, styles[className])}
+        className={classnames(styles.root, {
+          [styles.freeActive]: isFreeActive,
+          [styles.keenActive]: isKeenActive,
+          [styles.busyActive]: isBusyActive
+        })}
         role="button"
         title="Click to toggle availability"
         onClick={this.handleClick}
       >
-        {status}
+        {this.statuses.map(_status =>
+          this.renderDayContent(_status.toLowerCase())
+        )}
       </div>
     );
   }
 }
 
-export default CalendarDay;
+export default AvailabilityCalendarDay;

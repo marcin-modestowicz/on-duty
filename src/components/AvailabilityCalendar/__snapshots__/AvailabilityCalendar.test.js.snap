@@ -4,252 +4,283 @@ exports[`AvailabilityCalendar component should render 1`] = `
 <div
   className="root"
 >
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={1}
     key="0"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={2}
     key="1"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={3}
     key="2"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={4}
     key="3"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={5}
     key="4"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={6}
     key="5"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={7}
     key="6"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={8}
     key="7"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={9}
     key="8"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={10}
     key="9"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={11}
     key="10"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={12}
     key="11"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={13}
     key="12"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={14}
     key="13"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={15}
     key="14"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={16}
     key="15"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={17}
     key="16"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={18}
     key="17"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={19}
     key="18"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={20}
     key="19"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={21}
     key="20"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={22}
     key="21"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={23}
     key="22"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={24}
     key="23"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={25}
     key="24"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={26}
     key="25"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={27}
     key="26"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={28}
     key="27"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={29}
     key="28"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={30}
     key="29"
   />
-  <CalendarDay
+  <AvailabilityCalendarDay
     availability={
       Availability {
         "index": 0,
       }
     }
+    day={31}
     key="30"
   />
 </div>

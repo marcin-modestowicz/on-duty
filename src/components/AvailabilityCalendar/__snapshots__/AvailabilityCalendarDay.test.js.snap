@@ -1,12 +1,166 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AvailabilityCalendarDay component should render 1`] = `
+exports[`AvailabilityCalendarDay component should render with busy status active 1`] = `
 <div
-  className="day free"
+  className="root busyActive"
   onClick={[Function]}
   role="button"
   title="Click to toggle availability"
 >
-  Free
+  <div
+    className="day free"
+    key="free"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day keen"
+    key="keen"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day busy"
+    key="busy"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AvailabilityCalendarDay component should render with free status active 1`] = `
+<div
+  className="root freeActive"
+  onClick={[Function]}
+  role="button"
+  title="Click to toggle availability"
+>
+  <div
+    className="day free"
+    key="free"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day keen"
+    key="keen"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day busy"
+    key="busy"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AvailabilityCalendarDay component should render with keen status active 1`] = `
+<div
+  className="root keenActive"
+  onClick={[Function]}
+  role="button"
+  title="Click to toggle availability"
+>
+  <div
+    className="day free"
+    key="free"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day keen"
+    key="keen"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="day busy"
+    key="busy"
+  >
+    <div
+      className="dayName"
+    >
+      Monday
+    </div>
+    <div
+      className="dayNum"
+    >
+      1
+    </div>
+  </div>
 </div>
 `;

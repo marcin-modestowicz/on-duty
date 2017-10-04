@@ -17,7 +17,11 @@ class AvailabilityCalendar extends Component<Props> {
     return (
       <div className={styles.root}>
         {this.props.calendar.days.map((availability, index) => (
-          <AvailabilityCalendar.Day key={index} availability={availability} />
+          <AvailabilityCalendar.Day
+            key={index}
+            day={index + 1}
+            availability={availability}
+          />
         ))}
       </div>
     );
