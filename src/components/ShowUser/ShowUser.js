@@ -12,7 +12,9 @@ const ShowUser = ({ user }: Props) => (
   <div>
     <header>
       <h3>{user.name}</h3>
-      <h4>{user.type}</h4>
+      <h4>
+        {user.isDoctor && "Doctor"} {user.isSpecialist && "Specialist"}
+      </h4>
     </header>
     <AvailabilityCalendar calendar={user.calendar} />
   </div>

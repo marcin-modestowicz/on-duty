@@ -2,25 +2,33 @@
 import { AvailabilityCalendar } from "./Calendar";
 import uuid from "uuid/v1";
 
-export const USER_TYPES = {
-  RESIDENT: "Resident",
-  DOCTOR: "Doctor",
-  SPECIALIST: "Specialist"
-};
-
-export type UserType = "Resident" | "Doctor" | "Specialist";
-
 class User {
   id: string;
   name: string;
-  type: UserType;
+  isDoctor: boolean;
+  isSpecialist: boolean;
   calendar: AvailabilityCalendar;
 
-  constructor(name: string, type?: UserType) {
+  constructor(name: string, isDoctor?: boolean, isSpecialist?: boolean) {
     this.id = uuid();
     this.name = name;
-    this.type = type || USER_TYPES.RESIDENT;
+    this.isDoctor = !!isDoctor;
+    this.isSpecialist = !!isSpecialist;
     this.calendar = new AvailabilityCalendar();
+  }
+
+  get power(): number {
+    let power = 0;
+
+    if (this.isDoctor) {
+      power += 1;
+    }
+
+    if (this.isSpecialist) {
+      power += 2;
+    }
+
+    return power;
   }
 }
 

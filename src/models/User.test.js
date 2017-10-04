@@ -1,22 +1,24 @@
 // @flow
-import User, { USER_TYPES } from "./User";
+import User from "./User";
 import { AvailabilityCalendar } from "./Calendar";
 
 describe("User model", () => {
   describe("on instance creation", () => {
     test("should set id, name, type and calendar", () => {
-      const user = new User("Marty McFly", USER_TYPES.DOCTOR);
+      const user = new User("Marty McFly", true, true);
 
       expect(typeof user.id).toBe("string");
       expect(user.name).toBe("Marty McFly");
-      expect(user.type).toBe(USER_TYPES.DOCTOR);
+      expect(user.isDoctor).toBeTruthy();
+      expect(user.isSpecialist).toBeTruthy();
       expect(user.calendar instanceof AvailabilityCalendar).toBeTruthy();
     });
 
-    test("should set type to resident if none passed to constructor", () => {
+    test("should set isDoctor and isSpecialist to false by default", () => {
       const user = new User("Marty McFly");
 
-      expect(user.type).toBe(USER_TYPES.RESIDENT);
+      expect(user.isDoctor).toBeFalsy();
+      expect(user.isSpecialist).toBeFalsy();
     });
   });
 });

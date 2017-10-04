@@ -3,33 +3,40 @@
 exports[`AddUser component should render with button disabled 1`] = `
 <div>
   <input
+    name="name"
     onChange={[Function]}
     type="text"
     value=""
   />
-  <select
-    onChange={[Function]}
-    value="Resident"
+  <label
+    htmlFor="name"
   >
-    <option
-      key="RESIDENT"
-      value="Resident"
-    >
-      Resident
-    </option>
-    <option
-      key="DOCTOR"
-      value="Doctor"
-    >
-      Doctor
-    </option>
-    <option
-      key="SPECIALIST"
-      value="Specialist"
-    >
-      Specialist
-    </option>
-  </select>
+    Name
+  </label>
+  <input
+    checked={false}
+    name="isDoctor"
+    onChange={[Function]}
+    type="checkbox"
+    value="isDoctor"
+  />
+  <label
+    htmlFor="isDoctor"
+  >
+    Doctor
+  </label>
+  <input
+    checked={false}
+    name="isSpecialist"
+    onChange={[Function]}
+    type="checkbox"
+    value="isSpecialist"
+  />
+  <label
+    htmlFor="isSpecialist"
+  >
+    Specialist
+  </label>
   <button
     disabled={true}
     onClick={[Function]}
@@ -42,33 +49,40 @@ exports[`AddUser component should render with button disabled 1`] = `
 exports[`AddUser component should render with button enabled 1`] = `
 <div>
   <input
+    name="name"
     onChange={[Function]}
     type="text"
     value="Marty McFly"
   />
-  <select
-    onChange={[Function]}
-    value="Resident"
+  <label
+    htmlFor="name"
   >
-    <option
-      key="RESIDENT"
-      value="Resident"
-    >
-      Resident
-    </option>
-    <option
-      key="DOCTOR"
-      value="Doctor"
-    >
-      Doctor
-    </option>
-    <option
-      key="SPECIALIST"
-      value="Specialist"
-    >
-      Specialist
-    </option>
-  </select>
+    Name
+  </label>
+  <input
+    checked={false}
+    name="isDoctor"
+    onChange={[Function]}
+    type="checkbox"
+    value="isDoctor"
+  />
+  <label
+    htmlFor="isDoctor"
+  >
+    Doctor
+  </label>
+  <input
+    checked={false}
+    name="isSpecialist"
+    onChange={[Function]}
+    type="checkbox"
+    value="isSpecialist"
+  />
+  <label
+    htmlFor="isSpecialist"
+  >
+    Specialist
+  </label>
   <button
     disabled={false}
     onClick={[Function]}

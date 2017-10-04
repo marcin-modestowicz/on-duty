@@ -2,7 +2,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import { USER_TYPES } from "../../models/User";
 import AddUser from "./AddUser";
 
 describe("AddUser component", () => {
@@ -33,9 +32,14 @@ describe("AddUser component", () => {
   });
 
   describe("handleTypeChange method", () => {
-    test("should update user type", () => {
-      instance.handleTypeChange({ target: { value: USER_TYPES.DOCTOR } });
-      expect(instance.userType).toBe(USER_TYPES.DOCTOR);
+    test("should update isDoctor property", () => {
+      instance.handleTypeChange({ target: { value: "isDoctor" } });
+      expect(instance.isDoctor).toBeTruthy();
+    });
+
+    test("should update isSpecialist property", () => {
+      instance.handleTypeChange({ target: { value: "isSpecialist" } });
+      expect(instance.isSpecialist).toBeTruthy();
     });
   });
 
@@ -50,16 +54,18 @@ describe("AddUser component", () => {
     describe("if user name is filled", () => {
       beforeEach(() => {
         instance.handleNameChange({ target: { value: "Bronco Billy" } });
+        instance.handleTypeChange({ target: { value: "isDoctor" } });
+        instance.handleTypeChange({ target: { value: "isSpecialist" } });
         instance.handleUserAdd();
       });
 
       test("should call onAdd prop", () => {
-        expect(onAdd).toHaveBeenCalledWith("Bronco Billy", USER_TYPES.RESIDENT);
+        expect(onAdd).toHaveBeenCalledWith("Bronco Billy", true, true);
       });
 
-      test("should reset user name and type", () => {
-        expect(instance.userName).toBe("");
-        expect(instance.userType).toBe(USER_TYPES.RESIDENT);
+      test("should reset isSpecialist and isDoctor properties", () => {
+        expect(instance.userName).toBeFalsy();
+        expect(instance.userType).toBeFalsy();
       });
     });
   });

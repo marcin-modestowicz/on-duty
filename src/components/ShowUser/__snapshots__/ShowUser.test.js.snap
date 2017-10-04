@@ -7,7 +7,9 @@ exports[`ShowUser component should render 1`] = `
       Marty McFly
     </h3>
     <h4>
-      Resident
+      Doctor
+       
+      Specialist
     </h4>
   </header>
   <AvailabilityCalendar

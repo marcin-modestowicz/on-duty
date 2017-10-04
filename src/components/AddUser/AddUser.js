@@ -2,18 +2,18 @@
 import React, { Component } from "react";
 import { observable, action } from "mobx";
 import { observer } from "mobx-react";
-import { type UserType, USER_TYPES } from "../../models/User";
 
 /* global SyntheticInputEvent */
 
 type Props = {
-  onAdd: (name: string, type: UserType) => void
+  onAdd: (name: string, isSpecialist: boolean, isDoctor: boolean) => void
 };
 
 @observer
 class AddUser extends Component<Props> {
   @observable userName: string = "";
-  @observable userType: UserType = USER_TYPES.RESIDENT;
+  @observable isDoctor: boolean = false;
+  @observable isSpecialist: boolean = false;
 
   @action
   handleNameChange = (event: SyntheticInputEvent<*>) => {
@@ -22,16 +22,22 @@ class AddUser extends Component<Props> {
 
   @action
   handleTypeChange = (event: SyntheticInputEvent<*>) => {
-    //$FlowFixMe
-    this.userType = event.target.value;
+    const type = event.target.value;
+
+    if (type === "isDoctor") {
+      this.isDoctor = !this.isDoctor;
+    } else {
+      this.isSpecialist = !this.isSpecialist;
+    }
   };
 
   @action
   handleUserAdd = () => {
     if (this.userName !== "") {
-      this.props.onAdd(this.userName, this.userType);
+      this.props.onAdd(this.userName, this.isDoctor, this.isSpecialist);
       this.userName = "";
-      this.userType = USER_TYPES.RESIDENT;
+      this.isDoctor = false;
+      this.isSpecialist = false;
     }
   };
 
@@ -40,17 +46,28 @@ class AddUser extends Component<Props> {
     return (
       <div>
         <input
+          name="name"
           type="text"
           value={this.userName}
           onChange={this.handleNameChange}
         />
-        <select value={this.userType} onChange={this.handleTypeChange}>
-          {Object.keys(USER_TYPES).map(userType => (
-            <option key={userType} value={USER_TYPES[userType]}>
-              {USER_TYPES[userType]}
-            </option>
-          ))}
-        </select>
+        <label htmlFor="name">Name</label>
+        <input
+          name="isDoctor"
+          type="checkbox"
+          value="isDoctor"
+          checked={this.isDoctor}
+          onChange={this.handleTypeChange}
+        />
+        <label htmlFor="isDoctor">Doctor</label>
+        <input
+          name="isSpecialist"
+          type="checkbox"
+          value="isSpecialist"
+          checked={this.isSpecialist}
+          onChange={this.handleTypeChange}
+        />
+        <label htmlFor="isSpecialist">Specialist</label>
         <button onClick={this.handleUserAdd} disabled={isAddButtonDisabled}>
           Add User
         </button>
