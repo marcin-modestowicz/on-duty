@@ -5,7 +5,10 @@ import classnames from "classnames";
 import type Availability, {
   AvailabilityStatus
 } from "../../models/Availability";
-import { AVAILABILITY_STATUSES } from "../../models/Availability";
+import {
+  AVAILABILITY_STATUSES,
+  AVAILABILITY_STATUSES_NAMES
+} from "../../models/Availability";
 import styles from "./AvailabilityCalendarDay.scss";
 
 type Props = {
@@ -52,7 +55,9 @@ class AvailabilityCalendarDay extends Component<Props> {
         onClick={this.handleClick}
       >
         {this.statuses.map(_status =>
-          this.renderDayContent(_status.toLowerCase())
+          this.renderDayContent(
+            AVAILABILITY_STATUSES_NAMES[_status].toLowerCase()
+          )
         )}
       </div>
     );

@@ -2,38 +2,42 @@
 import { observable, computed, action } from "mobx";
 
 export const AVAILABILITY_STATUSES = {
-  FREE: "Free",
-  KEEN: "Keen",
-  BUSY: "Busy"
+  FREE: 0,
+  KEEN: 1,
+  BUSY: -1
 };
 
-export type AvailabilityStatus = "Free" | "Keen" | "Busy";
+export const AVAILABILITY_STATUSES_NAMES = {
+  "0": "Free",
+  "1": "Keen",
+  "-1": "Busy"
+};
+
+export type AvailabilityStatus = -1 | 0 | 1;
 
 export class Availability {
-  static statuses: AvailabilityStatus[] = [
-    AVAILABILITY_STATUSES.FREE,
-    AVAILABILITY_STATUSES.KEEN,
-    AVAILABILITY_STATUSES.BUSY
-  ];
-  @observable index: number = 0;
+  @observable status: AvailabilityStatus;
 
   constructor(availability?: AvailabilityStatus) {
-    this.index = Availability.statuses.indexOf(
-      availability || AVAILABILITY_STATUSES.FREE
-    );
+    this.status = availability || AVAILABILITY_STATUSES.FREE;
   }
 
   @computed
-  get status(): AvailabilityStatus {
-    return Availability.statuses[this.index];
+  get statusName(): AvailabilityStatus {
+    return AVAILABILITY_STATUSES_NAMES[this.status];
   }
 
   @action
   toggle() {
-    if (this.index === Availability.statuses.length - 1) {
-      this.index = 0;
-    } else {
-      this.index += 1;
+    switch (this.status) {
+      case AVAILABILITY_STATUSES.BUSY:
+        this.status = AVAILABILITY_STATUSES.FREE;
+        break;
+      case AVAILABILITY_STATUSES.KEEN:
+        this.status = AVAILABILITY_STATUSES.BUSY;
+        break;
+      default:
+        this.status = AVAILABILITY_STATUSES.KEEN;
     }
   }
 }

@@ -7,7 +7,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={1}
@@ -16,7 +16,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={2}
@@ -25,7 +25,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={3}
@@ -34,7 +34,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={4}
@@ -43,7 +43,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={5}
@@ -52,7 +52,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={6}
@@ -61,7 +61,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={7}
@@ -70,7 +70,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={8}
@@ -79,7 +79,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={9}
@@ -88,7 +88,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={10}
@@ -97,7 +97,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={11}
@@ -106,7 +106,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={12}
@@ -115,7 +115,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={13}
@@ -124,7 +124,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={14}
@@ -133,7 +133,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={15}
@@ -142,7 +142,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={16}
@@ -151,7 +151,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={17}
@@ -160,7 +160,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={18}
@@ -169,7 +169,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={19}
@@ -178,7 +178,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={20}
@@ -187,7 +187,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={21}
@@ -196,7 +196,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={22}
@@ -205,7 +205,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={23}
@@ -214,7 +214,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={24}
@@ -223,7 +223,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={25}
@@ -232,7 +232,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={26}
@@ -241,7 +241,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={27}
@@ -250,7 +250,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={28}
@@ -259,7 +259,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={29}
@@ -268,7 +268,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={30}
@@ -277,7 +277,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
   <AvailabilityCalendarDay
     availability={
       Availability {
-        "index": 0,
+        "status": 0,
       }
     }
     day={31}

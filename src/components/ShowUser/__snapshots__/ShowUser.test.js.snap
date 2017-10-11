@@ -17,97 +17,97 @@ exports[`ShowUser component should render 1`] = `
       AvailabilityCalendar {
         "days": Array [
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
           Availability {
-            "index": 0,
+            "status": 0,
           },
         ],
       }
