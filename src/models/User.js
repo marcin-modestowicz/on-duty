@@ -26,14 +26,15 @@ class User {
     name: string,
     isDoctor?: boolean,
     isSpecialist?: boolean,
-    availability?: number[]
+    availability?: number[],
+    shifts?: boolean[]
   ) {
     this.id = uuid();
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;
     this.availabilityCalendar = new AvailabilityCalendar(availability);
-    this.shiftCalendar = new ShiftCalendar();
+    this.shiftCalendar = new ShiftCalendar(shifts);
   }
 
   get power(): number {

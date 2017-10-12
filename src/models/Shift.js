@@ -2,7 +2,7 @@
 import { observable, action } from "mobx";
 import type User from "./User";
 
-const USERS_PER_SHIFT = 2;
+export const USERS_PER_SHIFT = 2;
 
 export class Shift {
   _onDuty: User[];
