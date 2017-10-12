@@ -1,34 +1,67 @@
 // @flow
-import { AvailabilityCalendar } from "./Calendar";
+import { AvailabilityCalendar, ShiftCalendar } from "./Calendar";
 import uuid from "uuid/v1";
+
+const POWER = {
+  RESIDENT: 0,
+  DOCTOR: 1,
+  SPECIALIST: 2
+};
+
+const REQUIRED_SHIFTS = {
+  RESIDENT: 2,
+  DOCTOR: 1,
+  SPECIALIST: 1
+};
 
 class User {
   id: string;
   name: string;
   isDoctor: boolean;
   isSpecialist: boolean;
-  calendar: AvailabilityCalendar;
+  availabilityCalendar: AvailabilityCalendar;
+  shiftCalendar: ShiftCalendar;
 
-  constructor(name: string, isDoctor?: boolean, isSpecialist?: boolean) {
+  constructor(
+    name: string,
+    isDoctor?: boolean,
+    isSpecialist?: boolean,
+    availability?: number[]
+  ) {
     this.id = uuid();
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;
-    this.calendar = new AvailabilityCalendar();
+    this.availabilityCalendar = new AvailabilityCalendar(availability);
+    this.shiftCalendar = new ShiftCalendar();
   }
 
   get power(): number {
-    let power = 0;
+    let power = POWER.RESIDENT;
 
     if (this.isDoctor) {
-      power += 1;
+      power += POWER.DOCTOR;
     }
 
     if (this.isSpecialist) {
-      power += 2;
+      power += POWER.SPECIALIST;
     }
 
     return power;
+  }
+
+  get requiredShifts(): number {
+    let requiredShifts = REQUIRED_SHIFTS.RESIDENT;
+
+    if (this.isDoctor) {
+      requiredShifts = REQUIRED_SHIFTS.DOCTOR;
+    }
+
+    if (this.isSpecialist) {
+      requiredShifts = REQUIRED_SHIFTS.SPECIALIST;
+    }
+
+    return requiredShifts;
   }
 }
 

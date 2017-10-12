@@ -11,7 +11,9 @@ describe("User model", () => {
       expect(user.name).toBe("Marty McFly");
       expect(user.isDoctor).toBeTruthy();
       expect(user.isSpecialist).toBeTruthy();
-      expect(user.calendar instanceof AvailabilityCalendar).toBeTruthy();
+      expect(
+        user.availabilityCalendar instanceof AvailabilityCalendar
+      ).toBeTruthy();
     });
 
     test("should set isDoctor and isSpecialist to false by default", () => {
