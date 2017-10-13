@@ -1,0 +1,6642 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShiftsCalendar component should render 1`] = `
+<div
+  className="root"
+>
+  <ShiftsCalendarDay
+    day={1}
+    key="0"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={2}
+    key="1"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={3}
+    key="2"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={4}
+    key="3"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={5}
+    key="4"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={6}
+    key="5"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={7}
+    key="6"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={8}
+    key="7"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={9}
+    key="8"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={10}
+    key="9"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={11}
+    key="10"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={12}
+    key="11"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={13}
+    key="12"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={14}
+    key="13"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={15}
+    key="14"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={16}
+    key="15"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={17}
+    key="16"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={18}
+    key="17"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={19}
+    key="18"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={20}
+    key="19"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={21}
+    key="20"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={22}
+    key="21"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={23}
+    key="22"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={24}
+    key="23"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={25}
+    key="24"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={26}
+    key="25"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={27}
+    key="26"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={28}
+    key="27"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={29}
+    key="28"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={30}
+    key="29"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a0",
+          "isDoctor": false,
+          "isSpecialist": false,
+          "name": "user1",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
+        },
+      ]
+    }
+  />
+  <ShiftsCalendarDay
+    day={31}
+    key="30"
+    users={
+      Array [
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
+        },
+        User {
+          "availabilityCalendar": AvailabilityCalendar {
+            "days": Array [
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+              Availability {
+                "status": 0,
+              },
+            ],
+          },
+          "id": "a3",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user4",
+        },
+      ]
+    }
+  />
+</div>
+`;

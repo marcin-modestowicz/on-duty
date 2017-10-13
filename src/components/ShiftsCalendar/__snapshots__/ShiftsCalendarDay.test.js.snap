@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShiftsCalendarDay component should render 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="shift"
+  >
+    <div
+      className="user"
+      key="a0"
+    >
+      user1
+    </div>
+    <div
+      className="user"
+      key="a1"
+    >
+      user2
+    </div>
+  </div>
+  <div
+    className="day"
+  >
+    <div
+      className="name"
+    >
+      Monday
+    </div>
+    <div
+      className="number"
+    >
+      1
+    </div>
+  </div>
+</div>
+`;
