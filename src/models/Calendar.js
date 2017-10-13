@@ -3,7 +3,6 @@ import { observable, computed, action } from "mobx";
 import type User from "./User";
 import Availability, { AVAILABILITY_STATUSES } from "./Availability";
 import Shift, { USERS_PER_SHIFT } from "./Shift";
-import { POWER } from "./User";
 
 export const MINIMUM_REST_DAYS = 1;
 
@@ -72,91 +71,19 @@ export class ShiftsCalendar {
       const notAllLimitsReached = users.some(
         user => this.getUserShifts(user.id).length < user.requiredShifts
       );
-      const userShiftCountPerPower = Object.keys(POWER).map(powerKey =>
-        users
-          .filter(user => user.power === POWER[powerKey])
-          .reduce((sum, user) => {
-            if (this.getUserShifts(user.id)[index]) {
-              return (sum += 1);
-            }
-
-            return sum;
-          }, 0)
-      );
 
       // Sort users in shift
       currentShift._onDuty = currentShift._onDuty.sort((userA, userB) => {
-        const userAShifts = this.getUserShifts(userA.id);
-        const userBShifts = this.getUserShifts(userB.id);
-        const userAShiftCount = userAShifts.length;
-        const userBShiftCount = userBShifts.length;
-        const hasUserAMinimumRestDays = !(
-          userAShifts.some(
-            shiftIndex =>
-              shiftIndex >= index - MINIMUM_REST_DAYS && shiftIndex < index
-          ) ||
-          userAShifts.some(
-            shiftIndex =>
-              shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
-          )
+        const userASortValue = this.getUserSortValue(
+          userA,
+          index,
+          notAllLimitsReached
         );
-        const hasUserBMinimumRestDays = !(
-          userBShifts.some(
-            shiftIndex =>
-              shiftIndex >= index - MINIMUM_REST_DAYS && shiftIndex < index
-          ) ||
-          userBShifts.some(
-            shiftIndex =>
-              shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
-          )
+        const userBSortValue = this.getUserSortValue(
+          userB,
+          index,
+          notAllLimitsReached
         );
-        const hasUserARequiredShiftsFilled =
-          userAShiftCount === userA.requiredShifts;
-        const hasUserBRequiredShiftsFilled =
-          userBShiftCount === userB.requiredShifts;
-        const userAAvailabilityStatus =
-          userA.availabilityCalendar.days[index].status;
-        const userBAvailabilityStatus =
-          userB.availabilityCalendar.days[index].status;
-
-        let userASortValue = -userAAvailabilityStatus * userA.power;
-        let userBSortValue = -userBAvailabilityStatus * userB.power;
-
-        if (!hasUserAMinimumRestDays) {
-          userASortValue += 20;
-        }
-
-        if (!hasUserBMinimumRestDays) {
-          userBSortValue += 20;
-        }
-
-        if (hasUserARequiredShiftsFilled && notAllLimitsReached) {
-          userASortValue += 1;
-        }
-
-        if (hasUserBRequiredShiftsFilled && notAllLimitsReached) {
-          userBSortValue += 1;
-        }
-
-        if (
-          userShiftCountPerPower[userA.power] >
-          userShiftCountPerPower[userB.power]
-        ) {
-          userASortValue += 1;
-        } else if (
-          userShiftCountPerPower[userA.power] <
-          userShiftCountPerPower[userB.power]
-        ) {
-          userBSortValue += 1;
-        }
-
-        if (userAShiftCount > userBShiftCount && userA.power >= userB.power) {
-          userASortValue += 1;
-        }
-
-        if (userBShiftCount > userAShiftCount && userB.power >= userA.power) {
-          userBSortValue += 1;
-        }
 
         return userASortValue - userBSortValue;
       });
@@ -167,6 +94,38 @@ export class ShiftsCalendar {
 
     // Create summary
     this.summary = this.createSummary(users);
+  }
+
+  getUserSortValue(
+    user: User,
+    shiftIndex: number,
+    notAllLimitsReached: boolean
+  ): number {
+    const userShifts = this.getUserShifts(user.id);
+    const userShiftCount = userShifts.length;
+    const hasUserMinimumRestDays = !(
+      userShifts.some(
+        index => shiftIndex >= index - MINIMUM_REST_DAYS && shiftIndex < index
+      ) ||
+      userShifts.some(
+        index => shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
+      )
+    );
+    const hasUserRequiredShiftsFilled = userShiftCount === user.requiredShifts;
+    const userAvailabilityStatus =
+      user.availabilityCalendar.days[shiftIndex].status;
+
+    let userSortValue = -userAvailabilityStatus * user.power;
+
+    if (!hasUserMinimumRestDays) {
+      userSortValue += 20;
+    }
+
+    if (hasUserRequiredShiftsFilled && notAllLimitsReached) {
+      userSortValue += 1;
+    }
+
+    return userSortValue;
   }
 
   createSummary(users: User[]) {
