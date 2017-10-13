@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from "react";
-import { observer } from "mobx-react";
 import User from "../../models/User";
 import { type AvailabilityCalendar as AvailabilityCalendarModel } from "../../models/Calendar";
 import AvailabilityCalendarDay from "./AvailabilityCalendarDay";
