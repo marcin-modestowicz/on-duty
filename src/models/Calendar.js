@@ -16,7 +16,7 @@ export function daysInCurrentMonth() {
 
 export class ShiftsCalendar {
   @observable days: Shift[] = [];
-  @observable summary: { [key: string]: string | number };
+  @observable summary: Object[];
 
   constructor() {
     const maxDay = daysInCurrentMonth();
@@ -128,10 +128,10 @@ export class ShiftsCalendar {
     return userSortValue;
   }
 
-  createSummary(users: User[]) {
-    const summary = users.reduce((allUsers, currentUser, index) => {
-      const availabilityDays = currentUser.availabilityCalendar.days;
-      const shiftDays = this.getUserShifts(currentUser.id);
+  createSummary(users: User[]): Object[] {
+    const summary = users.map(user => {
+      const availabilityDays = user.availabilityCalendar.days;
+      const shiftDays = this.getUserShifts(user.id);
       const highPreferenceDays = availabilityDays.reduce((sum, day, index) => {
         if (day.status === AVAILABILITY_STATUSES.KEEN) {
           sum.push(index);
@@ -154,29 +154,29 @@ export class ShiftsCalendar {
       const lowPreferenceFilled = lowPreferenceDays.filter(index =>
         shiftDays.includes(index)
       ).length;
+      const shiftsShare =
+        shiftDays.length /
+        (this.days.length * USERS_PER_SHIFT / users.length) *
+        100;
       const satisfaction =
         (highPreferenceFilled === 0
           ? 0
           : highPreferenceFilled / highPreference) -
         (lowPreferenceFilled === 0 ? 0 : lowPreferenceFilled / lowPreference);
 
-      allUsers[currentUser.id] = {
-        id: currentUser.id,
-        name: currentUser.name,
-        power: currentUser.power,
+      return {
+        id: user.id,
+        name: user.name,
+        power: user.power,
         highPreference,
         highPreferenceFilled,
         lowPreference,
         lowPreferenceFilled,
         shifts: shiftDays.length,
-        shiftsShare: `${shiftDays.length /
-          (this.days.length * USERS_PER_SHIFT / users.length) *
-          100}%`,
-        satisfaction
+        shiftsShare: `${Math.round(shiftsShare)}%`,
+        satisfaction: parseFloat(satisfaction.toFixed(2))
       };
-
-      return allUsers;
-    }, {});
+    });
 
     return summary;
   }

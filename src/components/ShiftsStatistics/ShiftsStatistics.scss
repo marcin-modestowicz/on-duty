@@ -1,0 +1,22 @@
+.root {
+  border-collapse: collapse;
+  border: 1px solid #4a4a4a;
+
+  .header {
+    font-size: .8em;
+    color: #4a4a4a;
+  }
+  .body {
+    font-size: .7em;
+
+    tr {
+      border-top: 1px solid #4a4a4a;
+    }
+  }
+
+  th,
+  td {
+    padding: .5em;
+    text-align: center;
+  }
+}

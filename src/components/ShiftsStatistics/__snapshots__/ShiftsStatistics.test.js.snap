@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShiftsStatistics component should render 1`] = `
+<table
+  className="root"
+>
+  <thead
+    className="header"
+  >
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Power
+      </th>
+      <th>
+        High Preference
+      </th>
+      <th>
+        High Preference Filled
+      </th>
+      <th>
+        Low Preference
+      </th>
+      <th>
+        Low Preference Filled
+      </th>
+      <th>
+        Shifts
+      </th>
+      <th>
+        Overall Shift Share
+      </th>
+      <th>
+        Satisfaction
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="body"
+  >
+    <tr
+      key="abc1"
+    >
+      <td>
+        John Doe
+      </td>
+      <td>
+        2
+      </td>
+      <td>
+        2
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        5
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        4
+      </td>
+      <td>
+        20%
+      </td>
+      <td>
+        0.1
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
