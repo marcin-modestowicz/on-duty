@@ -6,7 +6,7 @@ export const USERS_PER_SHIFT = 2;
 
 export class Shift {
   _onDuty: User[];
-  sealed: boolean;
+  isSealed: boolean = false;
 
   constructor(users: User[] = []) {
     this._onDuty = users;
@@ -24,19 +24,15 @@ export class Shift {
   };
 
   seal() {
-    this.sealed = true;
+    this.isSealed = true;
   }
 
   unseal() {
-    this.sealed = false;
-  }
-
-  get isSealed(): boolean {
-    return this.sealed;
+    this.isSealed = false;
   }
 
   get onDuty(): User[] {
-    if (this.sealed) {
+    if (this.isSealed) {
       return this._onDuty.slice(0, USERS_PER_SHIFT);
     } else {
       return this._onDuty;

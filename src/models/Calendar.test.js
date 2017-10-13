@@ -87,7 +87,7 @@ describe("ShiftsCalendar model", () => {
       ]);
     });
 
-    xtest("should choose best solution for 30 days and 30 users", () => {
+    test("should choose best solution for 30 days and 30 users", () => {
       const users = [
         new User("lekarz1", false, true, [
           1,
@@ -1091,36 +1091,36 @@ describe("ShiftsCalendar model", () => {
       );
 
       expect(result).toEqual([
-        ["lekarz16", "lekarz30"],
-        ["lekarz21", "lekarz26"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz24", "lekarz25"],
-        ["lekarz19", "lekarz5"],
-        ["lekarz15", "lekarz28"],
-        ["lekarz14", "lekarz27"],
-        ["lekarz22", "lekarz26"],
-        ["lekarz19", "lekarz4"],
-        ["lekarz20", "lekarz7"],
-        ["lekarz17", "lekarz29"],
-        ["lekarz18", "lekarz27"],
-        ["lekarz20", "lekarz28"],
-        ["lekarz18", "lekarz6"],
-        ["lekarz21", "lekarz8"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz10", "lekarz11"],
+        ["lekarz10", "lekarz2"],
+        ["lekarz20", "lekarz27"],
+        ["lekarz1", "lekarz16"],
+        ["lekarz23", "lekarz24"],
+        ["lekarz26", "lekarz27"],
+        ["lekarz11", "lekarz7"],
+        ["lekarz18", "lekarz23"],
         ["lekarz12", "lekarz13"],
-        ["lekarz17", "lekarz3"],
-        ["lekarz24", "lekarz25"],
-        ["lekarz2", "lekarz29"],
-        ["lekarz22", "lekarz23"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz16", "lekarz23"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz1", "lekarz16"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz1", "lekarz16"],
-        ["lekarz30", "lekarz9"],
-        ["lekarz1", "lekarz16"]
+        ["lekarz17", "lekarz24"],
+        ["lekarz28", "lekarz29"],
+        ["lekarz5", "lekarz6"],
+        ["lekarz22", "lekarz25"],
+        ["lekarz20", "lekarz21"],
+        ["lekarz16", "lekarz19"],
+        ["lekarz28", "lekarz30"],
+        ["lekarz1", "lekarz9"],
+        ["lekarz19", "lekarz26"],
+        ["lekarz18", "lekarz29"],
+        ["lekarz16", "lekarz30"],
+        ["lekarz17", "lekarz25"],
+        ["lekarz3", "lekarz4"],
+        ["lekarz14", "lekarz21"],
+        ["lekarz16", "lekarz22"],
+        ["lekarz29", "lekarz30"],
+        ["lekarz20", "lekarz26"],
+        ["lekarz15", "lekarz8"],
+        ["lekarz16", "lekarz9"],
+        ["lekarz1", "lekarz22"],
+        ["lekarz17", "lekarz24"],
+        ["lekarz18", "lekarz23"]
       ]);
     });
   });

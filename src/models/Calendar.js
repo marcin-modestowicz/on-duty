@@ -3,6 +3,7 @@ import { observable, computed, action } from "mobx";
 import type User from "./User";
 import Availability, { AVAILABILITY_STATUSES } from "./Availability";
 import Shift, { USERS_PER_SHIFT } from "./Shift";
+import { POWER } from "./User";
 
 export const MINIMUM_REST_DAYS = 1;
 
@@ -16,7 +17,7 @@ export function daysInCurrentMonth() {
 
 export class ShiftsCalendar {
   @observable days: Shift[] = [];
-  @observable summary: Object[];
+  @observable summary: { [key: string]: string | number };
 
   constructor() {
     const maxDay = daysInCurrentMonth();
@@ -34,7 +35,7 @@ export class ShiftsCalendar {
       });
     });
 
-    // Create index array to iterate over
+    // Create index array to iterate over, sort by preference
     const indexes = this.days
       .slice()
       .map((shift, index) => {
@@ -56,7 +57,7 @@ export class ShiftsCalendar {
       })
       .map(shift => shift.index);
 
-    // Iterate over shifts
+    // Iterate over shifts, sort users in shift
     indexes.forEach(index => {
       const currentShift = this.days[index];
       const previousShifts = this.days.slice(index - MINIMUM_REST_DAYS, index);
@@ -66,6 +67,17 @@ export class ShiftsCalendar {
       );
       const notAllLimitsReached = users.some(
         user => user.shiftCalendar.shiftCount < user.requiredShifts
+      );
+      const userShiftCountPerPower = Object.keys(POWER).map(powerKey =>
+        users
+          .filter(user => user.power === POWER[powerKey])
+          .reduce((sum, user) => {
+            if (user.shiftCalendar.days[index]) {
+              return (sum += 1);
+            }
+
+            return sum;
+          }, 0)
       );
 
       // Sort users in shift
@@ -103,11 +115,11 @@ export class ShiftsCalendar {
         let userBSortValue = -userBAvailabilityStatus * userB.power;
 
         if (!hasUserAMinimumRestDays) {
-          userASortValue += 10;
+          userASortValue += 20;
         }
 
         if (!hasUserBMinimumRestDays) {
-          userBSortValue += 10;
+          userBSortValue += 20;
         }
 
         if (hasUserARequiredShiftsFilled && notAllLimitsReached) {
@@ -118,10 +130,41 @@ export class ShiftsCalendar {
           userBSortValue += 1;
         }
 
+        if (
+          userShiftCountPerPower[userA.power] >
+          userShiftCountPerPower[userB.power]
+        ) {
+          userASortValue += 1;
+        } else if (
+          userShiftCountPerPower[userA.power] <
+          userShiftCountPerPower[userB.power]
+        ) {
+          userBSortValue += 1;
+        }
+
+        if (
+          userA.shiftCalendar.shiftCount > userB.shiftCalendar.shiftCount &&
+          userA.power >= userB.power
+        ) {
+          userASortValue += 1;
+        }
+
+        if (
+          userA.shiftCalendar.shiftCount > userB.shiftCalendar.shiftCount &&
+          userA.power >= userB.power
+        ) {
+          userASortValue += 1;
+        }
+
+        if (
+          userB.shiftCalendar.shiftCount > userA.shiftCalendar.shiftCount &&
+          userB.power >= userA.power
+        ) {
+          userBSortValue += 1;
+        }
+
         return userASortValue - userBSortValue;
       });
-
-      // console.log(currentShift._onDuty.map(user => ({name: user.name, power: user.power, preference: user.availabilityCalendar.days[index].status})));
 
       // Seal shift, mark shift as set in chosen users shift calendars
       currentShift.seal();
@@ -130,6 +173,7 @@ export class ShiftsCalendar {
       });
     });
 
+    // Create summary
     this.summary = this.createSummary(users);
   }
 
@@ -137,62 +181,55 @@ export class ShiftsCalendar {
     const summary = users.reduce((allUsers, currentUser, index) => {
       const availabilityDays = currentUser.availabilityCalendar.days;
       const shiftDays = currentUser.shiftCalendar.days;
+      const highPreference = availabilityDays.reduce(
+        (sum, day) =>
+          day.status === AVAILABILITY_STATUSES.KEEN ? (sum += 1) : sum,
+        0
+      );
+      const highPreferenceFilled = availabilityDays.reduce(
+        (sum, day, index) =>
+          day.status === AVAILABILITY_STATUSES.KEEN && shiftDays[index]
+            ? (sum += 1)
+            : sum,
+        0
+      );
+      const lowPreference = availabilityDays.reduce(
+        (sum, day) =>
+          day.status === AVAILABILITY_STATUSES.BUSY ? (sum += 1) : sum,
+        0
+      );
+      const lowPreferenceFilled = availabilityDays.reduce(
+        (sum, day, index) =>
+          day.status === AVAILABILITY_STATUSES.BUSY && shiftDays[index]
+            ? (sum += 1)
+            : sum,
+        0
+      );
+      const satisfaction =
+        (highPreferenceFilled === 0
+          ? 0
+          : highPreferenceFilled / highPreference) -
+        (lowPreferenceFilled === 0 ? 0 : lowPreferenceFilled / lowPreference);
 
       allUsers[currentUser.id] = {
+        id: currentUser.id,
         name: currentUser.name,
         power: currentUser.power,
-        highPreference: availabilityDays.reduce(
-          (sum, day) =>
-            day.status === AVAILABILITY_STATUSES.KEEN ? (sum += 1) : sum,
-          0
-        ),
-        highPreferenceFilled: availabilityDays.reduce(
-          (sum, day, index) =>
-            day.status === AVAILABILITY_STATUSES.KEEN && shiftDays[index]
-              ? (sum += 1)
-              : sum,
-          0
-        ),
-        lowPreference: availabilityDays.reduce(
-          (sum, day) =>
-            day.status === AVAILABILITY_STATUSES.BUSY ? (sum += 1) : sum,
-          0
-        ),
-        lowPreferenceFilled: availabilityDays.reduce(
-          (sum, day, index) =>
-            day.status === AVAILABILITY_STATUSES.BUSY && shiftDays[index]
-              ? (sum += 1)
-              : sum,
-          0
-        ),
-        shifts: currentUser.shiftCalendar.shiftCount
+        highPreference,
+        highPreferenceFilled,
+        lowPreference,
+        lowPreferenceFilled,
+        shifts: currentUser.shiftCalendar.shiftCount,
+        shiftsShare: `${currentUser.shiftCalendar.shiftCount /
+          (this.days.length * USERS_PER_SHIFT / users.length) *
+          100}%`,
+        satisfaction
       };
 
       return allUsers;
     }, {});
 
-    return Object.keys(summary).map(userId => ({
-      id: userId,
-      name: summary[userId].name,
-      power: summary[userId].power,
-      satisfaction: this.getSatisfactionFactor(summary[userId]),
-      shifts: summary[userId].shifts,
-      shiftsShare: `${summary[userId].shifts /
-        (this.days.length * USERS_PER_SHIFT / users.length) *
-        100}%`
-    }));
-  }
-
-  getSatisfactionFactor({
-    highPreference,
-    highPreferenceFilled,
-    lowPreference,
-    lowPreferenceFilled
-  }: Object): number {
-    return (
-      (highPreferenceFilled === 0 ? 0 : highPreferenceFilled / highPreference) -
-      (lowPreferenceFilled === 0 ? 0 : lowPreferenceFilled / lowPreference)
-    );
+    return summary;
   }
 }
 

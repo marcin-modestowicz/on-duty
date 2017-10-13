@@ -2,7 +2,7 @@
 import { AvailabilityCalendar, ShiftCalendar } from "./Calendar";
 import uuid from "uuid/v1";
 
-const POWER = {
+export const POWER = {
   RESIDENT: 0,
   DOCTOR: 1,
   SPECIALIST: 2
