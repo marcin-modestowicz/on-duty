@@ -2,7 +2,17 @@
 import MainStore from "./MainStore";
 
 describe("MainStore store", () => {
+  let localStorage;
   let mainStore;
+
+  beforeAll(() => {
+    localStorage = global.localStorage;
+    global.localStorage = { setItem: () => {}, getItem: () => {} };
+  });
+
+  afterAll(() => {
+    global.localStorage = localStorage;
+  });
 
   beforeEach(() => {
     mainStore = new MainStore();
