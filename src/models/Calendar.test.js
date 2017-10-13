@@ -58,10 +58,10 @@ describe("ShiftsCalendar model", () => {
   describe("fill calendar method", () => {
     test("should choose best solution for 5 days and 4 users", () => {
       const users = [
-        new User("lekarz1", false, false, [1, 0, 0, -1, -1]),
-        new User("lekarz2", true, false, [0, -1, 1, 1, 0]),
-        new User("lekarz3", false, true, [1, 0, 0, 0, -1]),
-        new User("lekarz4", false, true, [-1, 1, 0, 1, 0])
+        new User("user1", false, false, [1, 0, 0, -1, -1]),
+        new User("user2", true, false, [0, -1, 1, 1, 0]),
+        new User("user3", false, true, [1, 0, 0, 0, -1]),
+        new User("user4", false, true, [-1, 1, 0, 1, 0])
       ];
       const calendar = [
         new Shift(),
@@ -79,17 +79,17 @@ describe("ShiftsCalendar model", () => {
       );
 
       expect(result).toEqual([
-        ["lekarz1", "lekarz3"],
-        ["lekarz2", "lekarz4"],
-        ["lekarz1", "lekarz3"],
-        ["lekarz2", "lekarz4"],
-        ["lekarz1", "lekarz3"]
+        ["user1", "user3"],
+        ["user2", "user4"],
+        ["user1", "user3"],
+        ["user2", "user4"],
+        ["user1", "user3"]
       ]);
     });
 
     test("should choose best solution for 30 days and 30 users", () => {
       const users = [
-        new User("lekarz1", false, true, [
+        new User("user1", false, true, [
           1,
           0,
           0,
@@ -121,7 +121,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz2", false, true, [
+        new User("user2", false, true, [
           1,
           0,
           0,
@@ -153,7 +153,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz3", false, true, [
+        new User("user3", false, true, [
           1,
           0,
           0,
@@ -185,7 +185,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz4", false, true, [
+        new User("user4", false, true, [
           1,
           0,
           0,
@@ -217,7 +217,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz5", false, true, [
+        new User("user5", false, true, [
           1,
           0,
           0,
@@ -249,7 +249,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz6", false, true, [
+        new User("user6", false, true, [
           1,
           0,
           0,
@@ -281,7 +281,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz7", false, true, [
+        new User("user7", false, true, [
           1,
           0,
           0,
@@ -313,7 +313,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz8", false, true, [
+        new User("user8", false, true, [
           1,
           0,
           0,
@@ -345,7 +345,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz9", false, true, [
+        new User("user9", false, true, [
           1,
           0,
           0,
@@ -377,7 +377,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz10", false, true, [
+        new User("user10", false, true, [
           1,
           0,
           0,
@@ -409,7 +409,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz11", false, true, [
+        new User("user11", false, true, [
           1,
           0,
           0,
@@ -441,7 +441,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz12", false, true, [
+        new User("user12", false, true, [
           1,
           0,
           0,
@@ -473,7 +473,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz13", false, true, [
+        new User("user13", false, true, [
           1,
           0,
           0,
@@ -505,7 +505,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz14", false, true, [
+        new User("user14", false, true, [
           1,
           0,
           0,
@@ -537,7 +537,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz15", false, true, [
+        new User("user15", false, true, [
           1,
           0,
           0,
@@ -569,7 +569,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz16", false, false, [
+        new User("user16", false, false, [
           1,
           0,
           0,
@@ -601,7 +601,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz17", false, false, [
+        new User("user17", false, false, [
           1,
           0,
           0,
@@ -633,7 +633,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz18", false, false, [
+        new User("user18", false, false, [
           1,
           0,
           0,
@@ -665,7 +665,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz19", false, false, [
+        new User("user19", false, false, [
           1,
           0,
           0,
@@ -697,7 +697,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz20", false, false, [
+        new User("user20", false, false, [
           1,
           0,
           0,
@@ -729,7 +729,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz21", false, false, [
+        new User("user21", false, false, [
           1,
           0,
           0,
@@ -761,7 +761,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz22", false, false, [
+        new User("user22", false, false, [
           1,
           0,
           0,
@@ -793,7 +793,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz23", false, false, [
+        new User("user23", false, false, [
           1,
           0,
           0,
@@ -825,7 +825,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz24", false, false, [
+        new User("user24", false, false, [
           1,
           0,
           0,
@@ -857,7 +857,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz25", false, false, [
+        new User("user25", false, false, [
           1,
           0,
           0,
@@ -889,7 +889,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz26", false, false, [
+        new User("user26", false, false, [
           1,
           0,
           0,
@@ -921,7 +921,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz27", false, false, [
+        new User("user27", false, false, [
           1,
           0,
           0,
@@ -953,7 +953,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz28", false, false, [
+        new User("user28", false, false, [
           1,
           0,
           0,
@@ -985,7 +985,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz29", false, false, [
+        new User("user29", false, false, [
           1,
           0,
           0,
@@ -1017,7 +1017,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("lekarz30", false, false, [
+        new User("user30", false, false, [
           1,
           0,
           0,
@@ -1091,36 +1091,36 @@ describe("ShiftsCalendar model", () => {
       );
 
       expect(result).toEqual([
-        ["lekarz2", "lekarz3"],
-        ["lekarz19", "lekarz26"],
-        ["lekarz1", "lekarz16"],
-        ["lekarz24", "lekarz25"],
-        ["lekarz17", "lekarz23"],
-        ["lekarz11", "lekarz8"],
-        ["lekarz16", "lekarz30"],
-        ["lekarz13", "lekarz14"],
-        ["lekarz17", "lekarz23"],
-        ["lekarz18", "lekarz24"],
-        ["lekarz6", "lekarz7"],
-        ["lekarz19", "lekarz27"],
-        ["lekarz20", "lekarz28"],
-        ["lekarz27", "lekarz29"],
-        ["lekarz26", "lekarz28"],
-        ["lekarz1", "lekarz9"],
-        ["lekarz18", "lekarz25"],
-        ["lekarz12", "lekarz29"],
-        ["lekarz16", "lekarz30"],
-        ["lekarz20", "lekarz21"],
-        ["lekarz4", "lekarz5"],
-        ["lekarz21", "lekarz22"],
-        ["lekarz1", "lekarz16"],
-        ["lekarz22", "lekarz30"],
-        ["lekarz16", "lekarz20"],
-        ["lekarz10", "lekarz15"],
-        ["lekarz1", "lekarz16"],
-        ["lekarz2", "lekarz30"],
-        ["lekarz16", "lekarz22"],
-        ["lekarz29", "lekarz30"]
+        ["user2", "user3"],
+        ["user19", "user26"],
+        ["user1", "user16"],
+        ["user24", "user25"],
+        ["user17", "user23"],
+        ["user11", "user8"],
+        ["user16", "user30"],
+        ["user13", "user14"],
+        ["user17", "user23"],
+        ["user18", "user24"],
+        ["user6", "user7"],
+        ["user19", "user27"],
+        ["user20", "user28"],
+        ["user27", "user29"],
+        ["user26", "user28"],
+        ["user1", "user9"],
+        ["user18", "user25"],
+        ["user12", "user29"],
+        ["user16", "user30"],
+        ["user20", "user21"],
+        ["user4", "user5"],
+        ["user21", "user22"],
+        ["user1", "user16"],
+        ["user22", "user30"],
+        ["user16", "user20"],
+        ["user10", "user15"],
+        ["user1", "user16"],
+        ["user2", "user30"],
+        ["user16", "user22"],
+        ["user29", "user30"]
       ]);
     });
   });
