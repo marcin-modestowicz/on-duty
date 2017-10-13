@@ -4,6 +4,7 @@ import { observer } from "mobx-react";
 import MainStore from "./stores/MainStore";
 import AddUser from "./components/AddUser";
 import ShowUser from "./components/ShowUser";
+import Shifts from "./components/Shifts";
 import styles from "./App.scss";
 
 @observer
@@ -11,7 +12,14 @@ class App extends Component<null> {
   mainStore: MainStore = new MainStore();
 
   render() {
-    const { users, addUser } = this.mainStore;
+    const {
+      users,
+      addUser,
+      fillCalendar,
+      isReady,
+      calendar,
+      saveState
+    } = this.mainStore;
 
     return (
       <div className={styles.root}>
@@ -21,8 +29,13 @@ class App extends Component<null> {
         <div>
           <div>
             <AddUser onAdd={addUser} />
+            <button onClick={saveState}>Save state</button>
+            <button onClick={fillCalendar} disabled={!isReady}>
+              Create calendar
+            </button>
             {users.map(user => <ShowUser key={user.id} user={user} />)}
           </div>
+          <div>{calendar && <Shifts calendar={calendar} />}</div>
         </div>
       </div>
     );
