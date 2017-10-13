@@ -3,7 +3,6 @@ import { observable, computed, action } from "mobx";
 import User from "../models/User";
 import {
   ShiftsCalendar,
-  ShiftCalendar,
   AvailabilityCalendar,
   MINIMUM_REST_DAYS
 } from "../models/Calendar";

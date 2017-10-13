@@ -27,6 +27,15 @@ export class ShiftsCalendar {
     }
   }
 
+  getUserShifts(userId: string): number[] {
+    return this.days.reduce((sum, { isSealed, onDuty }, index) => {
+      if (isSealed && onDuty.some(user => user.id === userId)) {
+        sum.push(index);
+      }
+      return sum;
+    }, []);
+  }
+
   fillCalendar(users: User[]) {
     // Fill all slots in shift with users
     this.days.forEach((shift, index) => {
@@ -60,19 +69,14 @@ export class ShiftsCalendar {
     // Iterate over shifts, sort users in shift
     indexes.forEach(index => {
       const currentShift = this.days[index];
-      const previousShifts = this.days.slice(index - MINIMUM_REST_DAYS, index);
-      const nextShifts = this.days.slice(
-        index + 1,
-        index + MINIMUM_REST_DAYS + 1
-      );
       const notAllLimitsReached = users.some(
-        user => user.shiftCalendar.shiftCount < user.requiredShifts
+        user => this.getUserShifts(user.id).length < user.requiredShifts
       );
       const userShiftCountPerPower = Object.keys(POWER).map(powerKey =>
         users
           .filter(user => user.power === POWER[powerKey])
           .reduce((sum, user) => {
-            if (user.shiftCalendar.days[index]) {
+            if (this.getUserShifts(user.id)[index]) {
               return (sum += 1);
             }
 
@@ -82,30 +86,34 @@ export class ShiftsCalendar {
 
       // Sort users in shift
       currentShift._onDuty = currentShift._onDuty.sort((userA, userB) => {
+        const userAShifts = this.getUserShifts(userA.id);
+        const userBShifts = this.getUserShifts(userB.id);
+        const userAShiftCount = userAShifts.length;
+        const userBShiftCount = userBShifts.length;
         const hasUserAMinimumRestDays = !(
-          previousShifts.some(
-            shift =>
-              shift.isSealed && shift.onDuty.some(user => user.id === userA.id)
+          userAShifts.some(
+            shiftIndex =>
+              shiftIndex >= index - MINIMUM_REST_DAYS && shiftIndex < index
           ) ||
-          nextShifts.some(
-            shift =>
-              shift.isSealed && shift.onDuty.some(user => user.id === userA.id)
+          userAShifts.some(
+            shiftIndex =>
+              shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
           )
         );
         const hasUserBMinimumRestDays = !(
-          previousShifts.some(
-            shift =>
-              shift.isSealed && shift.onDuty.some(user => user.id === userB.id)
+          userBShifts.some(
+            shiftIndex =>
+              shiftIndex >= index - MINIMUM_REST_DAYS && shiftIndex < index
           ) ||
-          nextShifts.some(
-            shift =>
-              shift.isSealed && shift.onDuty.some(user => user.id === userB.id)
+          userBShifts.some(
+            shiftIndex =>
+              shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
           )
         );
         const hasUserARequiredShiftsFilled =
-          userA.shiftCalendar.shiftCount === userA.requiredShifts;
+          userAShiftCount === userA.requiredShifts;
         const hasUserBRequiredShiftsFilled =
-          userB.shiftCalendar.shiftCount === userB.requiredShifts;
+          userBShiftCount === userB.requiredShifts;
         const userAAvailabilityStatus =
           userA.availabilityCalendar.days[index].status;
         const userBAvailabilityStatus =
@@ -142,35 +150,19 @@ export class ShiftsCalendar {
           userBSortValue += 1;
         }
 
-        if (
-          userA.shiftCalendar.shiftCount > userB.shiftCalendar.shiftCount &&
-          userA.power >= userB.power
-        ) {
+        if (userAShiftCount > userBShiftCount && userA.power >= userB.power) {
           userASortValue += 1;
         }
 
-        if (
-          userA.shiftCalendar.shiftCount > userB.shiftCalendar.shiftCount &&
-          userA.power >= userB.power
-        ) {
-          userASortValue += 1;
-        }
-
-        if (
-          userB.shiftCalendar.shiftCount > userA.shiftCalendar.shiftCount &&
-          userB.power >= userA.power
-        ) {
+        if (userBShiftCount > userAShiftCount && userB.power >= userA.power) {
           userBSortValue += 1;
         }
 
         return userASortValue - userBSortValue;
       });
 
-      // Seal shift, mark shift as set in chosen users shift calendars
+      // Seal shift
       currentShift.seal();
-      currentShift.onDuty.forEach(user => {
-        user.shiftCalendar.addShift(index + 1);
-      });
     });
 
     // Create summary
@@ -180,31 +172,29 @@ export class ShiftsCalendar {
   createSummary(users: User[]) {
     const summary = users.reduce((allUsers, currentUser, index) => {
       const availabilityDays = currentUser.availabilityCalendar.days;
-      const shiftDays = currentUser.shiftCalendar.days;
-      const highPreference = availabilityDays.reduce(
-        (sum, day) =>
-          day.status === AVAILABILITY_STATUSES.KEEN ? (sum += 1) : sum,
-        0
-      );
-      const highPreferenceFilled = availabilityDays.reduce(
-        (sum, day, index) =>
-          day.status === AVAILABILITY_STATUSES.KEEN && shiftDays[index]
-            ? (sum += 1)
-            : sum,
-        0
-      );
-      const lowPreference = availabilityDays.reduce(
-        (sum, day) =>
-          day.status === AVAILABILITY_STATUSES.BUSY ? (sum += 1) : sum,
-        0
-      );
-      const lowPreferenceFilled = availabilityDays.reduce(
-        (sum, day, index) =>
-          day.status === AVAILABILITY_STATUSES.BUSY && shiftDays[index]
-            ? (sum += 1)
-            : sum,
-        0
-      );
+      const shiftDays = this.getUserShifts(currentUser.id);
+      const highPreferenceDays = availabilityDays.reduce((sum, day, index) => {
+        if (day.status === AVAILABILITY_STATUSES.KEEN) {
+          sum.push(index);
+        }
+
+        return sum;
+      }, []);
+      const highPreference = highPreferenceDays.length;
+      const highPreferenceFilled = highPreferenceDays.filter(index =>
+        shiftDays.includes(index)
+      ).length;
+      const lowPreferenceDays = availabilityDays.reduce((sum, day, index) => {
+        if (day.status === AVAILABILITY_STATUSES.BUSY) {
+          sum.push(index);
+        }
+
+        return sum;
+      }, []);
+      const lowPreference = lowPreferenceDays.length;
+      const lowPreferenceFilled = lowPreferenceDays.filter(index =>
+        shiftDays.includes(index)
+      ).length;
       const satisfaction =
         (highPreferenceFilled === 0
           ? 0
@@ -219,8 +209,8 @@ export class ShiftsCalendar {
         highPreferenceFilled,
         lowPreference,
         lowPreferenceFilled,
-        shifts: currentUser.shiftCalendar.shiftCount,
-        shiftsShare: `${currentUser.shiftCalendar.shiftCount /
+        shifts: shiftDays.length,
+        shiftsShare: `${shiftDays.length /
           (this.days.length * USERS_PER_SHIFT / users.length) *
           100}%`,
         satisfaction
@@ -245,33 +235,5 @@ export class AvailabilityCalendar {
       // $FlowFixMe
       this.days.push(new Availability(availability[day - 1]));
     }
-  }
-}
-
-export class ShiftCalendar {
-  days: boolean[] = [];
-
-  constructor(days: ?(boolean[])) {
-    if (days) {
-      this.days = days;
-    } else {
-      const maxDay = daysInCurrentMonth();
-
-      for (let day = 1; day <= maxDay; day += 1) {
-        this.days.push(false);
-      }
-    }
-  }
-
-  addShift(day: number) {
-    this.days[day - 1] = true;
-  }
-
-  removeShift(day: number) {
-    this.days[day - 1] = false;
-  }
-
-  get shiftCount(): number {
-    return this.days.filter(shift => shift).length;
   }
 }

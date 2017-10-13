@@ -1,5 +1,5 @@
 // @flow
-import { AvailabilityCalendar, ShiftCalendar } from "./Calendar";
+import { AvailabilityCalendar } from "./Calendar";
 import uuid from "uuid/v1";
 
 export const POWER = {
@@ -20,21 +20,18 @@ class User {
   isDoctor: boolean;
   isSpecialist: boolean;
   availabilityCalendar: AvailabilityCalendar;
-  shiftCalendar: ShiftCalendar;
 
   constructor(
     name: string,
     isDoctor?: boolean,
     isSpecialist?: boolean,
-    availability?: number[],
-    shifts?: boolean[]
+    availability?: number[]
   ) {
     this.id = uuid();
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;
     this.availabilityCalendar = new AvailabilityCalendar(availability);
-    this.shiftCalendar = new ShiftCalendar(shifts);
   }
 
   get power(): number {
