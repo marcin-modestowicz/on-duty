@@ -68,21 +68,30 @@ export class ShiftsCalendar {
     // Iterate over shifts, sort users in shift
     indexes.forEach(index => {
       const currentShift = this.days[index];
-      const notAllLimitsReached = users.some(
-        user => this.getUserShifts(user.id).length < user.requiredShifts
-      );
+      const shiftsPerPower = users.reduce((sum, user) => {
+        if (!sum[user.power]) {
+          sum[user.power] = {
+            users: 0,
+            shifts: 0
+          };
+        }
+        sum[user.power].users += 1;
+        sum[user.power].shifts += this.getUserShifts(user.id).length;
+
+        return sum;
+      }, {});
 
       // Sort users in shift
       currentShift._onDuty = currentShift._onDuty.sort((userA, userB) => {
         const userASortValue = this.getUserSortValue(
           userA,
           index,
-          notAllLimitsReached
+          shiftsPerPower
         );
         const userBSortValue = this.getUserSortValue(
           userB,
           index,
-          notAllLimitsReached
+          shiftsPerPower
         );
 
         return userASortValue - userBSortValue;
@@ -99,7 +108,7 @@ export class ShiftsCalendar {
   getUserSortValue(
     user: User,
     shiftIndex: number,
-    notAllLimitsReached: boolean
+    shiftsPerPower: Object
   ): number {
     const userShifts = this.getUserShifts(user.id);
     const userShiftCount = userShifts.length;
@@ -111,18 +120,19 @@ export class ShiftsCalendar {
         index => shiftIndex <= index + MINIMUM_REST_DAYS && shiftIndex > index
       )
     );
-    const hasUserRequiredShiftsFilled = userShiftCount === user.requiredShifts;
     const userAvailabilityStatus =
       user.availabilityCalendar.days[shiftIndex].status;
+    const averageShiftsPerUserPower =
+      shiftsPerPower[user.power].shifts / shiftsPerPower[user.power].users;
 
-    let userSortValue = -userAvailabilityStatus * user.power;
+    let userSortValue = -userAvailabilityStatus * (user.power + 1);
 
     if (!hasUserMinimumRestDays) {
       userSortValue += 20;
     }
 
-    if (hasUserRequiredShiftsFilled && notAllLimitsReached) {
-      userSortValue += 1;
+    if (userShiftCount >= averageShiftsPerUserPower) {
+      userSortValue += userShiftCount - averageShiftsPerUserPower;
     }
 
     return userSortValue;

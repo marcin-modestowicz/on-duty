@@ -210,10 +210,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user3",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -321,10 +321,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -424,10 +424,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a0",
+          "id": "a3",
           "isDoctor": false,
-          "isSpecialist": false,
-          "name": "user1",
+          "isSpecialist": true,
+          "name": "user4",
         },
       ]
     }
@@ -535,10 +535,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
+          "id": "a0",
           "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "isSpecialist": false,
+          "name": "user1",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -638,10 +638,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a0",
-          "isDoctor": false,
+          "id": "a1",
+          "isDoctor": true,
           "isSpecialist": false,
-          "name": "user1",
+          "name": "user2",
         },
       ]
     }
@@ -749,10 +749,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -852,10 +852,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -1066,10 +1066,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -1177,10 +1177,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -1280,10 +1280,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -1494,10 +1494,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -1605,10 +1605,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -1708,10 +1708,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -1922,10 +1922,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -2033,10 +2033,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -2136,10 +2136,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -2350,10 +2350,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -2461,10 +2461,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -2564,10 +2564,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -2778,10 +2778,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
-          "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "id": "a1",
+          "isDoctor": true,
+          "isSpecialist": false,
+          "name": "user2",
         },
       ]
     }
@@ -2889,10 +2889,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a1",
-          "isDoctor": true,
-          "isSpecialist": false,
-          "name": "user2",
+          "id": "a2",
+          "isDoctor": false,
+          "isSpecialist": true,
+          "name": "user3",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -2992,10 +2992,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a2",
+          "id": "a3",
           "isDoctor": false,
           "isSpecialist": true,
-          "name": "user3",
+          "name": "user4",
         },
       ]
     }
@@ -3103,10 +3103,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a3",
+          "id": "a0",
           "isDoctor": false,
-          "isSpecialist": true,
-          "name": "user4",
+          "isSpecialist": false,
+          "name": "user1",
         },
         User {
           "availabilityCalendar": AvailabilityCalendar {
@@ -3206,10 +3206,10 @@ exports[`ShiftsCalendar component should render 1`] = `
               },
             ],
           },
-          "id": "a0",
-          "isDoctor": false,
+          "id": "a1",
+          "isDoctor": true,
           "isSpecialist": false,
-          "name": "user1",
+          "name": "user2",
         },
       ]
     }
