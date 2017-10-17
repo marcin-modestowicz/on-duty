@@ -2,9 +2,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import classnames from "classnames";
-import type Availability, {
-  AvailabilityStatus
-} from "../../models/Availability";
+import type Availability from "../../models/Availability";
 import {
   AVAILABILITY_STATUSES,
   AVAILABILITY_STATUSES_NAMES
@@ -18,19 +16,16 @@ type Props = {
 
 @observer
 class AvailabilityCalendarDay extends Component<Props> {
-  statuses: AvailabilityStatus[] = [
-    AVAILABILITY_STATUSES.FREE,
-    AVAILABILITY_STATUSES.KEEN,
-    AVAILABILITY_STATUSES.BUSY
-  ];
-
   handleClick = () => {
     this.props.availability.toggle();
   };
 
-  renderDayContent(status: string) {
+  renderDayContent(statusName: string) {
     return (
-      <div key={status} className={classnames(styles.day, styles[status])}>
+      <div
+        key={statusName}
+        className={classnames(styles.day, styles[statusName])}
+      >
         <div className={styles.dayName}>Monday</div>
         <div className={styles.dayNum}>{this.props.day}</div>
       </div>
@@ -54,11 +49,12 @@ class AvailabilityCalendarDay extends Component<Props> {
         title="Click to toggle availability"
         onClick={this.handleClick}
       >
-        {this.statuses.map(_status =>
-          this.renderDayContent(
-            AVAILABILITY_STATUSES_NAMES[_status].toLowerCase()
-          )
-        )}
+        {Object.keys(AVAILABILITY_STATUSES).map(statusKey => {
+          const statusName =
+            AVAILABILITY_STATUSES_NAMES[AVAILABILITY_STATUSES[statusKey]];
+
+          return this.renderDayContent(statusName.toLowerCase());
+        })}
       </div>
     );
   }
