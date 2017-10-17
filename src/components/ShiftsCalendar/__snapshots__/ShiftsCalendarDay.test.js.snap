@@ -26,7 +26,7 @@ exports[`ShiftsCalendarDay component should render 1`] = `
     <div
       className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
       className="number"

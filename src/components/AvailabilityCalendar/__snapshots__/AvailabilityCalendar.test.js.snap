@@ -16,8 +16,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={1}
-      key="0"
+      date={2017-10-31T23:00:00.000Z}
+      key="1509490800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -25,8 +25,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={2}
-      key="1"
+      date={2017-11-01T23:00:00.000Z}
+      key="1509577200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -34,8 +34,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={3}
-      key="2"
+      date={2017-11-02T23:00:00.000Z}
+      key="1509663600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -43,8 +43,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={4}
-      key="3"
+      date={2017-11-03T23:00:00.000Z}
+      key="1509750000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -52,8 +52,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={5}
-      key="4"
+      date={2017-11-04T23:00:00.000Z}
+      key="1509836400000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -61,8 +61,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={6}
-      key="5"
+      date={2017-11-05T23:00:00.000Z}
+      key="1509922800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -70,8 +70,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={7}
-      key="6"
+      date={2017-11-06T23:00:00.000Z}
+      key="1510009200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -79,8 +79,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={8}
-      key="7"
+      date={2017-11-07T23:00:00.000Z}
+      key="1510095600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -88,8 +88,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={9}
-      key="8"
+      date={2017-11-08T23:00:00.000Z}
+      key="1510182000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -97,8 +97,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={10}
-      key="9"
+      date={2017-11-09T23:00:00.000Z}
+      key="1510268400000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -106,8 +106,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={11}
-      key="10"
+      date={2017-11-10T23:00:00.000Z}
+      key="1510354800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -115,8 +115,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={12}
-      key="11"
+      date={2017-11-11T23:00:00.000Z}
+      key="1510441200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -124,8 +124,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={13}
-      key="12"
+      date={2017-11-12T23:00:00.000Z}
+      key="1510527600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -133,8 +133,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={14}
-      key="13"
+      date={2017-11-13T23:00:00.000Z}
+      key="1510614000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -142,8 +142,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={15}
-      key="14"
+      date={2017-11-14T23:00:00.000Z}
+      key="1510700400000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -151,8 +151,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={16}
-      key="15"
+      date={2017-11-15T23:00:00.000Z}
+      key="1510786800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -160,8 +160,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={17}
-      key="16"
+      date={2017-11-16T23:00:00.000Z}
+      key="1510873200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -169,8 +169,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={18}
-      key="17"
+      date={2017-11-17T23:00:00.000Z}
+      key="1510959600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -178,8 +178,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={19}
-      key="18"
+      date={2017-11-18T23:00:00.000Z}
+      key="1511046000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -187,8 +187,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={20}
-      key="19"
+      date={2017-11-19T23:00:00.000Z}
+      key="1511132400000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -196,8 +196,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={21}
-      key="20"
+      date={2017-11-20T23:00:00.000Z}
+      key="1511218800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -205,8 +205,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={22}
-      key="21"
+      date={2017-11-21T23:00:00.000Z}
+      key="1511305200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -214,8 +214,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={23}
-      key="22"
+      date={2017-11-22T23:00:00.000Z}
+      key="1511391600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -223,8 +223,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={24}
-      key="23"
+      date={2017-11-23T23:00:00.000Z}
+      key="1511478000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -232,8 +232,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={25}
-      key="24"
+      date={2017-11-24T23:00:00.000Z}
+      key="1511564400000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -241,8 +241,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={26}
-      key="25"
+      date={2017-11-25T23:00:00.000Z}
+      key="1511650800000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -250,8 +250,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={27}
-      key="26"
+      date={2017-11-26T23:00:00.000Z}
+      key="1511737200000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -259,8 +259,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={28}
-      key="27"
+      date={2017-11-27T23:00:00.000Z}
+      key="1511823600000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -268,8 +268,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={29}
-      key="28"
+      date={2017-11-28T23:00:00.000Z}
+      key="1511910000000"
     />
     <AvailabilityCalendarDay
       availability={
@@ -277,17 +277,8 @@ exports[`AvailabilityCalendar component should render 1`] = `
           "status": 0,
         }
       }
-      day={30}
-      key="29"
-    />
-    <AvailabilityCalendarDay
-      availability={
-        Availability {
-          "status": 0,
-        }
-      }
-      day={31}
-      key="30"
+      date={2017-11-29T23:00:00.000Z}
+      key="1511996400000"
     />
   </div>
 </div>

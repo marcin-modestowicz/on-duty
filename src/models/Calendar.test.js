@@ -1,57 +1,36 @@
 // @flow
-import {
-  daysInCurrentMonth,
-  ShiftsCalendar,
-  AvailabilityCalendar
-} from "./Calendar";
+import { getNextMonthDays } from "../utils/date";
+import { ShiftsCalendar, AvailabilityCalendar } from "./Calendar";
 import Availability from "./Availability";
 import Shift from "./Shift";
 import User from "./User";
 
-describe("daysInCurrentMonth", () => {
-  let date;
+describe("ShiftsCalendar model", () => {
   let RealDate;
+  let shiftsCalendar;
 
   beforeAll(() => {
     RealDate = Date;
+    const date = new Date(2017, 9, 1);
     global.Date = function DateMock(...args) {
       return args.length ? new RealDate(...args) : date;
     };
+
+    shiftsCalendar = new ShiftsCalendar();
   });
 
   afterAll(() => {
     global.Date = RealDate;
   });
 
-  test("should return number of days in current month", () => {
-    date = new Date(2016, 1, 3);
-    expect(daysInCurrentMonth()).toBe(29);
-
-    date = new Date(2017, 1, 3);
-    expect(daysInCurrentMonth()).toBe(28);
-
-    date = new Date(2017, 2, 3);
-    expect(daysInCurrentMonth()).toBe(31);
-
-    date = new Date(2017, 3, 3);
-    expect(daysInCurrentMonth()).toBe(30);
-  });
-});
-
-describe("ShiftsCalendar model", () => {
-  let shiftsCalendar;
-
-  beforeAll(() => {
-    shiftsCalendar = new ShiftsCalendar();
-  });
-
   describe("on instance creation", () => {
-    test("should create slots equal in number to current month days", () => {
-      expect(shiftsCalendar.days.length).toBe(daysInCurrentMonth());
+    test("should create slots equal in number to next month days", () => {
+      expect(shiftsCalendar.days.length).toBe(getNextMonthDays().length);
     });
 
-    test("should fill slots with Shift instance", () => {
-      expect(shiftsCalendar.days[0] instanceof Shift).toBeTruthy();
+    test("should fill slots with Date and Shift instances", () => {
+      expect(shiftsCalendar.days[0].date instanceof RealDate).toBeTruthy();
+      expect(shiftsCalendar.days[0].shift instanceof Shift).toBeTruthy();
     });
   });
 
@@ -64,18 +43,33 @@ describe("ShiftsCalendar model", () => {
         new User("user4", false, true, [-1, 1, 0, 1, 0])
       ];
       const calendar = [
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift()
+        {
+          date: new Date(2017, 10, 1),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 2),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 3),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 4),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 5),
+          shift: new Shift()
+        }
       ];
 
       shiftsCalendar.days = calendar;
 
       const shifts = shiftsCalendar.fillCalendar(users);
-      const result = shiftsCalendar.days.map(({ onDuty }) =>
-        onDuty.map(user => user.name).sort()
+      const result = shiftsCalendar.days.map(({ shift }) =>
+        shift.onDuty.map(user => user.name).sort()
       );
 
       expect(result).toEqual([
@@ -1051,43 +1045,133 @@ describe("ShiftsCalendar model", () => {
         ])
       ];
       const calendar = [
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift(),
-        new Shift()
+        {
+          date: new Date(2017, 10, 1),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 2),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 3),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 4),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 5),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 6),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 7),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 8),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 9),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 10),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 11),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 12),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 13),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 14),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 15),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 16),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 17),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 18),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 19),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 20),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 21),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 22),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 23),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 24),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 25),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 26),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 27),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 28),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 29),
+          shift: new Shift()
+        },
+        {
+          date: new Date(2017, 10, 30),
+          shift: new Shift()
+        }
       ];
 
       shiftsCalendar.days = calendar;
 
       const shifts = shiftsCalendar.fillCalendar(users);
-      const result = shiftsCalendar.days.map(({ onDuty }) =>
-        onDuty.map(user => user.name).sort()
+      const result = shiftsCalendar.days.map(({ shift }) =>
+        shift.onDuty.map(user => user.name).sort()
       );
 
       expect(result).toEqual([
@@ -1127,19 +1211,35 @@ describe("ShiftsCalendar model", () => {
 });
 
 describe("AvailabilityCalendar model", () => {
+  let RealDate;
   let availabilityCalendar;
 
   beforeAll(() => {
+    RealDate = Date;
+    const date = new Date(2017, 9, 1);
+    global.Date = function DateMock(...args) {
+      return args.length ? new RealDate(...args) : date;
+    };
+
     availabilityCalendar = new AvailabilityCalendar();
   });
 
+  afterAll(() => {
+    global.Date = RealDate;
+  });
+
   describe("on instance creation", () => {
-    test("should create slots equal in number to current month days", () => {
-      expect(availabilityCalendar.days.length).toBe(daysInCurrentMonth());
+    test("should create slots equal in number to next month days", () => {
+      expect(availabilityCalendar.days.length).toBe(getNextMonthDays().length);
     });
 
-    test("should fill slots with Availability instance", () => {
-      expect(availabilityCalendar.days[0] instanceof Availability).toBeTruthy();
+    test("should fill slots with Date and Availability instances", () => {
+      expect(
+        availabilityCalendar.days[0].date instanceof RealDate
+      ).toBeTruthy();
+      expect(
+        availabilityCalendar.days[0].availability instanceof Availability
+      ).toBeTruthy();
     });
   });
 });

@@ -12,12 +12,12 @@ exports[`AvailabilityCalendarDay component should render with busy status active
     key="free"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -27,12 +27,12 @@ exports[`AvailabilityCalendarDay component should render with busy status active
     key="keen"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -42,12 +42,12 @@ exports[`AvailabilityCalendarDay component should render with busy status active
     key="busy"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -67,12 +67,12 @@ exports[`AvailabilityCalendarDay component should render with free status active
     key="free"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -82,12 +82,12 @@ exports[`AvailabilityCalendarDay component should render with free status active
     key="keen"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -97,12 +97,12 @@ exports[`AvailabilityCalendarDay component should render with free status active
     key="busy"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -122,12 +122,12 @@ exports[`AvailabilityCalendarDay component should render with keen status active
     key="free"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -137,12 +137,12 @@ exports[`AvailabilityCalendarDay component should render with keen status active
     key="keen"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>
@@ -152,12 +152,12 @@ exports[`AvailabilityCalendarDay component should render with keen status active
     key="busy"
   >
     <div
-      className="dayName"
+      className="name"
     >
-      Monday
+      Sunday
     </div>
     <div
-      className="dayNum"
+      className="number"
     >
       1
     </div>

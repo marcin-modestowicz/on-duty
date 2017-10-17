@@ -17,10 +17,10 @@ class ShiftsCalendar extends Component<Props> {
   render() {
     return (
       <div className={styles.root}>
-        {this.props.calendar.days.map((shift, index) => (
+        {this.props.calendar.days.map(({ date, shift }) => (
           <ShiftsCalendar.Day
-            key={index}
-            day={index + 1}
+            key={date.getTime()}
+            date={date}
             users={shift.onDuty}
           />
         ))}

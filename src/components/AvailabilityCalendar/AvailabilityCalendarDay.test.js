@@ -12,7 +12,10 @@ describe("AvailabilityCalendarDay component", () => {
   beforeAll(() => {
     availability = new Availability();
     availabilityCalendarDay = shallow(
-      <AvailabilityCalendarDay day={1} availability={availability} />
+      <AvailabilityCalendarDay
+        date={new Date(2017, 9, 1)}
+        availability={availability}
+      />
     );
   });
 

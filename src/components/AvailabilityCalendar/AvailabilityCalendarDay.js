@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import classnames from "classnames";
+import { getDayName } from "../../utils/date";
 import type Availability from "../../models/Availability";
 import {
   AVAILABILITY_STATUSES,
@@ -10,7 +11,7 @@ import {
 import styles from "./AvailabilityCalendarDay.scss";
 
 type Props = {
-  day: number,
+  date: Date,
   availability: Availability
 };
 
@@ -21,13 +22,15 @@ class AvailabilityCalendarDay extends Component<Props> {
   };
 
   renderDayContent(statusName: string) {
+    const date = this.props.date;
+
     return (
       <div
         key={statusName}
         className={classnames(styles.day, styles[statusName])}
       >
-        <div className={styles.dayName}>Monday</div>
-        <div className={styles.dayNum}>{this.props.day}</div>
+        <div className={styles.name}>{getDayName(date)}</div>
+        <div className={styles.number}>{date.getDate()}</div>
       </div>
     );
   }

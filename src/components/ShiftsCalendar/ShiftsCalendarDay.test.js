@@ -16,7 +16,9 @@ describe("ShiftsCalendarDay component", () => {
     users.forEach((user, index) => {
       user.id = `a${index}`;
     });
-    shiftsCalendarDay = shallow(<ShiftsCalendarDay day={1} users={users} />);
+    shiftsCalendarDay = shallow(
+      <ShiftsCalendarDay date={new Date(2017, 9, 1)} users={users} />
+    );
   });
 
   test("should render", () => {

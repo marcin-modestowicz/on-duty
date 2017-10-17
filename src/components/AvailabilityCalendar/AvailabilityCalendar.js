@@ -16,8 +16,8 @@ class AvailabilityCalendar extends Component<Props> {
   static Day = AvailabilityCalendarDay;
 
   handleToggleAll = (status: AvailabilityStatus) => {
-    this.props.calendar.days.forEach(day => {
-      day.status = status;
+    this.props.calendar.days.forEach(({ availability }) => {
+      availability.status = status;
     });
   };
 
@@ -26,10 +26,10 @@ class AvailabilityCalendar extends Component<Props> {
       <div className={styles.root}>
         <AvailabilityCalendar.SetAll onClick={this.handleToggleAll} />
         <div className={styles.calendar}>
-          {this.props.calendar.days.map((availability, index) => (
+          {this.props.calendar.days.map(({ date, availability }) => (
             <AvailabilityCalendar.Day
-              key={index}
-              day={index + 1}
+              key={date.getTime()}
+              date={date}
               availability={availability}
             />
           ))}

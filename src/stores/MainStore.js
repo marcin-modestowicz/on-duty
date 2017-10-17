@@ -21,7 +21,9 @@ class MainStore {
             user.name,
             user.isDoctor,
             user.isSpecialist,
-            user.availabilityCalendar.days.map(({ status }) => status)
+            user.availabilityCalendar.days.map(
+              ({ availability: { status } }) => status
+            )
           )
       );
     }
