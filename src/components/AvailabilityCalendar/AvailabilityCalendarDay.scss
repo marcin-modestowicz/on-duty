@@ -46,7 +46,7 @@
       background-color: $free;
       border-color: $free-darker;
 
-      .dayNum:after {
+      .number:after {
         background-color: $free-darker;
         border-color: $free-lighter;
       }
@@ -56,7 +56,7 @@
       background-color: $keen;
       border-color: $keen-darker;
 
-      .dayNum:after {
+      .number:after {
         background-color: $keen-darker;
         border-color: $keen-lighter;
       }
@@ -66,7 +66,7 @@
       background-color: $busy;
       border-color: $busy-darker;
 
-      .dayNum:after {
+      .number:after {
         background-color: $busy-darker;
         border-color: $busy-lighter;
       }
