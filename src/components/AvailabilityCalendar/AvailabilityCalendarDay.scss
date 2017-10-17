@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .root {
   position: relative;
   width: 5em;
@@ -36,38 +38,37 @@
         margin-top: .1em;
         width: 100%;
         height: 1px;
-        background-color: #e2ba4b;
         border-bottom: 1px solid;
       }
     }
 
     &.free {
-      background-color: #eec452;
-      border-color: #d4ae47;
+      background-color: $free;
+      border-color: $free-darker;
 
       .dayNum:after {
-        background-color: #e2ba4b;
-        border-color: #f7cb52;
+        background-color: $free-darker;
+        border-color: $free-lighter;
       }
     }
 
     &.keen {
-      background-color: #369984;
-      border-color: #286f60;
+      background-color: $keen;
+      border-color: $keen-darker;
 
       .dayNum:after {
-        background-color: #2e7f6f;
-        border-color: #43a993;
+        background-color: $keen-darker;
+        border-color: $keen-lighter;
       }
     }
 
     &.busy {
-      background-color: #d32857;
-      border-color: #9c1c3f;
+      background-color: $busy;
+      border-color: $busy-darker;
 
       .dayNum:after {
-        background-color: #b12148;
-        border-color: #e83a6a;
+        background-color: $busy-darker;
+        border-color: $busy-lighter;
       }
     }
   }
