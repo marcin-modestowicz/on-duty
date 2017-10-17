@@ -1,0 +1,59 @@
+@import './colors.scss';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+
+  .label,
+  .button {
+    box-sizing: border-box;
+    width: 5em;
+    height: 2.5em;
+    padding: .75em;
+    margin: .25em;
+  }
+
+  .button {
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-radius: .25em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    color: white;
+
+    &:active {
+      border-width: 1px 0 0 1px;
+    }
+
+    &.free {
+      background-color: $free;
+      border-color: $free-darker;
+
+      .dayNum:after {
+        background-color: $free-darker;
+        border-color: $free-lighter;
+      }
+    }
+
+    &.keen {
+      background-color: $keen;
+      border-color: $keen-darker;
+
+      .dayNum:after {
+        background-color: $keen-darker;
+        border-color: $keen-lighter;
+      }
+    }
+
+    &.busy {
+      background-color: $busy;
+      border-color: $busy-darker;
+
+      .dayNum:after {
+        background-color: $busy-darker;
+        border-color: $busy-lighter;
+      }
+    }
+  }
+}

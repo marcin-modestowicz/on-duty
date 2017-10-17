@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailabilityCalendarSetAll component should render properly 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="label"
+  >
+    Set all:
+  </div>
+  <div
+    className="button free"
+    key="0"
+    onClick={[Function]}
+    role="button"
+    title="Click to set all to Free"
+  >
+    Free
+  </div>
+  <div
+    className="button keen"
+    key="1"
+    onClick={[Function]}
+    role="button"
+    title="Click to set all to Keen"
+  >
+    Keen
+  </div>
+  <div
+    className="button busy"
+    key="-1"
+    onClick={[Function]}
+    role="button"
+    title="Click to set all to Busy"
+  >
+    Busy
+  </div>
+</div>
+`;
