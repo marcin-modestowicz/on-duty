@@ -17,7 +17,11 @@ describe("ShiftsCalendarDay component", () => {
       user.id = `a${index}`;
     });
     shiftsCalendarDay = shallow(
-      <ShiftsCalendarDay date={new Date(2017, 9, 1)} users={users} />
+      <ShiftsCalendarDay
+        date={new Date(2017, 9, 1)}
+        users={users}
+        onClick={jest.fn()}
+      />
     );
   });
 

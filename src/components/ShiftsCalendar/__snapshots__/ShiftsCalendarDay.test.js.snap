@@ -3,6 +3,7 @@
 exports[`ShiftsCalendarDay component should render 1`] = `
 <div
   className="root"
+  onClick={[Function]}
 >
   <div
     className="shift"

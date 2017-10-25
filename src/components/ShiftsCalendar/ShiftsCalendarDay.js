@@ -7,16 +7,21 @@ import styles from "./ShiftsCalendarDay.scss";
 
 type Props = {
   date: Date,
-  users: User[]
+  users: User[],
+  onClick: (date: Date) => void
 };
 
 @observer
 class ShiftsCalendarDay extends Component<Props> {
+  handleClick = () => {
+    this.props.onClick(this.props.date);
+  };
+
   render() {
     const { date, users } = this.props;
 
     return (
-      <div className={styles.root}>
+      <div className={styles.root} onClick={this.handleClick}>
         <div className={styles.shift}>
           {users.map(({ id, name }) => (
             <div key={id} className={styles.user}>

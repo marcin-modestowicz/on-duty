@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import '../../styles/colors.scss';
 
 .root {
   display: flex;
@@ -29,31 +29,16 @@
     &.free {
       background-color: $free;
       border-color: $free-darker;
-
-      .dayNum:after {
-        background-color: $free-darker;
-        border-color: $free-lighter;
-      }
     }
 
     &.keen {
       background-color: $keen;
       border-color: $keen-darker;
-
-      .dayNum:after {
-        background-color: $keen-darker;
-        border-color: $keen-lighter;
-      }
     }
 
     &.busy {
       background-color: $busy;
       border-color: $busy-darker;
-
-      .dayNum:after {
-        background-color: $busy-darker;
-        border-color: $busy-lighter;
-      }
     }
   }
 }

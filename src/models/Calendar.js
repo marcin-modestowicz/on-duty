@@ -25,7 +25,7 @@ export class ShiftsCalendar {
 
   getUserShifts(userId: string): number[] {
     return this.days.reduce((sum, { shift }, index) => {
-      if (shift.isSealed && shift.onDuty.some(user => user.id === userId)) {
+      if (shift.isReady && shift.onDuty.some(user => user.id === userId)) {
         sum.push(index);
       }
       return sum;
@@ -33,20 +33,15 @@ export class ShiftsCalendar {
   }
 
   fillCalendar(users: User[]) {
-    // Fill all slots in shift with users
-    this.days.forEach(({ shift }, index) => {
-      users.forEach(user => {
-        shift.addUser(user);
-      });
-    });
+    // Create days slots and fill them with users array copy
+    const days = this.days.map(() => users.slice());
 
     // Create index array to iterate over, sort by preference
-    const indexes = this.days
-      .slice()
-      .map(({ shift }, index) => {
+    const indexes = days
+      .map((allUsers, index) => {
         return {
           index,
-          preference: shift.onDuty.reduce(
+          preference: allUsers.reduce(
             (sum, user) =>
               sum +
               (user.availabilityCalendar.days[index].availability.status ===
@@ -57,14 +52,14 @@ export class ShiftsCalendar {
           )
         };
       })
-      .sort((shiftA, shiftB) => {
-        return shiftB.preference - shiftA.preference;
+      .sort((dayA, dayB) => {
+        return dayB.preference - dayA.preference;
       })
-      .map(shift => shift.index);
+      .map(day => day.index);
 
-    // Iterate over shifts, sort users in shift
+    // Iterate over days, sort users in each day
     indexes.forEach(index => {
-      const currentShift = this.days[index].shift;
+      let currentDay = days[index];
       const shiftsPerPower = users.reduce((sum, user) => {
         if (!sum[user.power]) {
           sum[user.power] = {
@@ -79,7 +74,7 @@ export class ShiftsCalendar {
       }, {});
 
       // Sort users in shift
-      currentShift._onDuty = currentShift._onDuty.sort((userA, userB) => {
+      currentDay = currentDay.sort((userA, userB) => {
         const userASortValue = this.getUserSortValue(
           userA,
           index,
@@ -94,8 +89,8 @@ export class ShiftsCalendar {
         return userASortValue - userBSortValue;
       });
 
-      // Seal shift
-      currentShift.seal();
+      // Add users to shift
+      this.days[index].shift.fill(currentDay);
     });
 
     // Create summary

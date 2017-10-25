@@ -29,7 +29,9 @@ describe("ShiftsCalendar component", () => {
       user.id = `a${index}`;
     });
     calendar.fillCalendar(users);
-    shiftsCalendar = shallow(<ShiftsCalendar calendar={calendar} />);
+    shiftsCalendar = shallow(
+      <ShiftsCalendar calendar={calendar} users={users} />
+    );
   });
 
   afterAll(() => {
