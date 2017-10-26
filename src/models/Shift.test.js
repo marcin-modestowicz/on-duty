@@ -42,7 +42,7 @@ describe("Shift model", () => {
     });
   });
 
-  describe("method toggle", () => {
+  describe("method toggleUser", () => {
     let addUserSpy;
     let removeUserSpy;
 
