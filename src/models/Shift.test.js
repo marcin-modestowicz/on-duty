@@ -16,10 +16,22 @@ describe("Shift model", () => {
   });
 
   describe("method addUser", () => {
-    test("should add user to the shift", () => {
+    test("should add user to the shift if shift is not full", () => {
       const anotherUser = new User("Homer Simpson");
       shift.addUser(anotherUser);
       expect(shift.onDuty.slice()).toEqual([user, anotherUser]);
+    });
+
+    test("should not add user to the shift if shift is full", () => {
+      const user1 = new User("Homer Simpson");
+      const user2 = new User("Marge Simpson");
+      const user3 = new User("Bart Simpson");
+
+      shift = new Shift([user1, user2]);
+
+      shift.addUser(user3);
+
+      expect(shift.onDuty.slice()).toEqual([user1, user2]);
     });
   });
 
@@ -54,7 +66,6 @@ describe("Shift model", () => {
     test("should call removeUser if user is present", () => {
       shift.toggleUser(user);
 
-      expect(addUserSpy).not.toHaveBeenCalled();
       expect(removeUserSpy).toHaveBeenCalled();
     });
 
@@ -64,7 +75,6 @@ describe("Shift model", () => {
       shift.toggleUser(anotherUser);
 
       expect(addUserSpy).toHaveBeenCalled();
-      expect(removeUserSpy).not.toHaveBeenCalled();
     });
   });
 });

@@ -13,13 +13,18 @@ export class Shift {
 
   @action
   addUser = (user: User) => {
-    this.onDuty.push(user);
+    if (this.onDuty.length < USERS_PER_SHIFT) {
+      this.onDuty.push(user);
+    }
   };
 
   @action
   removeUser = (id: string) => {
     const index = this.onDuty.findIndex(user => user.id === id);
-    this.onDuty.splice(index, 1);
+
+    if (index !== -1) {
+      this.onDuty.splice(index, 1);
+    }
   };
 
   toggleUser = (user: User) => {
