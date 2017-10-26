@@ -8,16 +8,17 @@ import ShiftsStatistics from "../ShiftsStatistics";
 
 type Props = {
   calendar: ShiftsCalendarModel,
+  summary: Object[],
   users: User[]
 };
 
-const Shifts = ({ calendar, users }: Props) => (
+const Shifts = ({ calendar, summary, users }: Props) => (
   <div>
     <header>
       <h3>Shifts</h3>
     </header>
     <ShiftsCalendar calendar={calendar} users={users} />
-    <ShiftsStatistics summary={calendar.summary} />
+    {summary && <ShiftsStatistics summary={summary} />}
   </div>
 );
 

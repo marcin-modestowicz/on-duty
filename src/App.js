@@ -18,7 +18,8 @@ class App extends Component<null> {
       fillCalendar,
       isReady,
       calendar,
-      saveState
+      saveState,
+      summary
     } = this.mainStore;
 
     return (
@@ -35,7 +36,11 @@ class App extends Component<null> {
             </button>
             {users.map(user => <ShowUser key={user.id} user={user} />)}
           </div>
-          <div>{calendar && <Shifts calendar={calendar} users={users} />}</div>
+          <div>
+            {calendar && (
+              <Shifts calendar={calendar} summary={summary} users={users} />
+            )}
+          </div>
         </div>
       </div>
     );

@@ -12,7 +12,6 @@ export const MINIMUM_REST_DAYS = 1;
 
 export class ShiftsCalendar {
   @observable days: { date: Date, shift: Shift }[] = [];
-  @observable summary: Object[];
 
   constructor() {
     const nextMonthDays = getNextMonthDays();
@@ -92,9 +91,6 @@ export class ShiftsCalendar {
       // Add users to shift
       this.days[index].shift.fill(currentDay);
     });
-
-    // Create summary
-    this.summary = this.createSummary(users);
   }
 
   getUserSortValue(
@@ -128,65 +124,6 @@ export class ShiftsCalendar {
     }
 
     return userSortValue;
-  }
-
-  createSummary(users: User[]): Object[] {
-    const summary = users.map(user => {
-      const availabilityDays = user.availabilityCalendar.days;
-      const shiftDays = this.getUserShifts(user.id);
-      const highPreferenceDays = availabilityDays.reduce(
-        (sum, { availability }, index) => {
-          if (availability.status === AVAILABILITY_STATUSES.KEEN) {
-            sum.push(index);
-          }
-
-          return sum;
-        },
-        []
-      );
-      const highPreference = highPreferenceDays.length;
-      const highPreferenceFilled = highPreferenceDays.filter(index =>
-        shiftDays.includes(index)
-      ).length;
-      const lowPreferenceDays = availabilityDays.reduce(
-        (sum, { availability }, index) => {
-          if (availability.status === AVAILABILITY_STATUSES.BUSY) {
-            sum.push(index);
-          }
-
-          return sum;
-        },
-        []
-      );
-      const lowPreference = lowPreferenceDays.length;
-      const lowPreferenceFilled = lowPreferenceDays.filter(index =>
-        shiftDays.includes(index)
-      ).length;
-      const shiftsShare =
-        shiftDays.length /
-        (this.days.length * USERS_PER_SHIFT / users.length) *
-        100;
-      const satisfaction =
-        (highPreferenceFilled === 0
-          ? 0
-          : highPreferenceFilled / highPreference) -
-        (lowPreferenceFilled === 0 ? 0 : lowPreferenceFilled / lowPreference);
-
-      return {
-        id: user.id,
-        name: user.name,
-        power: user.power,
-        highPreference,
-        highPreferenceFilled,
-        lowPreference,
-        lowPreferenceFilled,
-        shifts: shiftDays.length,
-        shiftsShare: `${Math.round(shiftsShare)}%`,
-        satisfaction: parseFloat(satisfaction.toFixed(2))
-      };
-    });
-
-    return summary;
   }
 }
 
