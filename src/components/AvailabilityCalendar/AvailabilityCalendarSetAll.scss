@@ -27,18 +27,18 @@
     }
 
     &.free {
-      background-color: $free;
-      border-color: $free-darker;
+      background-color: $yellow;
+      border-color: $yellow-darker;
     }
 
     &.keen {
-      background-color: $keen;
-      border-color: $keen-darker;
+      background-color: $green;
+      border-color: $green-darker;
     }
 
     &.busy {
-      background-color: $busy;
-      border-color: $busy-darker;
+      background-color: $red;
+      border-color: $red-darker;
     }
   }
 }

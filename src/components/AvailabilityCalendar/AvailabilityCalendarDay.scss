@@ -43,32 +43,32 @@
     }
 
     &.free {
-      background-color: $free;
-      border-color: $free-darker;
+      background-color: $yellow;
+      border-color: $yellow-darker;
 
       .number:after {
-        background-color: $free-darker;
-        border-color: $free-lighter;
+        background-color: $yellow-darker;
+        border-color: $yellow-lighter;
       }
     }
 
     &.keen {
-      background-color: $keen;
-      border-color: $keen-darker;
+      background-color: $green;
+      border-color: $green-darker;
 
       .number:after {
-        background-color: $keen-darker;
-        border-color: $keen-lighter;
+        background-color: $green-darker;
+        border-color: $green-lighter;
       }
     }
 
     &.busy {
-      background-color: $busy;
-      border-color: $busy-darker;
+      background-color: $red;
+      border-color: $red-darker;
 
       .number:after {
-        background-color: $busy-darker;
-        border-color: $busy-lighter;
+        background-color: $red-darker;
+        border-color: $red-lighter;
       }
     }
   }

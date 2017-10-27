@@ -52,18 +52,18 @@
       color: white;
 
       &.free {
-        background-color: transparentize($free, 0.8);
-        border-color: transparentize($free-darker, 0.9);
+        background-color: transparentize($yellow, 0.8);
+        border-color: transparentize($yellow-darker, 0.9);
       }
 
       &.keen {
-        background-color: transparentize($keen, 0.8);
-        border-color: transparentize($keen-darker, 0.9);
+        background-color: transparentize($green, 0.8);
+        border-color: transparentize($green-darker, 0.9);
       }
 
       &.busy {
-        background-color: transparentize($busy, 0.8);
-        border-color: transparentize($busy-darker, 0.9);
+        background-color: transparentize($red, 0.8);
+        border-color: transparentize($red-darker, 0.9);
       }
     }
 
@@ -71,18 +71,18 @@
       border-width: 1px 0 0 1px;
 
       &.free {
-        background-color: $free;
-        border-color: $free-darker;
+        background-color: $yellow;
+        border-color: $yellow-darker;
       }
 
       &.keen {
-        background-color: $keen;
-        border-color: $keen-darker;
+        background-color: $green;
+        border-color: $green-darker;
       }
 
       &.busy {
-        background-color: $busy;
-        border-color: $busy-darker;
+        background-color: $red;
+        border-color: $red-darker;
       }
     }
   }
