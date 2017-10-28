@@ -1,0 +1,75 @@
+@import '../../styles/colors.scss';
+
+.root {
+  .field {
+    margin-bottom: 1em;
+  }
+
+  .submit {
+    text-align: center;
+  }
+
+  .errorMessage {
+    font-size: .75em;
+    color: $red;
+  }
+
+  .input,
+  .label {
+    display: block;
+  }
+
+  .input,
+  .button {
+    box-sizing: border-box;
+    width: 5em;
+    height: 2.5em;
+    padding: .75em;
+    font-size: 1em;
+  }
+
+  .label {
+    margin-bottom: .25em;
+  }
+
+  &.error .label {
+    color: $red;
+  }
+
+  .input {
+    margin: 0;
+    line-height: 2.5em;
+    padding: 0 .5em;
+    width: 15em;
+    border: 1px solid $gray;
+    border-radius: .25em;
+  }
+
+  &.error .input {
+    border-color: $red;
+    outline-color: $red;
+  }
+
+  .button {
+    margin: 0 auto;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-radius: .25em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    color: white;
+    background-color: $green;
+    border-color: $green-darker;
+
+    &:active {
+      border-width: 1px 0 0 1px;
+    }
+
+    &:disabled {
+      cursor: default;
+      background-color: $gray;
+      border-color: $gray-darker;
+    }
+  }
+}
