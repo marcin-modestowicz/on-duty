@@ -103,6 +103,20 @@ describe("LoginStore store", () => {
     });
   });
 
+  describe("computed property isAdmin", () => {
+    test("should return false if there's no user data", () => {
+      loginStore.user = null;
+
+      expect(loginStore.isAdmin).toBeFalsy();
+    });
+
+    test("should return false if user has isAdmin property set to false", () => {
+      loginStore.user = new User("Jake Doe");
+
+      expect(loginStore.isAdmin).toBeFalsy();
+    });
+  });
+
   describe("getUserData method", () => {
     describe("if user data is stored in localStorage", () => {
       test("should create new user", () => {

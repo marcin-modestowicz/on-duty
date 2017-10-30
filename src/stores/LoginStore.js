@@ -28,6 +28,11 @@ class LoginStore {
     return this.user === undefined;
   }
 
+  @computed
+  get isAdmin(): boolean {
+    return !!this.user && this.user.isAdmin;
+  }
+
   getUserData(userId: string) {
     const userData = localStorage.getItem("on-duty-user");
     if (!userData) {
