@@ -22,5 +22,11 @@ describe("User model", () => {
       expect(user.isDoctor).toBeFalsy();
       expect(user.isSpecialist).toBeFalsy();
     });
+
+    test("should set isAdmin to false", () => {
+      const user = new User("Marty McFly");
+
+      expect(user.isAdmin).toBeFalsy();
+    });
   });
 });

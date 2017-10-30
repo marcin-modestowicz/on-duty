@@ -20,6 +20,7 @@ class User {
   name: string;
   isDoctor: boolean;
   isSpecialist: boolean;
+  isAdmin: boolean;
   availabilityCalendar: AvailabilityCalendar;
 
   constructor(
@@ -32,6 +33,7 @@ class User {
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;
+    this.isAdmin = false;
     this.availabilityCalendar = new AvailabilityCalendar(availability);
   }
 
