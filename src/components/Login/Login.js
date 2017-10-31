@@ -25,19 +25,12 @@ class Login extends Component<Props> {
 
     this.isLoading = true;
 
-    this.props
-      .onLogin(this.email, this.password)
-      .then(() => {
-        runInAction("user logged in", () => {
-          this.isLoading = false;
-        });
-      })
-      .catch(error => {
-        runInAction("user login error", () => {
-          this.isError = true;
-          this.isLoading = false;
-        });
+    this.props.onLogin(this.email, this.password).catch(error => {
+      runInAction("user login error", () => {
+        this.isError = true;
+        this.isLoading = false;
       });
+    });
   };
 
   @action
