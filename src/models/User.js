@@ -27,13 +27,14 @@ class User {
     name: string,
     isDoctor?: boolean,
     isSpecialist?: boolean,
-    availability?: AvailabilityStatus[]
+    availability?: AvailabilityStatus[],
+    isAdmin?: boolean
   ) {
     this.id = uuid();
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;
-    this.isAdmin = false;
+    this.isAdmin = !!isAdmin;
     this.availabilityCalendar = new AvailabilityCalendar(availability);
   }
 

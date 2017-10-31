@@ -2,35 +2,24 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import LoginStore from "./stores/LoginStore";
-import MainStore from "./stores/MainStore";
 import Login from "./components/Login";
-import AddUser from "./components/AddUser";
+import AdminPanel from "./components/AdminPanel";
 import ShowUser from "./components/ShowUser";
-import Shifts from "./components/Shifts";
 import styles from "./App.scss";
 
 @observer
 class App extends Component<null> {
   loginStore: LoginStore = new LoginStore();
-  mainStore: MainStore = new MainStore();
 
   render() {
     const {
       isLoggedIn,
       isLoggingIn,
+      isAdmin,
       user,
       handleLogin,
       handleLogout
     } = this.loginStore;
-    const {
-      users,
-      addUser,
-      fillCalendar,
-      isReady,
-      calendar,
-      saveState,
-      summary
-    } = this.mainStore;
 
     if (isLoggingIn) {
       return null;
@@ -38,28 +27,11 @@ class App extends Component<null> {
 
     return (
       <div className={styles.root}>
-        <div className={styles.header}>
-          <h2>On Duty</h2>
-        </div>
+        <h2 className={styles.header}>On Duty</h2>
+        {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
         {!isLoggedIn && <Login onLogin={handleLogin} />}
-        {isLoggedIn && (
-          <div>
-            <button onClick={handleLogout}>Logout</button>
-            <div>
-              <AddUser onAdd={addUser} />
-              <button onClick={saveState}>Save state</button>
-              <button onClick={fillCalendar} disabled={!isReady}>
-                Create calendar
-              </button>
-              {users.map(user => <ShowUser key={user.id} user={user} />)}
-            </div>
-            <div>
-              {calendar && (
-                <Shifts calendar={calendar} summary={summary} users={users} />
-              )}
-            </div>
-          </div>
-        )}
+        {isLoggedIn && <ShowUser user={user} />}
+        {isLoggedIn && isAdmin && <AdminPanel />}
       </div>
     );
   }

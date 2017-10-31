@@ -45,7 +45,13 @@ class LoginStore {
 
           if (user) {
             runInAction("getUserData", () => {
-              this.user = new User(`${user.firstName} ${user.lastName}`);
+              this.user = new User(
+                `${user.firstName} ${user.lastName}`,
+                user.isDoctor,
+                user.isSpecialist,
+                undefined,
+                user.isAdmin
+              );
             });
 
             localStorage.setItem("on-duty-user", JSON.stringify(this.user));
@@ -60,7 +66,8 @@ class LoginStore {
         user.isSpecialist,
         user.availabilityCalendar.days.map(
           ({ availability: { status } }) => status
-        )
+        ),
+        user.isAdmin
       );
     }
   }
