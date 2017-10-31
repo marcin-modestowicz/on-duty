@@ -1,8 +1,9 @@
 // @flow
 import React, { Component } from "react";
-import { observable, action, computed } from "mobx";
+import { observable, action, computed, runInAction } from "mobx";
 import { observer } from "mobx-react";
 import classnames from "classnames";
+import Spinner from "./spinner.svg";
 import styles from "./Login.scss";
 
 /* global SyntheticInputEvent */
@@ -16,14 +17,27 @@ class Login extends Component<Props> {
   @observable email: string = "";
   @observable password: string = "";
   @observable isError: boolean = false;
+  @observable isLoading: boolean = false;
 
   @action
   handleLogin = (event: Event) => {
     event.preventDefault();
 
-    this.props.onLogin(this.email, this.password).catch(error => {
-      this.isError = true;
-    });
+    this.isLoading = true;
+
+    this.props
+      .onLogin(this.email, this.password)
+      .then(() => {
+        runInAction("user logged in", () => {
+          this.isLoading = false;
+        });
+      })
+      .catch(error => {
+        runInAction("user login error", () => {
+          this.isError = true;
+          this.isLoading = false;
+        });
+      });
   };
 
   @action
@@ -82,8 +96,9 @@ class Login extends Component<Props> {
           <button
             type="submit"
             className={styles.button}
-            disabled={!this.isFormReady}
+            disabled={!this.isFormReady || this.isLoading}
           >
+            {this.isLoading && <Spinner />}
             Login
           </button>
         </div>

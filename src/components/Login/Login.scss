@@ -1,6 +1,11 @@
 @import '../../styles/colors.scss';
 
 .root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
   .field {
     margin-bottom: 1em;
   }
@@ -21,8 +26,6 @@
 
   .input,
   .button {
-    box-sizing: border-box;
-    width: 5em;
     height: 2.5em;
     padding: .75em;
     font-size: 1em;
@@ -37,10 +40,10 @@
   }
 
   .input {
+    box-sizing: border-box;
     margin: 0;
     line-height: 2.5em;
     padding: 0 .5em;
-    width: 15em;
     border: 1px solid $gray;
     border-radius: .25em;
   }
@@ -62,6 +65,10 @@
     background-color: $green;
     border-color: $green-darker;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     &:active {
       border-width: 1px 0 0 1px;
     }
@@ -70,6 +77,10 @@
       cursor: default;
       background-color: $gray;
       border-color: $gray-darker;
+    }
+
+    svg {
+      margin-right: .5em;
     }
   }
 }
