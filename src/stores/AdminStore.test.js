@@ -1,9 +1,9 @@
 // @flow
-import MainStore from "./MainStore";
+import AdminStore from "./AdminStore";
 
-describe("MainStore store", () => {
+describe("AdminStore store", () => {
   let localStorage;
-  let mainStore;
+  let adminStore;
 
   beforeAll(() => {
     localStorage = global.localStorage;
@@ -15,14 +15,14 @@ describe("MainStore store", () => {
   });
 
   beforeEach(() => {
-    mainStore = new MainStore();
+    adminStore = new AdminStore();
   });
 
   describe("addUser method", () => {
     test("should add new user", () => {
-      mainStore.addUser("Superman", true, true);
+      adminStore.addUser("Superman", true, true);
 
-      const user = mainStore.users[0];
+      const user = adminStore.users[0];
 
       expect(user.name).toBe("Superman");
       expect(user.isDoctor).toBeTruthy();

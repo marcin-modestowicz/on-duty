@@ -9,7 +9,7 @@ import {
 import { AVAILABILITY_STATUSES } from "../models/Availability";
 import { USERS_PER_SHIFT } from "../models/Shift";
 
-class MainStore {
+class AdminStore {
   @observable users: User[] = [];
   @observable calendar: ShiftsCalendar;
 
@@ -116,4 +116,4 @@ class MainStore {
   };
 }
 
-export default MainStore;
+export default AdminStore;
