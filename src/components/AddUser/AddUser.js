@@ -6,7 +6,12 @@ import { observer } from "mobx-react";
 /* global SyntheticInputEvent */
 
 type Props = {
-  onAdd: (name: string, isSpecialist: boolean, isDoctor: boolean) => void
+  onAdd: (
+    name: string,
+    email: string,
+    isSpecialist: boolean,
+    isDoctor: boolean
+  ) => void
 };
 
 @observer

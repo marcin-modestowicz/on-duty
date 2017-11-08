@@ -7,7 +7,7 @@ describe("Shift model", () => {
   let shift;
 
   beforeEach(() => {
-    user = new User("Marty McFly");
+    user = new User("a0", "Marty McFly");
     shift = new Shift([user]);
   });
 
@@ -17,15 +17,15 @@ describe("Shift model", () => {
 
   describe("method addUser", () => {
     test("should add user to the shift if shift is not full", () => {
-      const anotherUser = new User("Homer Simpson");
+      const anotherUser = new User("a1", "Homer Simpson");
       shift.addUser(anotherUser);
       expect(shift.onDuty.slice()).toEqual([user, anotherUser]);
     });
 
     test("should not add user to the shift if shift is full", () => {
-      const user1 = new User("Homer Simpson");
-      const user2 = new User("Marge Simpson");
-      const user3 = new User("Bart Simpson");
+      const user1 = new User("a1", "Homer Simpson");
+      const user2 = new User("a2", "Marge Simpson");
+      const user3 = new User("a3", "Bart Simpson");
 
       shift = new Shift([user1, user2]);
 
@@ -44,9 +44,9 @@ describe("Shift model", () => {
 
   describe("method fill", () => {
     test("should fill the shift up to the limit", () => {
-      const user1 = new User("Homer Simpson");
-      const user2 = new User("Marge Simpson");
-      const user3 = new User("Bart Simpson");
+      const user1 = new User("a1", "Homer Simpson");
+      const user2 = new User("a2", "Marge Simpson");
+      const user3 = new User("a3", "Bart Simpson");
 
       shift.fill([user1, user2, user3]);
 
@@ -70,7 +70,7 @@ describe("Shift model", () => {
     });
 
     test("should call addUser if user is not present", () => {
-      const anotherUser = new User("Homer Simpson");
+      const anotherUser = new User("a1", "Homer Simpson");
 
       shift.toggleUser(anotherUser);
 
