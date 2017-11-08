@@ -46,7 +46,8 @@ class LoginStore {
           if (user) {
             runInAction("getUserData", () => {
               this.user = new User(
-                `${user.firstName} ${user.lastName}`,
+                userId,
+                user.name,
                 user.isDoctor,
                 user.isSpecialist,
                 undefined,
@@ -61,6 +62,7 @@ class LoginStore {
       const user = JSON.parse(userData);
 
       this.user = new User(
+        userId,
         user.name,
         user.isDoctor,
         user.isSpecialist,

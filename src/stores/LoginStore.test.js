@@ -77,7 +77,7 @@ describe("LoginStore store", () => {
     });
 
     test("should return true if user data is fetched", () => {
-      loginStore.user = new User("Jake Doe");
+      loginStore.user = new User("a1", "Jake Doe");
 
       expect(loginStore.isLoggedIn).toBeTruthy();
     });
@@ -97,7 +97,7 @@ describe("LoginStore store", () => {
     });
 
     test("should return false if user data is fetched", () => {
-      loginStore.user = new User("Jake Doe");
+      loginStore.user = new User("a1", "Jake Doe");
 
       expect(loginStore.isLoggingIn).toBeFalsy();
     });
@@ -111,7 +111,7 @@ describe("LoginStore store", () => {
     });
 
     test("should return false if user has isAdmin property set to false", () => {
-      loginStore.user = new User("Jake Doe");
+      loginStore.user = new User("a1", "Jake Doe");
 
       expect(loginStore.isAdmin).toBeFalsy();
     });
@@ -121,7 +121,7 @@ describe("LoginStore store", () => {
     describe("if user data is stored in localStorage", () => {
       test("should create new user", () => {
         global.localStorage.getItem.mockImplementation(() =>
-          JSON.stringify(new User("John Doe"))
+          JSON.stringify(new User("a2", "John Doe"))
         );
 
         loginStore.getUserData("userId");
@@ -134,8 +134,7 @@ describe("LoginStore store", () => {
       beforeEach(() => {
         global.localStorage.getItem.mockImplementation(() => null);
         valSpy.mockImplementation(() => ({
-          firstName: "Jane",
-          lastName: "Doe"
+          name: "Jane Doe"
         }));
         loginStore.getUserData("userId");
       });
@@ -159,7 +158,7 @@ describe("LoginStore store", () => {
 
   describe("clearUserData method", () => {
     test("should clear user data", () => {
-      loginStore.user = new User("Jill Doe");
+      loginStore.user = new User("a3", "Jill Doe");
       loginStore.clearUserData();
 
       expect(loginStore.user).toBeNull();

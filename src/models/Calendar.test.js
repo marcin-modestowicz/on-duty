@@ -37,10 +37,10 @@ describe("ShiftsCalendar model", () => {
   describe("fill calendar method", () => {
     test("should choose best solution for 5 days and 4 users", () => {
       const users = [
-        new User("user1", false, false, [1, 0, 0, -1, -1]),
-        new User("user2", true, false, [0, -1, 1, 1, 0]),
-        new User("user3", false, true, [1, 0, 0, 0, -1]),
-        new User("user4", false, true, [-1, 1, 0, 1, 0])
+        new User("a1", "user1", false, false, [1, 0, 0, -1, -1]),
+        new User("a2", "user2", true, false, [0, -1, 1, 1, 0]),
+        new User("a3", "user3", false, true, [1, 0, 0, 0, -1]),
+        new User("a4", "user4", false, true, [-1, 1, 0, 1, 0])
       ];
       const calendar = [
         {
@@ -83,7 +83,7 @@ describe("ShiftsCalendar model", () => {
 
     test("should choose best solution for 30 days and 30 users", () => {
       const users = [
-        new User("user1", false, true, [
+        new User("a1", "user1", false, true, [
           1,
           0,
           0,
@@ -115,7 +115,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user2", false, true, [
+        new User("a2", "user2", false, true, [
           1,
           0,
           0,
@@ -147,7 +147,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user3", false, true, [
+        new User("a3", "user3", false, true, [
           1,
           0,
           0,
@@ -179,7 +179,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user4", false, true, [
+        new User("a4", "user4", false, true, [
           1,
           0,
           0,
@@ -211,7 +211,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user5", false, true, [
+        new User("a5", "user5", false, true, [
           1,
           0,
           0,
@@ -243,7 +243,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user6", false, true, [
+        new User("a6", "user6", false, true, [
           1,
           0,
           0,
@@ -275,7 +275,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user7", false, true, [
+        new User("a7", "user7", false, true, [
           1,
           0,
           0,
@@ -307,7 +307,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user8", false, true, [
+        new User("a8", "user8", false, true, [
           1,
           0,
           0,
@@ -339,7 +339,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user9", false, true, [
+        new User("a9", "user9", false, true, [
           1,
           0,
           0,
@@ -371,7 +371,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user10", false, true, [
+        new User("a10", "user10", false, true, [
           1,
           0,
           0,
@@ -403,7 +403,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user11", false, true, [
+        new User("a11", "user11", false, true, [
           1,
           0,
           0,
@@ -435,7 +435,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user12", false, true, [
+        new User("a12", "user12", false, true, [
           1,
           0,
           0,
@@ -467,7 +467,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user13", false, true, [
+        new User("a13", "user13", false, true, [
           1,
           0,
           0,
@@ -499,7 +499,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user14", false, true, [
+        new User("a14", "user14", false, true, [
           1,
           0,
           0,
@@ -531,7 +531,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user15", false, true, [
+        new User("a15", "user15", false, true, [
           1,
           0,
           0,
@@ -563,7 +563,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user16", false, false, [
+        new User("a16", "user16", false, false, [
           1,
           0,
           0,
@@ -595,7 +595,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user17", false, false, [
+        new User("a17", "user17", false, false, [
           1,
           0,
           0,
@@ -627,7 +627,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user18", false, false, [
+        new User("a18", "user18", false, false, [
           1,
           0,
           0,
@@ -659,7 +659,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user19", false, false, [
+        new User("a19", "user19", false, false, [
           1,
           0,
           0,
@@ -691,7 +691,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user20", false, false, [
+        new User("a20", "user20", false, false, [
           1,
           0,
           0,
@@ -723,7 +723,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user21", false, false, [
+        new User("a21", "user21", false, false, [
           1,
           0,
           0,
@@ -755,7 +755,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user22", false, false, [
+        new User("a22", "user22", false, false, [
           1,
           0,
           0,
@@ -787,7 +787,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user23", false, false, [
+        new User("a23", "user23", false, false, [
           1,
           0,
           0,
@@ -819,7 +819,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user24", false, false, [
+        new User("a24", "user24", false, false, [
           1,
           0,
           0,
@@ -851,7 +851,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user25", false, false, [
+        new User("a25", "user25", false, false, [
           1,
           0,
           0,
@@ -883,7 +883,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user26", false, false, [
+        new User("a26", "user26", false, false, [
           1,
           0,
           0,
@@ -915,7 +915,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user27", false, false, [
+        new User("a27", "user27", false, false, [
           1,
           0,
           0,
@@ -947,7 +947,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user28", false, false, [
+        new User("a28", "user28", false, false, [
           1,
           0,
           0,
@@ -979,7 +979,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user29", false, false, [
+        new User("a29", "user29", false, false, [
           1,
           0,
           0,
@@ -1011,7 +1011,7 @@ describe("ShiftsCalendar model", () => {
           -1,
           -1
         ]),
-        new User("user30", false, false, [
+        new User("a30", "user30", false, false, [
           1,
           0,
           0,

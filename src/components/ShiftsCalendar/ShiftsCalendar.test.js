@@ -20,14 +20,11 @@ describe("ShiftsCalendar component", () => {
 
     const calendar = new ShiftsCalendarModel();
     const users = [
-      new User("user1", false, false),
-      new User("user2", true, false),
-      new User("user3", false, true),
-      new User("user4", false, true)
+      new User("a1", "user1", false, false),
+      new User("a2", "user2", true, false),
+      new User("a3", "user3", false, true),
+      new User("a4", "user4", false, true)
     ];
-    users.forEach((user, index) => {
-      user.id = `a${index}`;
-    });
     calendar.fillCalendar(users);
     shiftsCalendar = shallow(
       <ShiftsCalendar calendar={calendar} users={users} />

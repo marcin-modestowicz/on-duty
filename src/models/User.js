@@ -1,7 +1,6 @@
 // @flow
 import { AvailabilityCalendar } from "./Calendar";
 import { type AvailabilityStatus } from "./Availability";
-import uuid from "uuid/v1";
 
 export const POWER = {
   RESIDENT: 0,
@@ -24,13 +23,14 @@ class User {
   availabilityCalendar: AvailabilityCalendar;
 
   constructor(
+    id: string,
     name: string,
     isDoctor?: boolean,
     isSpecialist?: boolean,
     availability?: AvailabilityStatus[],
     isAdmin?: boolean
   ) {
-    this.id = uuid();
+    this.id = id;
     this.name = name;
     this.isDoctor = !!isDoctor;
     this.isSpecialist = !!isSpecialist;

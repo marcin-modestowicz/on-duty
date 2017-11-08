@@ -19,9 +19,9 @@ describe("ShiftsCalendarModal component", () => {
     };
 
     const users = [
-      new User("user1", false, false),
-      new User("user2", false, false, [AVAILABILITY_STATUSES.BUSY]),
-      new User("user3", true, false, [AVAILABILITY_STATUSES.KEEN])
+      new User("a1", "user1", false, false),
+      new User("a2", "user2", false, false, [AVAILABILITY_STATUSES.BUSY]),
+      new User("a3", "user3", true, false, [AVAILABILITY_STATUSES.KEEN])
     ];
     users.forEach((user, index) => {
       user.id = `a${index}`;

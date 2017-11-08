@@ -10,8 +10,8 @@ describe("ShiftsCalendarDay component", () => {
 
   beforeAll(() => {
     const users = [
-      new User("user1", false, false),
-      new User("user2", true, false)
+      new User("a1", "user1", false, false),
+      new User("a2", "user2", true, false)
     ];
     users.forEach((user, index) => {
       user.id = `a${index}`;
