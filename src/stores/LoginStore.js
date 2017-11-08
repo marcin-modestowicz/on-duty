@@ -4,80 +4,34 @@ import { observable, runInAction, computed } from "mobx";
 import User from "../models/User";
 
 class LoginStore {
-  @observable user: ?User;
+  @observable userId: ?string;
 
   constructor() {
     firebase.auth().onAuthStateChanged(this.authObserver);
   }
 
-  authObserver = (user: ?Object) => {
-    if (user != null) {
-      this.getUserData(user.uid);
-    } else {
-      this.clearUserData();
-    }
-  };
-
   @computed
   get isLoggedIn(): boolean {
-    return !!this.user;
+    return !!this.userId;
   }
 
   @computed
   get isLoggingIn(): boolean {
-    return this.user === undefined;
+    return this.userId === undefined;
   }
 
-  @computed
-  get isAdmin(): boolean {
-    return !!this.user && this.user.isAdmin;
-  }
-
-  getUserData(userId: string) {
-    const userData = localStorage.getItem("on-duty-user");
-    if (!userData) {
-      firebase
-        .database()
-        .ref(`/users/${userId}`)
-        .once("value")
-        .then(snapshot => {
-          const user = snapshot.val();
-
-          if (user) {
-            runInAction("getUserData", () => {
-              this.user = new User(
-                userId,
-                user.name,
-                user.isDoctor,
-                user.isSpecialist,
-                undefined,
-                user.isAdmin
-              );
-            });
-
-            localStorage.setItem("on-duty-user", JSON.stringify(this.user));
-          }
-        });
+  authObserver = (user: ?Object) => {
+    if (user != null) {
+      runInAction("set user id", () => {
+        //$FlowFixMe - user cannot be null
+        this.userId = user.uid;
+      });
     } else {
-      const user = JSON.parse(userData);
-
-      this.user = new User(
-        userId,
-        user.name,
-        user.isDoctor,
-        user.isSpecialist,
-        user.availabilityCalendar.days.map(
-          ({ availability: { status } }) => status
-        ),
-        user.isAdmin
-      );
+      runInAction("clear user id", () => {
+        this.userId = null;
+      });
     }
-  }
-
-  clearUserData() {
-    this.user = null;
-    localStorage.removeItem("on-duty-user");
-  }
+  };
 
   handleLogin = (email: string, password: string) => {
     return firebase

@@ -1,26 +1,20 @@
 // @flow
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import User from "../../models/User";
-import UserStore from "../../stores/UserStore";
+import type UserStore from "../../stores/UserStore";
 import AvailabilityCalendar from "../AvailabilityCalendar";
 
 type Props = {
-  user: User
+  userStore: UserStore
 };
 
+@observer
 class ShowUser extends Component<*> {
   props: Props;
-  userStore: UserStore;
-
-  constructor(props: Props) {
-    super(props);
-
-    this.userStore = new UserStore(props.user);
-  }
 
   render() {
-    const user = this.props.user;
+    const { user, setDayStatus } = this.props.userStore;
+
     return (
       <div>
         <header>
@@ -31,7 +25,7 @@ class ShowUser extends Component<*> {
         </header>
         <AvailabilityCalendar
           calendar={user.availabilityCalendar}
-          userStore={this.userStore}
+          onDayToggle={setDayStatus}
         />
       </div>
     );

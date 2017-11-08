@@ -3,6 +3,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import User from "../../models/User";
+import UserStore from "../../stores/UserStore";
 import ShowUser from "./ShowUser";
 
 describe("ShowUser component", () => {
@@ -16,9 +17,9 @@ describe("ShowUser component", () => {
     global.Date = function DateMock(...args) {
       return args.length ? new RealDate(...args) : date;
     };
-
-    const user = new User("a1", "Marty McFly", true, true);
-    showUser = shallow(<ShowUser user={user} />);
+    const userStore = new UserStore();
+    userStore.user = new User("a1", "Marty McFly", true, true);
+    showUser = shallow(<ShowUser userStore={userStore} />);
   });
 
   afterAll(() => {

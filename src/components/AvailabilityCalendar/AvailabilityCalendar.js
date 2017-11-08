@@ -10,7 +10,7 @@ import styles from "./AvailabilityCalendar.scss";
 
 type Props = {
   calendar: AvailabilityCalendarModel,
-  userStore: UserStore
+  onDayToggle: (date: Date, status: AvailabilityStatus) => void
 };
 
 class AvailabilityCalendar extends Component<Props> {
@@ -33,7 +33,7 @@ class AvailabilityCalendar extends Component<Props> {
               key={date.getTime()}
               date={date}
               availability={availability}
-              onClick={this.props.userStore.setDayStatus}
+              onClick={this.props.onDayToggle}
             />
           ))}
         </div>

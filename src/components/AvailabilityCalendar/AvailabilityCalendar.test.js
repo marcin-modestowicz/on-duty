@@ -19,10 +19,9 @@ describe("AvailabilityCalendar component", () => {
       return args.length ? new RealDate(...args) : date;
     };
 
-    const userStore = new UserStore(new User("a1", "Mickey Mouse"));
     const calendar = new AvailabilityCalendarModel();
     availabilityCalendar = shallow(
-      <AvailabilityCalendar calendar={calendar} userStore={userStore} />
+      <AvailabilityCalendar calendar={calendar} onDayToggle={() => {}} />
     );
   });
 

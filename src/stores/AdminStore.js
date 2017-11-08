@@ -1,5 +1,6 @@
 //@flow
 import { observable, computed, action } from "mobx";
+import firebase from "../firebase";
 import User from "../models/User";
 import {
   ShiftsCalendar,
@@ -36,8 +37,33 @@ class AdminStore {
   }
 
   @action
-  addUser = (name: string, isDoctor: boolean, isSpecialist: boolean) => {
-    this.users.push(new User(name, isDoctor, isSpecialist));
+  addUser = (
+    name: string,
+    email: string,
+    isDoctor: boolean,
+    isSpecialist: boolean
+  ) => {
+    const sanitizedEmail = email.replace(".", "%2E");
+
+    firebase
+      .database()
+      .ref()
+      .child("inactiveUsers")
+      .child(sanitizedEmail)
+      .set(
+        {
+          center: "spsk2", // @todo replace hardcoded center id value with something meaningful
+          name,
+          isDoctor,
+          isSpecialist,
+          isAdmin: false
+        },
+        () => {
+          this.users.push(
+            new User(sanitizedEmail, name, isDoctor, isSpecialist)
+          );
+        }
+      );
   };
 
   fillCalendar = () => {

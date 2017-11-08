@@ -8,17 +8,9 @@ describe("LoginStore store", () => {
   let onAuthStateChangedSpy;
   let signInWithEmailAndPasswordSpy;
   let signOutSpy;
-  let valSpy;
-  let refSpy;
   let loginStore;
 
   beforeAll(() => {
-    localStorage = global.localStorage;
-    global.localStorage = {
-      setItem: jest.fn(),
-      removeItem: jest.fn(),
-      getItem: jest.fn()
-    };
     onAuthStateChangedSpy = jest.fn();
     signInWithEmailAndPasswordSpy = jest.fn(() => Promise.resolve());
     signOutSpy = jest.fn(() => Promise.resolve());
@@ -27,16 +19,9 @@ describe("LoginStore store", () => {
       signInWithEmailAndPassword: signInWithEmailAndPasswordSpy,
       signOut: signOutSpy
     }));
-    valSpy = jest.fn();
-    refSpy = jest.fn(() => ({ once: () => Promise.resolve({ val: valSpy }) }));
-    jest
-      .spyOn(firebase, "database")
-      .mockImplementation(() => ({ ref: refSpy }));
   });
 
   afterAll(() => {
-    global.localStorage = localStorage;
-
     // $FlowFixMe - jest bug https://github.com/facebook/jest/issues/4436
     jest.restoreAllMocks();
   });
@@ -54,122 +39,50 @@ describe("LoginStore store", () => {
   });
 
   describe("authObserver method", () => {
-    test("should call getUserData if user is passed as argument", () => {
-      jest.spyOn(loginStore, "getUserData").mockImplementation(() => {});
+    test("should set userId if user is passed as argument", () => {
       loginStore.authObserver({ uid: "test" });
 
-      expect(loginStore.getUserData).toHaveBeenCalledWith("test");
+      expect(loginStore.userId).toBe("test");
     });
 
-    test("should call clearUserData if no user is passed as argument", () => {
-      jest.spyOn(loginStore, "clearUserData").mockImplementation(() => {});
+    test("should clear userId if no user is passed as argument", () => {
       loginStore.authObserver();
 
-      expect(loginStore.clearUserData).toHaveBeenCalled();
+      expect(loginStore.userId).toBeNull();
     });
   });
 
   describe("computed property isLoggedIn", () => {
-    test("should return false if there's no user data", () => {
-      loginStore.user = null;
+    test("should return false if there's no userId", () => {
+      loginStore.userId = null;
 
       expect(loginStore.isLoggedIn).toBeFalsy();
     });
 
-    test("should return true if user data is fetched", () => {
-      loginStore.user = new User("a1", "Jake Doe");
+    test("should return true if userId is set", () => {
+      loginStore.userId = "a1";
 
       expect(loginStore.isLoggedIn).toBeTruthy();
     });
   });
 
   describe("computed property isLoggingIn", () => {
-    test("should return true if user was not initalized", () => {
-      loginStore.user = undefined;
+    test("should return true if userId was not initalized", () => {
+      loginStore.userId = undefined;
 
       expect(loginStore.isLoggingIn).toBeTruthy();
     });
 
-    test("should return false if there's no user data", () => {
-      loginStore.user = null;
+    test("should return false if there's no userId", () => {
+      loginStore.userId = null;
 
       expect(loginStore.isLoggingIn).toBeFalsy();
     });
 
-    test("should return false if user data is fetched", () => {
-      loginStore.user = new User("a1", "Jake Doe");
+    test("should return false if userId is set", () => {
+      loginStore.userId = "a1";
 
       expect(loginStore.isLoggingIn).toBeFalsy();
-    });
-  });
-
-  describe("computed property isAdmin", () => {
-    test("should return false if there's no user data", () => {
-      loginStore.user = null;
-
-      expect(loginStore.isAdmin).toBeFalsy();
-    });
-
-    test("should return false if user has isAdmin property set to false", () => {
-      loginStore.user = new User("a1", "Jake Doe");
-
-      expect(loginStore.isAdmin).toBeFalsy();
-    });
-  });
-
-  describe("getUserData method", () => {
-    describe("if user data is stored in localStorage", () => {
-      test("should create new user", () => {
-        global.localStorage.getItem.mockImplementation(() =>
-          JSON.stringify(new User("a2", "John Doe"))
-        );
-
-        loginStore.getUserData("userId");
-
-        expect(loginStore.user && loginStore.user.name).toBe("John Doe");
-      });
-    });
-
-    describe("if there's no user data stored in localStorage", () => {
-      beforeEach(() => {
-        global.localStorage.getItem.mockImplementation(() => null);
-        valSpy.mockImplementation(() => ({
-          name: "Jane Doe"
-        }));
-        loginStore.getUserData("userId");
-      });
-
-      test("should fetch user data", () => {
-        expect(refSpy).toHaveBeenCalledWith("/users/userId");
-      });
-
-      test("should create new user", () => {
-        expect(loginStore.user && loginStore.user.name).toBe("Jane Doe");
-      });
-
-      test("should store user data in localStorage", () => {
-        expect(global.localStorage.setItem).toHaveBeenCalledWith(
-          "on-duty-user",
-          JSON.stringify(loginStore.user)
-        );
-      });
-    });
-  });
-
-  describe("clearUserData method", () => {
-    test("should clear user data", () => {
-      loginStore.user = new User("a3", "Jill Doe");
-      loginStore.clearUserData();
-
-      expect(loginStore.user).toBeNull();
-    });
-
-    test("should remove user data from localStorage", () => {
-      loginStore.clearUserData();
-
-      expect(global.localStorage.removeItem).toHaveBeenCalledWith(
-        "on-duty-user"
-      );
     });
   });
 
