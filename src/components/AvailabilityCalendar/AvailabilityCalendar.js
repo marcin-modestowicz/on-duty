@@ -3,12 +3,14 @@ import React, { Component } from "react";
 import User from "../../models/User";
 import { type AvailabilityCalendar as AvailabilityCalendarModel } from "../../models/Calendar";
 import { type AvailabilityStatus } from "../../models/Availability";
+import type UserStore from "../../stores/UserStore";
 import AvailabilityCalendarSetAll from "./AvailabilityCalendarSetAll";
 import AvailabilityCalendarDay from "./AvailabilityCalendarDay";
 import styles from "./AvailabilityCalendar.scss";
 
 type Props = {
-  calendar: AvailabilityCalendarModel
+  calendar: AvailabilityCalendarModel,
+  userStore: UserStore
 };
 
 class AvailabilityCalendar extends Component<Props> {
@@ -31,6 +33,7 @@ class AvailabilityCalendar extends Component<Props> {
               key={date.getTime()}
               date={date}
               availability={availability}
+              onClick={this.props.userStore.setDayStatus}
             />
           ))}
         </div>

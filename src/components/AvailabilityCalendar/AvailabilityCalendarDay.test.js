@@ -15,6 +15,7 @@ describe("AvailabilityCalendarDay component", () => {
       <AvailabilityCalendarDay
         date={new Date(2017, 9, 1)}
         availability={availability}
+        onClick={() => Promise.resolve()}
       />
     );
   });

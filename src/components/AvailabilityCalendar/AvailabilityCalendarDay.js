@@ -5,6 +5,7 @@ import classnames from "classnames";
 import { getDayName } from "../../utils/date";
 import type Availability from "../../models/Availability";
 import {
+  type AvailabilityStatus,
   AVAILABILITY_STATUSES,
   AVAILABILITY_STATUSES_NAMES
 } from "../../models/Availability";
@@ -12,13 +13,19 @@ import styles from "./AvailabilityCalendarDay.scss";
 
 type Props = {
   date: Date,
-  availability: Availability
+  availability: Availability,
+  onClick: (date: Date, availability: AvailabilityStatus) => void
 };
 
 @observer
 class AvailabilityCalendarDay extends Component<Props> {
   handleClick = () => {
-    this.props.availability.toggle();
+    const { availability, onClick } = this.props;
+    const status = availability.status;
+
+    availability.toggle();
+
+    onClick(this.props.date, availability.status);
   };
 
   renderDayContent(statusName: string) {

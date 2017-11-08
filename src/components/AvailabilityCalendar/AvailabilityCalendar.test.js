@@ -2,7 +2,9 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
+import User from "../../models/User";
 import { AvailabilityCalendar as AvailabilityCalendarModel } from "../../models/Calendar";
+import UserStore from "../../stores/UserStore";
 import AvailabilityCalendar from "./AvailabilityCalendar";
 
 describe("AvailabilityCalendar component", () => {
@@ -17,9 +19,10 @@ describe("AvailabilityCalendar component", () => {
       return args.length ? new RealDate(...args) : date;
     };
 
+    const userStore = new UserStore(new User("a1", "Mickey Mouse"));
     const calendar = new AvailabilityCalendarModel();
     availabilityCalendar = shallow(
-      <AvailabilityCalendar calendar={calendar} />
+      <AvailabilityCalendar calendar={calendar} userStore={userStore} />
     );
   });
 

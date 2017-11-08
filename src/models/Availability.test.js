@@ -30,4 +30,11 @@ describe("Availability model", () => {
       expect(availability.status).toBe(AVAILABILITY_STATUSES.FREE);
     });
   });
+
+  describe("setStatus method", () => {
+    test("should change status to the one provided as argument", () => {
+      availability.setStatus(AVAILABILITY_STATUSES.BUSY);
+      expect(availability.status).toBe(AVAILABILITY_STATUSES.BUSY);
+    });
+  });
 });

@@ -17,7 +17,7 @@ describe("ShowUser component", () => {
       return args.length ? new RealDate(...args) : date;
     };
 
-    const user = new User("Marty McFly", true, true);
+    const user = new User("a1", "Marty McFly", true, true);
     showUser = shallow(<ShowUser user={user} />);
   });
 

@@ -18,6 +18,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-10-31T23:00:00.000Z}
       key="1509490800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -27,6 +28,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-01T23:00:00.000Z}
       key="1509577200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -36,6 +38,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-02T23:00:00.000Z}
       key="1509663600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -45,6 +48,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-03T23:00:00.000Z}
       key="1509750000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -54,6 +58,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-04T23:00:00.000Z}
       key="1509836400000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -63,6 +68,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-05T23:00:00.000Z}
       key="1509922800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -72,6 +78,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-06T23:00:00.000Z}
       key="1510009200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -81,6 +88,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-07T23:00:00.000Z}
       key="1510095600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -90,6 +98,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-08T23:00:00.000Z}
       key="1510182000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -99,6 +108,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-09T23:00:00.000Z}
       key="1510268400000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -108,6 +118,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-10T23:00:00.000Z}
       key="1510354800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -117,6 +128,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-11T23:00:00.000Z}
       key="1510441200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -126,6 +138,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-12T23:00:00.000Z}
       key="1510527600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -135,6 +148,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-13T23:00:00.000Z}
       key="1510614000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -144,6 +158,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-14T23:00:00.000Z}
       key="1510700400000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -153,6 +168,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-15T23:00:00.000Z}
       key="1510786800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -162,6 +178,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-16T23:00:00.000Z}
       key="1510873200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -171,6 +188,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-17T23:00:00.000Z}
       key="1510959600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -180,6 +198,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-18T23:00:00.000Z}
       key="1511046000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -189,6 +208,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-19T23:00:00.000Z}
       key="1511132400000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -198,6 +218,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-20T23:00:00.000Z}
       key="1511218800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -207,6 +228,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-21T23:00:00.000Z}
       key="1511305200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -216,6 +238,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-22T23:00:00.000Z}
       key="1511391600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -225,6 +248,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-23T23:00:00.000Z}
       key="1511478000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -234,6 +258,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-24T23:00:00.000Z}
       key="1511564400000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -243,6 +268,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-25T23:00:00.000Z}
       key="1511650800000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -252,6 +278,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-26T23:00:00.000Z}
       key="1511737200000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -261,6 +288,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-27T23:00:00.000Z}
       key="1511823600000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -270,6 +298,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-28T23:00:00.000Z}
       key="1511910000000"
+      onClick={[Function]}
     />
     <AvailabilityCalendarDay
       availability={
@@ -279,6 +308,7 @@ exports[`AvailabilityCalendar component should render 1`] = `
       }
       date={2017-11-29T23:00:00.000Z}
       key="1511996400000"
+      onClick={[Function]}
     />
   </div>
 </div>

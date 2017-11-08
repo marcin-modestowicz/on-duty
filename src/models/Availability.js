@@ -15,7 +15,7 @@ export const AVAILABILITY_STATUSES_NAMES = {
 
 export type AvailabilityStatus = -1 | 0 | 1;
 
-export class Availability {
+class Availability {
   @observable status: AvailabilityStatus;
 
   constructor(availability?: AvailabilityStatus) {
@@ -39,6 +39,11 @@ export class Availability {
       default:
         this.status = AVAILABILITY_STATUSES.KEEN;
     }
+  }
+
+  @action
+  setStatus(status: AvailabilityStatus) {
+    this.status = status;
   }
 }
 
