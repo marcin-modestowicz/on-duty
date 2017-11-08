@@ -14,6 +14,17 @@ exports[`AddUser component should render with button disabled 1`] = `
     Name
   </label>
   <input
+    name="email"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <label
+    htmlFor="email"
+  >
+    Email
+  </label>
+  <input
     checked={false}
     name="isDoctor"
     onChange={[Function]}
@@ -58,6 +69,17 @@ exports[`AddUser component should render with button enabled 1`] = `
     htmlFor="name"
   >
     Name
+  </label>
+  <input
+    name="email"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <label
+    htmlFor="email"
+  >
+    Email
   </label>
   <input
     checked={false}

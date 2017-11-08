@@ -51,20 +51,35 @@ describe("AddUser component", () => {
       });
     });
 
-    describe("if user name is filled", () => {
+    describe("if email is not filled", () => {
+      test("should do nothing", () => {
+        instance.handleNameChange({ target: { value: "Bronco Billy" } });
+        instance.handleUserAdd();
+        expect(onAdd).not.toHaveBeenCalled();
+      });
+    });
+
+    describe("if user name and email is filled", () => {
       beforeEach(() => {
         instance.handleNameChange({ target: { value: "Bronco Billy" } });
+        instance.handleEmailChange({ target: { value: "bronco@billy.com" } });
         instance.handleTypeChange({ target: { value: "isDoctor" } });
         instance.handleTypeChange({ target: { value: "isSpecialist" } });
         instance.handleUserAdd();
       });
 
       test("should call onAdd prop", () => {
-        expect(onAdd).toHaveBeenCalledWith("Bronco Billy", true, true);
+        expect(onAdd).toHaveBeenCalledWith(
+          "Bronco Billy",
+          "bronco@billy.com",
+          true,
+          true
+        );
       });
 
-      test("should reset isSpecialist and isDoctor properties", () => {
-        expect(instance.userName).toBeFalsy();
+      test("should reset fields values properties", () => {
+        expect(instance.userName).toBe("");
+        expect(instance.emailAddress).toBe("");
         expect(instance.userType).toBeFalsy();
       });
     });

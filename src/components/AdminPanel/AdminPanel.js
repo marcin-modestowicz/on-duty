@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from "react";
+import { observer } from "mobx-react";
 import AdminStore from "../../stores/AdminStore";
 import { ShiftsCalendar } from "../../models/Calendar";
 import User from "../../models/User";
@@ -7,6 +8,7 @@ import AddUser from "../AddUser";
 import ShowUser from "../ShowUser";
 import Shifts from "../Shifts";
 
+@observer
 class AdminPanel extends Component<*> {
   adminStore: AdminStore = new AdminStore();
 

@@ -12,12 +12,18 @@ type Props = {
 @observer
 class AddUser extends Component<Props> {
   @observable userName: string = "";
+  @observable emailAddress: string = "";
   @observable isDoctor: boolean = false;
   @observable isSpecialist: boolean = false;
 
   @action
   handleNameChange = (event: SyntheticInputEvent<*>) => {
     this.userName = event.target.value;
+  };
+
+  @action
+  handleEmailChange = (event: SyntheticInputEvent<*>) => {
+    this.emailAddress = event.target.value;
   };
 
   @action
@@ -33,9 +39,15 @@ class AddUser extends Component<Props> {
 
   @action
   handleUserAdd = () => {
-    if (this.userName !== "") {
-      this.props.onAdd(this.userName, this.isDoctor, this.isSpecialist);
+    if (this.userName !== "" && this.emailAddress !== "") {
+      this.props.onAdd(
+        this.userName,
+        this.emailAddress,
+        this.isDoctor,
+        this.isSpecialist
+      );
       this.userName = "";
+      this.emailAddress = "";
       this.isDoctor = false;
       this.isSpecialist = false;
     }
@@ -52,6 +64,13 @@ class AddUser extends Component<Props> {
           onChange={this.handleNameChange}
         />
         <label htmlFor="name">Name</label>
+        <input
+          name="email"
+          type="text"
+          value={this.emailAddress}
+          onChange={this.handleEmailChange}
+        />
+        <label htmlFor="email">Email</label>
         <input
           name="isDoctor"
           type="checkbox"
