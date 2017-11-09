@@ -21,7 +21,11 @@ describe("AvailabilityCalendar component", () => {
 
     const calendar = new AvailabilityCalendarModel();
     availabilityCalendar = shallow(
-      <AvailabilityCalendar calendar={calendar} onDayToggle={() => {}} />
+      <AvailabilityCalendar
+        calendar={calendar}
+        onDayToggle={() => {}}
+        onAllDaysStatusSet={() => {}}
+      />
     );
   });
 

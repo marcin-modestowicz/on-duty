@@ -2,6 +2,7 @@
 import { observable, computed, runInAction } from "mobx";
 import firebase from "../firebase";
 import User from "../models/User";
+import { AvailabilityCalendar } from "../models/Calendar";
 import { type AvailabilityStatus } from "../models/Availability";
 
 class UserStore {
@@ -71,6 +72,21 @@ class UserStore {
       .update({
         [`/availabilityCalendars/${this.user.id}/${date.getTime()}`]: status
       });
+  };
+
+  setAllDaysStatus = (
+    calendar: AvailabilityCalendar,
+    status: AvailabilityStatus
+  ) => {
+    const availabilityCalendar = calendar.days.reduce((sum, day) => {
+      sum[day.date.getTime()] = status;
+      return sum;
+    }, {});
+
+    firebase
+      .database()
+      .ref(`/availabilityCalendars/${this.user.id}`)
+      .set(availabilityCalendar);
   };
 }
 

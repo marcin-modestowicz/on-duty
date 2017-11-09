@@ -6,21 +6,27 @@ import UserStore from "./UserStore";
 describe("UserStore store", () => {
   let userDataSnapshotMock;
   let availabilityCalendarSnapshotMock;
-  let refSpy;
+  let refMock;
+  let updateMock;
+  let setMock;
   let userStore;
 
   beforeAll(() => {
     userDataSnapshotMock = { val: () => "test value" };
     availabilityCalendarSnapshotMock = { val: () => ({}) };
-    refSpy = jest.fn(() => ({
+    updateMock = jest.fn();
+    setMock = jest.fn();
+    refMock = jest.fn(() => ({
       once: () => Promise.resolve(userDataSnapshotMock),
       on: (param, callback) => {
         callback(availabilityCalendarSnapshotMock);
-      }
+      },
+      set: setMock,
+      update: updateMock
     }));
     jest
       .spyOn(firebase, "database")
-      .mockImplementation(() => ({ ref: refSpy }));
+      .mockImplementation(() => ({ ref: refMock }));
   });
 
   afterAll(() => {
@@ -35,7 +41,7 @@ describe("UserStore store", () => {
   describe("on initialization", () => {
     describe("if no userId was passed", () => {
       test("should do nothing", () => {
-        expect(refSpy).not.toHaveBeenCalled();
+        expect(refMock).not.toHaveBeenCalled();
       });
     });
 
@@ -104,6 +110,48 @@ describe("UserStore store", () => {
       });
 
       expect(userStore.user).toMatchObject(userData);
+    });
+  });
+
+  describe("setDayStatus method", () => {
+    beforeEach(() => {
+      userStore.user = new User("a2", "Homer Simpson");
+    });
+
+    test("should update ref", () => {
+      const date = new Date();
+      const status = -1;
+
+      userStore.setDayStatus(date, status);
+
+      expect(updateMock).toHaveBeenCalledWith({
+        [`/availabilityCalendars/${userStore.user
+          .id}/${date.getTime()}`]: status
+      });
+    });
+  });
+
+  describe("setAllDaysStatus method", () => {
+    beforeEach(() => {
+      userStore.user = new User("a2", "Homer Simpson");
+    });
+
+    test("should update ref", () => {
+      const status = -1;
+      const availabilityCalendar = userStore.user.availabilityCalendar.days.reduce(
+        (sum, day) => {
+          sum[day.date.getTime()] = status;
+          return sum;
+        },
+        {}
+      );
+
+      userStore.setAllDaysStatus(userStore.user.availabilityCalendar, status);
+
+      expect(refMock).toHaveBeenCalledWith(
+        `/availabilityCalendars/${userStore.user.id}`
+      );
+      expect(setMock).toHaveBeenCalledWith(availabilityCalendar);
     });
   });
 });

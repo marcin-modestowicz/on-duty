@@ -10,7 +10,11 @@ import styles from "./AvailabilityCalendar.scss";
 
 type Props = {
   calendar: AvailabilityCalendarModel,
-  onDayToggle: (date: Date, status: AvailabilityStatus) => void
+  onDayToggle: (date: Date, status: AvailabilityStatus) => void,
+  onAllDaysStatusSet: (
+    calendar: AvailabilityCalendarModel,
+    status: AvailabilityStatus
+  ) => void
 };
 
 class AvailabilityCalendar extends Component<Props> {
@@ -18,9 +22,7 @@ class AvailabilityCalendar extends Component<Props> {
   static Day = AvailabilityCalendarDay;
 
   handleToggleAll = (status: AvailabilityStatus) => {
-    this.props.calendar.days.forEach(({ availability }) => {
-      availability.status = status;
-    });
+    this.props.onAllDaysStatusSet(this.props.calendar, status);
   };
 
   render() {

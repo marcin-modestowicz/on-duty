@@ -13,7 +13,7 @@ class ShowUser extends Component<*> {
   props: Props;
 
   render() {
-    const { user, setDayStatus } = this.props.userStore;
+    const { user, setDayStatus, setAllDaysStatus } = this.props.userStore;
 
     return (
       <div>
@@ -26,6 +26,7 @@ class ShowUser extends Component<*> {
         <AvailabilityCalendar
           calendar={user.availabilityCalendar}
           onDayToggle={setDayStatus}
+          onAllDaysStatusSet={setAllDaysStatus}
         />
       </div>
     );
