@@ -37,7 +37,9 @@ class App extends Component<null> {
         <h2 className={styles.header}>On Duty</h2>
         {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
         {!isLoggedIn && <Login onLogin={handleLogin} />}
-        {isLoggedIn && user && <ShowUser userStore={this.userStore} />}
+        {isLoggedIn &&
+          user &&
+          !isAdmin && <ShowUser userStore={this.userStore} />}
         {isLoggedIn && isAdmin && <AdminPanel />}
       </div>
     );
