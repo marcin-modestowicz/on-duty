@@ -1,5 +1,5 @@
 //@flow
-import { observable, computed, action } from "mobx";
+import { observable, computed, runInAction } from "mobx";
 import firebase from "../firebase";
 import User from "../models/User";
 import {
@@ -9,26 +9,27 @@ import {
 } from "../models/Calendar";
 import { AVAILABILITY_STATUSES } from "../models/Availability";
 import { USERS_PER_SHIFT } from "../models/Shift";
+import UserStore from "./UserStore";
 
 class AdminStore {
-  @observable users: User[] = [];
+  @observable users: UserStore[] = [];
   @observable calendar: ShiftsCalendar;
 
-  constructor() {
-    const savedState = localStorage.getItem("on-duty");
-    if (savedState) {
-      this.users = JSON.parse(savedState).map(
-        user =>
-          new User(
-            user.name,
-            user.isDoctor,
-            user.isSpecialist,
-            user.availabilityCalendar.days.map(
-              ({ availability: { status } }) => status
-            )
-          )
-      );
-    }
+  constructor(centerId: string) {
+    firebase
+      .database()
+      .ref(`/centers/${centerId}/users`)
+      .on("value", snapshot => {
+        const users = snapshot.val();
+
+        if (users) {
+          const usersIds = Object.keys(snapshot.val());
+
+          runInAction("add users", () => {
+            this.users = usersIds.map(userId => new UserStore(userId));
+          });
+        }
+      });
   }
 
   @computed
@@ -36,7 +37,6 @@ class AdminStore {
     return this.users.length >= USERS_PER_SHIFT * (MINIMUM_REST_DAYS + 1);
   }
 
-  @action
   addUser = (
     name: string,
     email: string,
@@ -44,32 +44,36 @@ class AdminStore {
     isSpecialist: boolean
   ) => {
     const sanitizedEmail = email.replace(".", "%2E");
+    const user = {
+      center: "spsk2", // @todo replace hardcoded center id value with something meaningful
+      name,
+      isDoctor,
+      isSpecialist,
+      isAdmin: false
+    };
+    const userId = firebase
+      .database()
+      .ref("users")
+      .push().key;
 
     firebase
       .database()
       .ref()
-      .child("inactiveUsers")
-      .child(sanitizedEmail)
-      .set(
-        {
-          center: "spsk2", // @todo replace hardcoded center id value with something meaningful
-          name,
-          isDoctor,
-          isSpecialist,
-          isAdmin: false
-        },
-        () => {
-          this.users.push(
-            new User(sanitizedEmail, name, isDoctor, isSpecialist)
-          );
-        }
-      );
+      .update({
+        [`/users/${userId}`]: user, // @todo replace hardcoded center id value with something meaningful
+        [`/centers/spsk2/users/${userId}`]: true // @todo replace hardcoded center id value with something meaningful
+      });
+
+    firebase
+      .database()
+      .ref(`/emailToUserId/${sanitizedEmail}`)
+      .set(userId);
   };
 
   fillCalendar = () => {
     if (this.isReady) {
       this.calendar = new ShiftsCalendar();
-      this.calendar.fillCalendar(this.users);
+      this.calendar.fillCalendar(this.users.map(({ user }) => user));
     }
   };
 
@@ -79,7 +83,7 @@ class AdminStore {
       return null;
     }
 
-    const summary = this.users.map(user => {
+    const summary = this.users.map(({ user }) => {
       const availabilityDays = user.availabilityCalendar.days;
       const shiftDays = this.calendar.getUserShifts(user.id);
       const highPreferenceDays = availabilityDays.reduce(
@@ -136,10 +140,6 @@ class AdminStore {
 
     return summary;
   }
-
-  saveState = () => {
-    localStorage.setItem("on-duty", JSON.stringify(this.users));
-  };
 }
 
 export default AdminStore;

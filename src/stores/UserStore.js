@@ -13,13 +13,7 @@ class UserStore {
       firebase
         .database()
         .ref(`/users/${userId}`)
-        .once("value")
-        .then(snapshot => this.getUserData(snapshot));
-
-      firebase
-        .database()
-        .ref(`/availabilityCalendars/${userId}`)
-        .on("value", snapshot => this.getAvailabilityCalendar(snapshot));
+        .on("value", snapshot => this.getUserData(snapshot));
     }
   }
 
@@ -30,39 +24,32 @@ class UserStore {
 
   getUserData(snapshot: Object) {
     const user = snapshot.val();
-    const availabilityCalendar = this.user
-      ? this.user.availabilityCalendar.days.map(
-          ({ availability }) => availability.status
-        )
-      : undefined;
 
-    this.user = new User(
-      snapshot.key,
-      user.name,
-      user.isDoctor,
-      user.isSpecialist,
-      availabilityCalendar,
-      user.isAdmin
-    );
-  }
-
-  getAvailabilityCalendar(snapshot: Object) {
-    const availabilityCalendar = snapshot.val();
-
-    if (!this.user) {
-      this.user = new User(snapshot.key, "");
-    }
-
-    this.user.availabilityCalendar.days.forEach(day => {
-      const timestamp = day.date.getTime();
-
-      if (
-        availabilityCalendar[timestamp] != null &&
-        availabilityCalendar[timestamp] !== day.availability.status
-      ) {
-        day.availability.setStatus(availabilityCalendar[timestamp]);
+    if (user) {
+      if (!this.user) {
+        this.user = new User(
+          snapshot.key,
+          user.name,
+          user.isDoctor,
+          user.isSpecialist,
+          undefined,
+          user.isAdmin
+        );
       }
-    });
+
+      if (user.availabilityCalendar) {
+        this.user.availabilityCalendar.days.forEach(day => {
+          const timestamp = day.date.getTime();
+
+          if (
+            user.availabilityCalendar[timestamp] != null &&
+            user.availabilityCalendar[timestamp] !== day.availability.status
+          ) {
+            day.availability.setStatus(user.availabilityCalendar[timestamp]);
+          }
+        });
+      }
+    }
   }
 
   setDayStatus = (date: Date, status: AvailabilityStatus) => {
@@ -70,7 +57,8 @@ class UserStore {
       .database()
       .ref()
       .update({
-        [`/availabilityCalendars/${this.user.id}/${date.getTime()}`]: status
+        [`/users/${this.user
+          .id}/availabilityCalendar/${date.getTime()}`]: status
       });
   };
 
@@ -85,7 +73,7 @@ class UserStore {
 
     firebase
       .database()
-      .ref(`/availabilityCalendars/${this.user.id}`)
+      .ref(`/users/${this.user.id}/availabilityCalendar`)
       .set(availabilityCalendar);
   };
 }

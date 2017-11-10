@@ -4,21 +4,27 @@ import User from "../models/User";
 import LoginStore from "./LoginStore";
 
 describe("LoginStore store", () => {
-  let localStorage;
-  let onAuthStateChangedSpy;
-  let signInWithEmailAndPasswordSpy;
-  let signOutSpy;
+  let onAuthStateChangedMock;
+  let signInWithEmailAndPasswordMock;
+  let signOutMock;
+  let refMock;
   let loginStore;
 
   beforeAll(() => {
-    onAuthStateChangedSpy = jest.fn();
-    signInWithEmailAndPasswordSpy = jest.fn(() => Promise.resolve());
-    signOutSpy = jest.fn(() => Promise.resolve());
+    onAuthStateChangedMock = jest.fn();
+    signInWithEmailAndPasswordMock = jest.fn(() => Promise.resolve());
+    signOutMock = jest.fn(() => Promise.resolve());
     jest.spyOn(firebase, "auth").mockImplementation(() => ({
-      onAuthStateChanged: onAuthStateChangedSpy,
-      signInWithEmailAndPassword: signInWithEmailAndPasswordSpy,
-      signOut: signOutSpy
+      onAuthStateChanged: onAuthStateChangedMock,
+      signInWithEmailAndPassword: signInWithEmailAndPasswordMock,
+      signOut: signOutMock
     }));
+    refMock = jest.fn(() => ({
+      once: () => Promise.resolve({ val: () => "testUserId" })
+    }));
+    jest
+      .spyOn(firebase, "database")
+      .mockImplementation(() => ({ ref: refMock }));
   });
 
   afterAll(() => {
@@ -32,17 +38,25 @@ describe("LoginStore store", () => {
 
   describe("on initialization", () => {
     test("should call firebase auth and initialize observer", () => {
-      expect(onAuthStateChangedSpy).toHaveBeenCalledWith(
+      expect(onAuthStateChangedMock).toHaveBeenCalledWith(
         loginStore.authObserver
       );
     });
   });
 
   describe("authObserver method", () => {
-    test("should set userId if user is passed as argument", () => {
-      loginStore.authObserver({ uid: "test" });
+    describe("if user is passed as an argument", () => {
+      beforeEach(() => {
+        loginStore.authObserver({ uid: "test" });
+      });
 
-      expect(loginStore.userId).toBe("test");
+      test("should call firebase to get userId", () => {
+        expect(refMock).toHaveBeenCalledWith("/authIdToUserId/test");
+      });
+
+      test("should set userId if user is passed as argument", () => {
+        expect(loginStore.userId).toBe("testUserId");
+      });
     });
 
     test("should clear userId if no user is passed as argument", () => {
@@ -90,7 +104,7 @@ describe("LoginStore store", () => {
     test("should call firebase auth signInWithEmailAndPassword method with provided email and password", () => {
       loginStore.handleLogin("test@email.com", "test123");
 
-      expect(signInWithEmailAndPasswordSpy).toHaveBeenCalledWith(
+      expect(signInWithEmailAndPasswordMock).toHaveBeenCalledWith(
         "test@email.com",
         "test123"
       );
@@ -101,7 +115,7 @@ describe("LoginStore store", () => {
     test("should call firebase auth signOut method", () => {
       loginStore.handleLogout();
 
-      expect(signOutSpy).toHaveBeenCalled();
+      expect(signOutMock).toHaveBeenCalled();
     });
   });
 });

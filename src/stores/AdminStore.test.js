@@ -3,31 +3,69 @@ import firebase from "../firebase";
 import AdminStore from "./AdminStore";
 
 describe("AdminStore store", () => {
-  let localStorage;
+  let centerDataSnapshotMock;
+  let refMock;
+  let pushMock;
+  let updateMock;
+  let setMock;
   let adminStore;
 
   beforeAll(() => {
-    localStorage = global.localStorage;
-    global.localStorage = { setItem: () => {}, getItem: () => {} };
+    centerDataSnapshotMock = { val: () => "test value" };
+    pushMock = jest.fn(() => ({ key: "testUserId" }));
+    updateMock = jest.fn();
+    setMock = jest.fn();
+    refMock = jest.fn(() => ({
+      on: () => Promise.resolve(centerDataSnapshotMock),
+      push: pushMock,
+      set: setMock,
+      update: updateMock
+    }));
+    jest
+      .spyOn(firebase, "database")
+      .mockImplementation(() => ({ ref: refMock }));
   });
 
   afterAll(() => {
-    global.localStorage = localStorage;
+    // $FlowFixMe - jest bug https://github.com/facebook/jest/issues/4436
+    jest.restoreAllMocks();
   });
 
   beforeEach(() => {
-    adminStore = new AdminStore();
+    adminStore = new AdminStore("a1");
   });
 
-  xdescribe("addUser method", () => {
-    test("should add new user", () => {
-      adminStore.addUser("Superman", "superman@superman.com", true, true);
+  describe("on initialization", () => {
+    test("should query firebase database to get center data", () => {
+      expect(refMock).toHaveBeenCalled();
+    });
+  });
 
-      const user = adminStore.users[0];
+  describe("addUser method", () => {
+    beforeEach(() => {
+      adminStore.addUser("Superman", "super@man.com", true, true);
+    });
 
-      expect(user.name).toBe("Superman");
-      expect(user.isDoctor).toBeTruthy();
-      expect(user.isSpecialist).toBeTruthy();
+    test("should get userId from database", () => {
+      expect(refMock).toHaveBeenCalledWith("users");
+    });
+
+    test("should update user and center data", () => {
+      expect(updateMock).toHaveBeenCalledWith({
+        "/users/testUserId": {
+          center: "spsk2",
+          name: "Superman",
+          isDoctor: true,
+          isSpecialist: true,
+          isAdmin: false
+        },
+        "/centers/spsk2/users/testUserId": true
+      });
+    });
+
+    test("should set email key", () => {
+      expect(refMock).toHaveBeenCalledWith("/emailToUserId/super@man%2Ecom");
+      expect(setMock).toHaveBeenCalledWith("testUserId");
     });
   });
 });

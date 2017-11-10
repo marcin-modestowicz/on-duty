@@ -22,12 +22,21 @@ class LoginStore {
 
   authObserver = (user: ?Object) => {
     if (user != null) {
-      runInAction("set user id", () => {
-        //$FlowFixMe - user cannot be null
-        this.userId = user.uid;
-      });
+      firebase
+        .database()
+        .ref(`/authIdToUserId/${user.uid}`)
+        .once("value")
+        .then(snapshot => {
+          const userId = snapshot.val();
+
+          if (userId) {
+            runInAction("set userId", () => {
+              this.userId = userId;
+            });
+          }
+        });
     } else {
-      runInAction("clear user id", () => {
+      runInAction("clear userId", () => {
         this.userId = null;
       });
     }
@@ -38,8 +47,11 @@ class LoginStore {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .catch(error => {
-        console.log(error.code, error.message);
-        throw error;
+        if (error.code === "auth/user-not-found") {
+          return this.handleRegistration(email, password);
+        } else {
+          throw error;
+        }
       });
   };
 
@@ -48,7 +60,45 @@ class LoginStore {
       .auth()
       .signOut()
       .catch(error => {
-        console.log(error.code, error.message);
+        console.log(error.message);
+        throw error;
+      });
+  };
+
+  handleRegistration = (email: string, password: string) => {
+    return firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        const authId = user.uid;
+        const sanitizedEmail = email.replace(".", "%2E");
+
+        return firebase
+          .database()
+          .ref(`/emailToUserId/${sanitizedEmail}`)
+          .once("value")
+          .then(snapshot => {
+            const userId = snapshot.val();
+
+            if (userId) {
+              return firebase
+                .database()
+                .ref(`/authIdToUserId/${authId}`)
+                .set(userId)
+                .then(() => {
+                  return firebase
+                    .database()
+                    .ref(`/emailToUserId/${sanitizedEmail}`)
+                    .remove();
+                });
+            } else {
+              firebase.auth().currentUser.delete();
+              throw new Error("No account created for the user");
+            }
+          });
+      })
+      .catch(error => {
+        console.log(error.message);
         throw error;
       });
   };

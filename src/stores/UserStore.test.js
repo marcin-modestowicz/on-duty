@@ -13,13 +13,11 @@ describe("UserStore store", () => {
 
   beforeAll(() => {
     userDataSnapshotMock = { val: () => "test value" };
-    availabilityCalendarSnapshotMock = { val: () => ({}) };
     updateMock = jest.fn();
     setMock = jest.fn();
     refMock = jest.fn(() => ({
-      once: () => Promise.resolve(userDataSnapshotMock),
       on: (param, callback) => {
-        callback(availabilityCalendarSnapshotMock);
+        callback(userDataSnapshotMock);
       },
       set: setMock,
       update: updateMock
@@ -47,25 +45,14 @@ describe("UserStore store", () => {
 
     describe("if userId was passed", () => {
       let getUserDataSpy;
-      let getAvailabilityCalendarSpy;
 
       beforeEach(() => {
         getUserDataSpy = jest.spyOn(UserStore.prototype, "getUserData");
-        getAvailabilityCalendarSpy = jest.spyOn(
-          UserStore.prototype,
-          "getAvailabilityCalendar"
-        );
         userStore = new UserStore("a1");
       });
 
       test("should query firebase database to get user data", () => {
         expect(getUserDataSpy).toHaveBeenCalledWith(userDataSnapshotMock);
-      });
-
-      test("should query firebase database to get user availabilityCalendar", () => {
-        expect(getAvailabilityCalendarSpy).toHaveBeenCalledWith(
-          availabilityCalendarSnapshotMock
-        );
       });
     });
   });
@@ -125,8 +112,8 @@ describe("UserStore store", () => {
       userStore.setDayStatus(date, status);
 
       expect(updateMock).toHaveBeenCalledWith({
-        [`/availabilityCalendars/${userStore.user
-          .id}/${date.getTime()}`]: status
+        [`/users/${userStore.user
+          .id}/availabilityCalendar/${date.getTime()}`]: status
       });
     });
   });
@@ -149,7 +136,7 @@ describe("UserStore store", () => {
       userStore.setAllDaysStatus(userStore.user.availabilityCalendar, status);
 
       expect(refMock).toHaveBeenCalledWith(
-        `/availabilityCalendars/${userStore.user.id}`
+        `/users/${userStore.user.id}/availabilityCalendar`
       );
       expect(setMock).toHaveBeenCalledWith(availabilityCalendar);
     });
