@@ -10,7 +10,7 @@ import Shifts from "../Shifts";
 
 @observer
 class AdminPanel extends Component<*> {
-  adminStore: AdminStore = new AdminStore();
+  adminStore: AdminStore = new AdminStore("spsk2"); // @todo replace hardcoded center id value with something meaningful
 
   render() {
     const {
@@ -30,11 +30,19 @@ class AdminPanel extends Component<*> {
           <button onClick={fillCalendar} disabled={!isReady}>
             Create calendar
           </button>
-          {users.map(user => <ShowUser key={user.id} user={user} />)}
+          {users.map(userStore => {
+            return userStore.user ? (
+              <ShowUser key={userStore.user.id} userStore={userStore} />
+            ) : null;
+          })}
         </div>
         <div>
           {calendar && (
-            <Shifts calendar={calendar} summary={summary} users={users} />
+            <Shifts
+              calendar={calendar}
+              summary={summary}
+              users={users.map(({ user }) => user)}
+            />
           )}
         </div>
       </div>
