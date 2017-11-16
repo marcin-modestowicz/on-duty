@@ -1,0 +1,53 @@
+@import '../../styles/colors.scss';
+
+.root {
+/*   display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  box-sizing: border-box;
+  margin: 0;
+  height: 2.5em;
+  padding: .75em;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-radius: .25em;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+
+  svg {
+    margin-right: .5em;
+  }
+
+  &:active {
+    border-width: 1px 0 0 1px;
+  }
+
+  &.default {
+    background-color: blue;
+    border-color: navy;
+  }
+
+  &.yellow {
+    background-color: $yellow;
+    border-color: $yellow-darker;
+  }
+
+  &.green {
+    background-color: $green;
+    border-color: $green-darker;
+  }
+
+  &.red {
+    background-color: $red;
+    border-color: $red-darker;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: $gray;
+    border-color: $gray-darker;
+  }
+}

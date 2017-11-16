@@ -50,12 +50,12 @@ exports[`AddUser component should render with button disabled 1`] = `
   >
     Specialist
   </label>
-  <button
+  <Button
     disabled={true}
     onClick={[Function]}
   >
     Add User
-  </button>
+  </Button>
 </div>
 `;
 
@@ -109,11 +109,11 @@ exports[`AddUser component should render with button enabled 1`] = `
   >
     Specialist
   </label>
-  <button
+  <Button
     disabled={false}
     onClick={[Function]}
   >
     Add User
-  </button>
+  </Button>
 </div>
 `;

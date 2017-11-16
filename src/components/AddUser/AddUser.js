@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { observable, action, computed } from "mobx";
 import { observer } from "mobx-react";
+import Button from "../Button";
 
 /* global SyntheticInputEvent */
 
@@ -127,12 +128,12 @@ class AddUser extends Component<Props> {
         {this.isEmailAvailable === false && (
           <span>User with email address provided already exists</span>
         )}
-        <button
+        <Button
           onClick={this.handleUserAdd}
           disabled={this.isAddButtonDisabled}
         >
           Add User
-        </button>
+        </Button>
       </div>
     );
   }

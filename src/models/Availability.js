@@ -13,6 +13,12 @@ export const AVAILABILITY_STATUSES_NAMES = {
   "-1": "Busy"
 };
 
+export const AVAILABILITY_STATUSES_COLORS = {
+  "0": "yellow",
+  "1": "green",
+  "-1": "red"
+};
+
 export type AvailabilityStatus = -1 | 0 | 1;
 
 class Availability {

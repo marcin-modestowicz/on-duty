@@ -6,8 +6,10 @@ import classnames from "classnames";
 import {
   type AvailabilityStatus,
   AVAILABILITY_STATUSES,
-  AVAILABILITY_STATUSES_NAMES
+  AVAILABILITY_STATUSES_NAMES,
+  AVAILABILITY_STATUSES_COLORS
 } from "../../models/Availability";
+import Button from "../Button";
 import styles from "./AvailabilityCalendarSetAll.scss";
 
 type Props = {
@@ -28,20 +30,18 @@ class AvailabilityCalendarSetAll extends Component<Props> {
         {Object.keys(AVAILABILITY_STATUSES).map(statusKey => {
           const status = AVAILABILITY_STATUSES[statusKey];
           const statusName = AVAILABILITY_STATUSES_NAMES[status];
+          const statusColor = AVAILABILITY_STATUSES_COLORS[status];
 
           return (
-            <div
+            <Button
               key={status}
-              role="button"
-              className={classnames(
-                styles.button,
-                styles[statusName.toLowerCase()]
-              )}
               title={`Click to set all to ${statusName}`}
+              color={statusColor}
               onClick={this.handleToggleAll(status)}
+              className={styles.button}
             >
               {statusName}
-            </div>
+            </Button>
           );
         })}
       </div>

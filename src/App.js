@@ -7,6 +7,7 @@ import UserStore from "./stores/UserStore";
 import Login from "./components/Login";
 import AdminPanel from "./components/AdminPanel";
 import ShowUser from "./components/ShowUser";
+import Button from "./components/Button";
 import styles from "./App.scss";
 
 @observer
@@ -35,7 +36,7 @@ class App extends Component<null> {
     return (
       <div className={styles.root}>
         <h2 className={styles.header}>On Duty</h2>
-        {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
+        {isLoggedIn && <Button onClick={handleLogout}>Logout</Button>}
         {!isLoggedIn && <Login onLogin={handleLogin} />}
         {isLoggedIn &&
           user &&

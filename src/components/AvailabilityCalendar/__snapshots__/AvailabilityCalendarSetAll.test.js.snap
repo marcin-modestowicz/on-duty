@@ -9,32 +9,32 @@ exports[`AvailabilityCalendarSetAll component should render properly 1`] = `
   >
     Set all:
   </div>
-  <div
-    className="button free"
+  <Button
+    className="button"
+    color="yellow"
     key="0"
     onClick={[Function]}
-    role="button"
     title="Click to set all to Free"
   >
     Free
-  </div>
-  <div
-    className="button keen"
+  </Button>
+  <Button
+    className="button"
+    color="green"
     key="1"
     onClick={[Function]}
-    role="button"
     title="Click to set all to Keen"
   >
     Keen
-  </div>
-  <div
-    className="button busy"
+  </Button>
+  <Button
+    className="button"
+    color="red"
     key="-1"
     onClick={[Function]}
-    role="button"
     title="Click to set all to Busy"
   >
     Busy
-  </div>
+  </Button>
 </div>
 `;

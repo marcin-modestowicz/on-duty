@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { observable, action, computed, runInAction } from "mobx";
 import { observer } from "mobx-react";
 import classnames from "classnames";
+import Button from "../Button";
 import Spinner from "./spinner.svg";
 import styles from "./Login.scss";
 
@@ -86,14 +87,10 @@ class Login extends Component<Props> {
           </div>
         )}
         <div className={styles.submit}>
-          <button
-            type="submit"
-            className={styles.button}
-            disabled={!this.isFormReady || this.isLoading}
-          >
+          <Button type="submit" disabled={!this.isFormReady || this.isLoading}>
             {this.isLoading && <Spinner />}
             Login
-          </button>
+          </Button>
         </div>
       </form>
     );

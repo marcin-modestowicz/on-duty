@@ -4,41 +4,16 @@
   display: flex;
   flex-wrap: wrap;
 
-  .label,
-  .button {
+  .label {
     box-sizing: border-box;
     width: 5em;
     height: 2.5em;
     padding: .75em;
     margin: .25em;
   }
+}
 
-  .button {
-    border-width: 0 1px 1px 0;
-    border-style: solid;
-    border-radius: .25em;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    color: white;
-
-    &:active {
-      border-width: 1px 0 0 1px;
-    }
-
-    &.free {
-      background-color: $yellow;
-      border-color: $yellow-darker;
-    }
-
-    &.keen {
-      background-color: $green;
-      border-color: $green-darker;
-    }
-
-    &.busy {
-      background-color: $red;
-      border-color: $red-darker;
-    }
-  }
+.button {
+  width: 5em;
+  margin: .25em;
 }

@@ -4,6 +4,7 @@ import { observer } from "mobx-react";
 import AdminStore from "../../stores/AdminStore";
 import { ShiftsCalendar } from "../../models/Calendar";
 import User from "../../models/User";
+import Button from "../Button";
 import AddUser from "../AddUser";
 import ShowUser from "../ShowUser";
 import Shifts from "../Shifts";
@@ -31,9 +32,9 @@ class AdminPanel extends Component<*> {
             onAdd={addUser}
             onEmailAvailabilityCheck={checkEmailAvailability}
           />
-          <button onClick={fillCalendar} disabled={!isReady}>
+          <Button onClick={fillCalendar} disabled={!isReady}>
             Create calendar
-          </button>
+          </Button>
           {users.map(userStore => {
             return userStore.user ? (
               <ShowUser key={userStore.user.id} userStore={userStore} />

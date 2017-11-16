@@ -42,13 +42,12 @@ exports[`Login component should render 1`] = `
   <div
     className="submit"
   >
-    <button
-      className="button"
+    <Button
       disabled={true}
       type="submit"
     >
       Login
-    </button>
+    </Button>
   </div>
 </form>
 `;
