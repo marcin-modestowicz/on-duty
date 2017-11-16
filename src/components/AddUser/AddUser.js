@@ -94,14 +94,14 @@ class AddUser extends Component<Props> {
     return (
       <div>
         <input
-          name="name"
+          id="name"
           type="text"
           value={this.userName}
           onChange={this.handleNameChange}
         />
         <label htmlFor="name">Name</label>
         <input
-          name="email"
+          id="email"
           type="text"
           value={this.email}
           onChange={this.handleEmailChange}
@@ -110,7 +110,7 @@ class AddUser extends Component<Props> {
         />
         <label htmlFor="email">Email</label>
         <input
-          name="isDoctor"
+          id="isDoctor"
           type="checkbox"
           value="isDoctor"
           checked={this.isDoctor}
@@ -118,7 +118,7 @@ class AddUser extends Component<Props> {
         />
         <label htmlFor="isDoctor">Doctor</label>
         <input
-          name="isSpecialist"
+          id="isSpecialist"
           type="checkbox"
           value="isSpecialist"
           checked={this.isSpecialist}

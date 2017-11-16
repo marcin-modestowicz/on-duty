@@ -3,7 +3,7 @@
 exports[`AddUser component should render with button disabled 1`] = `
 <div>
   <input
-    name="name"
+    id="name"
     onChange={[Function]}
     type="text"
     value=""
@@ -14,7 +14,7 @@ exports[`AddUser component should render with button disabled 1`] = `
     Name
   </label>
   <input
-    name="email"
+    id="email"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -28,7 +28,7 @@ exports[`AddUser component should render with button disabled 1`] = `
   </label>
   <input
     checked={false}
-    name="isDoctor"
+    id="isDoctor"
     onChange={[Function]}
     type="checkbox"
     value="isDoctor"
@@ -40,7 +40,7 @@ exports[`AddUser component should render with button disabled 1`] = `
   </label>
   <input
     checked={false}
-    name="isSpecialist"
+    id="isSpecialist"
     onChange={[Function]}
     type="checkbox"
     value="isSpecialist"
@@ -62,7 +62,7 @@ exports[`AddUser component should render with button disabled 1`] = `
 exports[`AddUser component should render with button enabled 1`] = `
 <div>
   <input
-    name="name"
+    id="name"
     onChange={[Function]}
     type="text"
     value="Marty McFly"
@@ -73,7 +73,7 @@ exports[`AddUser component should render with button enabled 1`] = `
     Name
   </label>
   <input
-    name="email"
+    id="email"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -87,7 +87,7 @@ exports[`AddUser component should render with button enabled 1`] = `
   </label>
   <input
     checked={false}
-    name="isDoctor"
+    id="isDoctor"
     onChange={[Function]}
     type="checkbox"
     value="isDoctor"
@@ -99,7 +99,7 @@ exports[`AddUser component should render with button enabled 1`] = `
   </label>
   <input
     checked={false}
-    name="isSpecialist"
+    id="isSpecialist"
     onChange={[Function]}
     type="checkbox"
     value="isSpecialist"
