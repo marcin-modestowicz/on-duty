@@ -26,8 +26,8 @@
   }
 
   &.default {
-    background-color: blue;
-    border-color: navy;
+    background-color: $blue;
+    border-color: $blue-darker;
   }
 
   &.yellow {
