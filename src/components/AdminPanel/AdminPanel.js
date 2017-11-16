@@ -16,6 +16,7 @@ class AdminPanel extends Component<*> {
     const {
       addUser,
       fillCalendar,
+      checkEmailAvailability,
       users,
       calendar,
       isReady,
@@ -26,7 +27,10 @@ class AdminPanel extends Component<*> {
       <div>
         <h3>Admin Panel</h3>
         <div>
-          <AddUser onAdd={addUser} />
+          <AddUser
+            onAdd={addUser}
+            onEmailAvailabilityCheck={checkEmailAvailability}
+          />
           <button onClick={fillCalendar} disabled={!isReady}>
             Create calendar
           </button>

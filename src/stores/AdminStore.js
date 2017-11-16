@@ -1,5 +1,5 @@
 //@flow
-import { observable, computed, runInAction } from "mobx";
+import { observable, computed, action, runInAction } from "mobx";
 import firebase from "../firebase";
 import User from "../models/User";
 import {
@@ -37,13 +37,26 @@ class AdminStore {
     return this.users.length >= USERS_PER_SHIFT * (MINIMUM_REST_DAYS + 1);
   }
 
+  @action
+  checkEmailAvailability = (email: string): Promise<boolean> => {
+    const sanitizedEmail = email.replace(/\./g, "%2E");
+
+    return firebase
+      .database()
+      .ref(`/emailToUserId/${sanitizedEmail}`)
+      .once("value")
+      .then(userId => {
+        return !userId.val();
+      });
+  };
+
   addUser = (
     name: string,
     email: string,
     isDoctor: boolean,
     isSpecialist: boolean
   ) => {
-    const sanitizedEmail = email.replace(".", "%2E");
+    const sanitizedEmail = email.replace(/\./g, "%2E");
     const user = {
       center: "spsk2", // @todo replace hardcoded center id value with something meaningful
       name,
@@ -62,14 +75,16 @@ class AdminStore {
       .update({
         [`/users/${userId}`]: user, // @todo replace hardcoded center id value with something meaningful
         [`/centers/spsk2/users/${userId}`]: true // @todo replace hardcoded center id value with something meaningful
+      })
+      .then(() => {
+        firebase
+          .database()
+          .ref(`/emailToUserId/${sanitizedEmail}`)
+          .set(userId);
       });
-
-    firebase
-      .database()
-      .ref(`/emailToUserId/${sanitizedEmail}`)
-      .set(userId);
   };
 
+  @action
   fillCalendar = () => {
     if (this.isReady) {
       this.calendar = new ShiftsCalendar();

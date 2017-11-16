@@ -47,11 +47,11 @@ describe("LoginStore store", () => {
   describe("authObserver method", () => {
     describe("if user is passed as an argument", () => {
       beforeEach(() => {
-        loginStore.authObserver({ uid: "test" });
+        loginStore.authObserver({ email: "test@test.com" });
       });
 
       test("should call firebase to get userId", () => {
-        expect(refMock).toHaveBeenCalledWith("/authIdToUserId/test");
+        expect(refMock).toHaveBeenCalledWith("/emailToUserId/test@test%2Ecom");
       });
 
       test("should set userId if user is passed as argument", () => {

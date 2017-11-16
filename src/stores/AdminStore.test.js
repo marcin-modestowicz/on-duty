@@ -13,7 +13,7 @@ describe("AdminStore store", () => {
   beforeAll(() => {
     centerDataSnapshotMock = { val: () => "test value" };
     pushMock = jest.fn(() => ({ key: "testUserId" }));
-    updateMock = jest.fn();
+    updateMock = jest.fn(() => Promise.resolve());
     setMock = jest.fn();
     refMock = jest.fn(() => ({
       on: () => Promise.resolve(centerDataSnapshotMock),
@@ -44,10 +44,6 @@ describe("AdminStore store", () => {
   describe("addUser method", () => {
     beforeEach(() => {
       adminStore.addUser("Superman", "super@man.com", true, true);
-    });
-
-    test("should get userId from database", () => {
-      expect(refMock).toHaveBeenCalledWith("users");
     });
 
     test("should update user and center data", () => {

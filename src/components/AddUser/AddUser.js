@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from "react";
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import { observer } from "mobx-react";
 
 /* global SyntheticInputEvent */
@@ -11,13 +11,15 @@ type Props = {
     email: string,
     isSpecialist: boolean,
     isDoctor: boolean
-  ) => void
+  ) => void,
+  onEmailAvailabilityCheck: (email: string) => Promise<boolean>
 };
 
 @observer
 class AddUser extends Component<Props> {
   @observable userName: string = "";
-  @observable emailAddress: string = "";
+  @observable email: string = "";
+  @observable isEmailAvailable: ?boolean = null;
   @observable isDoctor: boolean = false;
   @observable isSpecialist: boolean = false;
 
@@ -28,7 +30,22 @@ class AddUser extends Component<Props> {
 
   @action
   handleEmailChange = (event: SyntheticInputEvent<*>) => {
-    this.emailAddress = event.target.value;
+    this.email = event.target.value;
+  };
+
+  @action
+  handleEmailFocus = () => {
+    this.isEmailAvailable = null;
+  };
+
+  @action
+  handleEmailBlur = () => {
+    if (this.isValidEmail) {
+      this.isEmailAvailable = null;
+      this.props.onEmailAvailabilityCheck(this.email).then(isEmailAvailable => {
+        this.isEmailAvailable = isEmailAvailable;
+      });
+    }
   };
 
   @action
@@ -44,22 +61,35 @@ class AddUser extends Component<Props> {
 
   @action
   handleUserAdd = () => {
-    if (this.userName !== "" && this.emailAddress !== "") {
+    if (!this.isAddButtonDisabled) {
       this.props.onAdd(
         this.userName,
-        this.emailAddress,
+        this.email,
         this.isDoctor,
         this.isSpecialist
       );
       this.userName = "";
-      this.emailAddress = "";
+      this.email = "";
       this.isDoctor = false;
       this.isSpecialist = false;
     }
   };
 
+  @computed
+  get isValidEmail(): boolean {
+    return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.email);
+  }
+
+  @computed
+  get isAddButtonDisabled(): boolean {
+    return (
+      this.userName.trim() === "" ||
+      this.email.trim() === "" ||
+      this.isEmailAvailable !== true
+    );
+  }
+
   render() {
-    const isAddButtonDisabled = this.userName.trim() === "";
     return (
       <div>
         <input
@@ -72,8 +102,10 @@ class AddUser extends Component<Props> {
         <input
           name="email"
           type="text"
-          value={this.emailAddress}
+          value={this.email}
           onChange={this.handleEmailChange}
+          onBlur={this.handleEmailBlur}
+          onFocus={this.handleEmailFocus}
         />
         <label htmlFor="email">Email</label>
         <input
@@ -92,7 +124,13 @@ class AddUser extends Component<Props> {
           onChange={this.handleTypeChange}
         />
         <label htmlFor="isSpecialist">Specialist</label>
-        <button onClick={this.handleUserAdd} disabled={isAddButtonDisabled}>
+        {this.isEmailAvailable === false && (
+          <span>User with email address provided already exists</span>
+        )}
+        <button
+          onClick={this.handleUserAdd}
+          disabled={this.isAddButtonDisabled}
+        >
           Add User
         </button>
       </div>

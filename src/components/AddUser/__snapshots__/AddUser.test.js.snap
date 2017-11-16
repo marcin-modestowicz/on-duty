@@ -15,7 +15,9 @@ exports[`AddUser component should render with button disabled 1`] = `
   </label>
   <input
     name="email"
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     type="text"
     value=""
   />
@@ -72,9 +74,11 @@ exports[`AddUser component should render with button enabled 1`] = `
   </label>
   <input
     name="email"
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     type="text"
-    value=""
+    value="marty@mcfly.com"
   />
   <label
     htmlFor="email"

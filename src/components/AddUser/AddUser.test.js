@@ -6,12 +6,19 @@ import AddUser from "./AddUser";
 
 describe("AddUser component", () => {
   let onAdd;
+  let onEmailAvailabilityCheck;
   let addUser;
   let instance;
 
   beforeEach(() => {
     onAdd = jest.fn();
-    addUser = shallow(<AddUser onAdd={onAdd} />);
+    onEmailAvailabilityCheck = jest.fn(() => Promise.resolve(true));
+    addUser = shallow(
+      <AddUser
+        onAdd={onAdd}
+        onEmailAvailabilityCheck={onEmailAvailabilityCheck}
+      />
+    );
     instance = addUser.instance();
   });
 
@@ -21,6 +28,8 @@ describe("AddUser component", () => {
 
   test("should render with button enabled", () => {
     instance.handleNameChange({ target: { value: "Marty McFly" } });
+    instance.handleEmailChange({ target: { value: "marty@mcfly.com" } });
+    instance.isEmailAvailable = true;
     expect(toJson(addUser)).toMatchSnapshot();
   });
 
@@ -59,12 +68,33 @@ describe("AddUser component", () => {
       });
     });
 
-    describe("if user name and email is filled", () => {
+    describe("if email is not verified", () => {
+      test("should do nothing", () => {
+        instance.handleNameChange({ target: { value: "Bronco Billy" } });
+        instance.handleEmailChange({ target: { value: "bronco@billy.com" } });
+        instance.isEmailAvailable = null;
+        instance.handleUserAdd();
+        expect(onAdd).not.toHaveBeenCalled();
+      });
+    });
+
+    describe("if email is unavailable", () => {
+      test("should do nothing", () => {
+        instance.handleNameChange({ target: { value: "Bronco Billy" } });
+        instance.handleEmailChange({ target: { value: "bronco@billy.com" } });
+        instance.isEmailAvailable = false;
+        instance.handleUserAdd();
+        expect(onAdd).not.toHaveBeenCalled();
+      });
+    });
+
+    describe("if user name and email is filled and verified", () => {
       beforeEach(() => {
         instance.handleNameChange({ target: { value: "Bronco Billy" } });
         instance.handleEmailChange({ target: { value: "bronco@billy.com" } });
         instance.handleTypeChange({ target: { value: "isDoctor" } });
         instance.handleTypeChange({ target: { value: "isSpecialist" } });
+        instance.isEmailAvailable = true;
         instance.handleUserAdd();
       });
 
@@ -79,7 +109,7 @@ describe("AddUser component", () => {
 
       test("should reset fields values properties", () => {
         expect(instance.userName).toBe("");
-        expect(instance.emailAddress).toBe("");
+        expect(instance.email).toBe("");
         expect(instance.userType).toBeFalsy();
       });
     });

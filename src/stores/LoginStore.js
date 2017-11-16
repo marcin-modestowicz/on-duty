@@ -24,7 +24,7 @@ class LoginStore {
     if (user != null) {
       firebase
         .database()
-        .ref(`/authIdToUserId/${user.uid}`)
+        .ref(`/emailToUserId/${user.email.replace(/\./g, "%2E")}`)
         .once("value")
         .then(snapshot => {
           const userId = snapshot.val();
@@ -71,7 +71,7 @@ class LoginStore {
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
         const authId = user.uid;
-        const sanitizedEmail = email.replace(".", "%2E");
+        const sanitizedEmail = email.replace(/\./g, "%2E");
 
         return firebase
           .database()
@@ -80,18 +80,7 @@ class LoginStore {
           .then(snapshot => {
             const userId = snapshot.val();
 
-            if (userId) {
-              return firebase
-                .database()
-                .ref(`/authIdToUserId/${authId}`)
-                .set(userId)
-                .then(() => {
-                  return firebase
-                    .database()
-                    .ref(`/emailToUserId/${sanitizedEmail}`)
-                    .remove();
-                });
-            } else {
+            if (!userId) {
               firebase.auth().currentUser.delete();
               throw new Error("No account created for the user");
             }
