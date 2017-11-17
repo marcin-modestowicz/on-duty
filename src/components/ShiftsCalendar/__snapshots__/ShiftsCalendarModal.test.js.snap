@@ -21,63 +21,33 @@ exports[`ShiftsCalendarModal component should render 1`] = `
     <div
       className="content"
     >
-      <div
-        className="user"
+      <CheckboxButton
+        checked={true}
+        color="yellow"
+        id="a0"
         key="a0"
-      >
-        <input
-          checked={true}
-          className="input"
-          id="a0"
-          onChange={[Function]}
-          type="checkbox"
-          value="a0"
-        />
-        <label
-          className="label free"
-          htmlFor="a0"
-        >
-          user1
-        </label>
-      </div>
-      <div
-        className="user"
+        label="user1"
+        onChange={[Function]}
+        value="a0"
+      />
+      <CheckboxButton
+        checked={false}
+        color="red"
+        id="a1"
         key="a1"
-      >
-        <input
-          checked={false}
-          className="input"
-          id="a1"
-          onChange={[Function]}
-          type="checkbox"
-          value="a1"
-        />
-        <label
-          className="label busy"
-          htmlFor="a1"
-        >
-          user2
-        </label>
-      </div>
-      <div
-        className="user"
+        label="user2"
+        onChange={[Function]}
+        value="a1"
+      />
+      <CheckboxButton
+        checked={false}
+        color="green"
+        id="a2"
         key="a2"
-      >
-        <input
-          checked={false}
-          className="input"
-          id="a2"
-          onChange={[Function]}
-          type="checkbox"
-          value="a2"
-        />
-        <label
-          className="label keen"
-          htmlFor="a2"
-        >
-          user3
-        </label>
-      </div>
+        label="user3"
+        onChange={[Function]}
+        value="a2"
+      />
     </div>
   </div>
 </div>

@@ -3,17 +3,17 @@
 .root {
   display: flex;
   flex-wrap: wrap;
+  margin-right: -.5em;
 
   .label {
     box-sizing: border-box;
     width: 5em;
     height: 2.5em;
     padding: .75em;
-    margin: .25em;
+    margin: 0 .5em .5em 0;
   }
 }
 
 .button {
   width: 5em;
-  margin: .25em;
 }

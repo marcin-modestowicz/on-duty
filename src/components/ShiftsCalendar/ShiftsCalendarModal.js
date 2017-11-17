@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import classnames from "classnames";
-import { AVAILABILITY_STATUSES_NAMES } from "../../models/Availability";
+import {
+  AVAILABILITY_STATUSES_NAMES,
+  AVAILABILITY_STATUSES_COLORS
+} from "../../models/Availability";
 import type User from "../../models/User";
 import type Shift from "../../models/Shift";
+import CheckboxButton from "../CheckboxButton";
 import styles from "./ShiftsCalendarModal.scss";
 
 /* global SyntheticInputEvent */
@@ -36,24 +40,18 @@ class ShiftsCalendarModal extends Component {
     );
     const availabilityStatus = dayInAvailabilityCalendar.availability.status;
     const statusName = AVAILABILITY_STATUSES_NAMES[availabilityStatus];
+    const statusColor = AVAILABILITY_STATUSES_COLORS[availabilityStatus];
 
     return (
-      <div className={styles.user} key={userId}>
-        <input
-          type="checkbox"
-          id={userId}
-          value={userId}
-          checked={isUserActive}
-          onChange={this.handleInputChange}
-          className={styles.input}
-        />
-        <label
-          htmlFor={userId}
-          className={classnames(styles.label, styles[statusName.toLowerCase()])}
-        >
-          {user.name}
-        </label>
-      </div>
+      <CheckboxButton
+        key={userId}
+        id={userId}
+        value={userId}
+        label={user.name}
+        checked={isUserActive}
+        onChange={this.handleInputChange}
+        color={statusColor}
+      />
     );
   }
 

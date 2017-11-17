@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { observable, action, computed } from "mobx";
 import { observer } from "mobx-react";
 import Button from "../Button";
+import CheckboxButton from "../CheckboxButton";
 
 /* global SyntheticInputEvent */
 
@@ -93,47 +94,47 @@ class AddUser extends Component<Props> {
   render() {
     return (
       <div>
-        <input
-          id="name"
-          type="text"
-          value={this.userName}
-          onChange={this.handleNameChange}
-        />
-        <label htmlFor="name">Name</label>
-        <input
-          id="email"
-          type="text"
-          value={this.email}
-          onChange={this.handleEmailChange}
-          onBlur={this.handleEmailBlur}
-          onFocus={this.handleEmailFocus}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          id="isDoctor"
-          type="checkbox"
-          value="isDoctor"
-          checked={this.isDoctor}
-          onChange={this.handleTypeChange}
-        />
-        <label htmlFor="isDoctor">Doctor</label>
-        <input
-          id="isSpecialist"
-          type="checkbox"
-          value="isSpecialist"
-          checked={this.isSpecialist}
-          onChange={this.handleTypeChange}
-        />
-        <label htmlFor="isSpecialist">Specialist</label>
+        <div>
+          <input
+            id="name"
+            type="text"
+            value={this.userName}
+            onChange={this.handleNameChange}
+          />
+          <label htmlFor="name">Name</label>
+          <input
+            id="email"
+            type="text"
+            value={this.email}
+            onChange={this.handleEmailChange}
+            onBlur={this.handleEmailBlur}
+            onFocus={this.handleEmailFocus}
+          />
+          <label htmlFor="email">Email</label>
+          <CheckboxButton
+            value="isDoctor"
+            checked={this.isDoctor}
+            onChange={this.handleTypeChange}
+            label="Doctor"
+          />
+          <CheckboxButton
+            value="isSpecialist"
+            checked={this.isSpecialist}
+            onChange={this.handleTypeChange}
+            label="Specialist"
+          />
+        </div>
         {this.isEmailAvailable === false && (
-          <span>User with email address provided already exists</span>
+          <div>User with email address provided already exists</div>
         )}
-        <Button
-          onClick={this.handleUserAdd}
-          disabled={this.isAddButtonDisabled}
-        >
-          Add User
-        </Button>
+        <div>
+          <Button
+            onClick={this.handleUserAdd}
+            disabled={this.isAddButtonDisabled}
+          >
+            Add User
+          </Button>
+        </div>
       </div>
     );
   }

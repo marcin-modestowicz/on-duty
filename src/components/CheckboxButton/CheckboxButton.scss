@@ -1,0 +1,68 @@
+@import '../../styles/colors.scss';
+
+.root {
+  display: inline-block;
+
+  .input {
+    display: none;
+  }
+
+  .label {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 2.5em;
+    padding: .75em;
+    margin: 0 .5em .5em 0;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-radius: .25em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    color: white;
+
+    &.default {
+      background-color: $gray;
+      border-color: $gray-darker;
+    }
+
+    &.yellow {
+      background-color: transparentize(desaturate($yellow, 20%), 0.4);
+      border-color: transparentize(desaturate($yellow-darker, 20%), 0.6);
+    }
+
+    &.green {
+      background-color: transparentize(desaturate($green, 20%), 0.4);
+      border-color: transparentize(desaturate($green-darker, 20%), 0.6);
+    }
+
+    &.red {
+      background-color: transparentize(desaturate($red, 20%), 0.4);
+      border-color: transparentize(desaturate($red-darker, 20%), 0.6);
+    }
+  }
+
+  .input:checked + .label {
+    border-width: 1px 0 0 1px;
+
+    &.default {
+      background-color: $blue;
+      border-color: $blue-darker;
+    }
+
+    &.yellow {
+      background-color: $yellow;
+      border-color: $yellow-darker;
+    }
+
+    &.green {
+      background-color: $green;
+      border-color: $green-darker;
+    }
+
+    &.red {
+      background-color: $red;
+      border-color: $red-darker;
+    }
+  }
+}
