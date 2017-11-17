@@ -26,22 +26,19 @@ class AdminPanel extends Component<*> {
 
     return (
       <div>
-        <h3>Admin Panel</h3>
         <div>
+          <h2>Add User</h2>
           <AddUser
             onAdd={addUser}
             onEmailAvailabilityCheck={checkEmailAvailability}
           />
-          <Button onClick={fillCalendar} disabled={!isReady}>
-            Create calendar
-          </Button>
-          {users.map(userStore => {
-            return userStore.user ? (
-              <ShowUser key={userStore.user.id} userStore={userStore} />
-            ) : null;
-          })}
         </div>
         <div>
+          <h2>Shift Calendar</h2>
+          <Button onClick={fillCalendar} disabled={!isReady}>
+            Create
+          </Button>
+          {!isReady && <span>Add more users to create calendar</span>}
           {calendar && (
             <Shifts
               calendar={calendar}
@@ -49,6 +46,14 @@ class AdminPanel extends Component<*> {
               users={users.map(({ user }) => user)}
             />
           )}
+        </div>
+        <div>
+          <h2>Users</h2>
+          {users.map(userStore => {
+            return userStore.user ? (
+              <ShowUser key={userStore.user.id} userStore={userStore} />
+            ) : null;
+          })}
         </div>
       </div>
     );
