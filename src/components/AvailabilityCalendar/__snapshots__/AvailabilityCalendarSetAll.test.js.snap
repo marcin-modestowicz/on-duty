@@ -10,28 +10,28 @@ exports[`AvailabilityCalendarSetAll component should render properly 1`] = `
     Set all:
   </div>
   <Button
-    className="button"
     color="yellow"
     key="0"
     onClick={[Function]}
+    size="small"
     title="Click to set all to Free"
   >
     Free
   </Button>
   <Button
-    className="button"
     color="green"
     key="1"
     onClick={[Function]}
+    size="small"
     title="Click to set all to Keen"
   >
     Keen
   </Button>
   <Button
-    className="button"
     color="red"
     key="-1"
     onClick={[Function]}
+    size="small"
     title="Click to set all to Busy"
   >
     Busy

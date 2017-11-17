@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { observable, action, computed } from "mobx";
 import { observer } from "mobx-react";
 import Button from "../Button";
+import TextInput from "../TextInput";
 import CheckboxButton from "../CheckboxButton";
 
 /* global SyntheticInputEvent */
@@ -95,22 +96,21 @@ class AddUser extends Component<Props> {
     return (
       <div>
         <div>
-          <input
+          <TextInput
             id="name"
-            type="text"
             value={this.userName}
+            label="Name"
             onChange={this.handleNameChange}
           />
-          <label htmlFor="name">Name</label>
-          <input
+          <TextInput
             id="email"
-            type="text"
+            label="Email"
             value={this.email}
             onChange={this.handleEmailChange}
             onBlur={this.handleEmailBlur}
             onFocus={this.handleEmailFocus}
+            isInvalid={this.isEmailAvailable === false}
           />
-          <label htmlFor="email">Email</label>
           <CheckboxButton
             value="isDoctor"
             checked={this.isDoctor}

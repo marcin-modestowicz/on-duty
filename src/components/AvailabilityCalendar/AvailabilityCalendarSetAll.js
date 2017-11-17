@@ -38,7 +38,7 @@ class AvailabilityCalendarSetAll extends Component<Props> {
               title={`Click to set all to ${statusName}`}
               color={statusColor}
               onClick={this.handleToggleAll(status)}
-              className={styles.button}
+              size="small"
             >
               {statusName}
             </Button>

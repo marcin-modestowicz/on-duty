@@ -8,25 +8,29 @@ import styles from "./Button.scss";
 type Props = {
   onClick?: () => void,
   color?: "red" | "yellow" | "green",
+  size?: "small" | "big" | "full",
   title?: string,
   type?: string,
   children?: React$Node,
   disabled?: boolean,
-  className?: string
+  marginless?: boolean
 };
 
 const Button = ({
   onClick,
-  color,
+  color = "default",
+  size = "auto",
   title,
   type = "button",
   disabled,
-  className,
+  marginless,
   children
 }: Props) => (
   <button
     type="submit"
-    className={classnames(styles.root, styles[color || "default"], className)}
+    className={classnames(styles.root, styles[color], styles[size], {
+      [styles.marginless]: marginless
+    })}
     title={title}
     onClick={onClick}
     disabled={disabled}

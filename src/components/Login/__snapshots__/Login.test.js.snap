@@ -8,32 +8,23 @@ exports[`Login component should render 1`] = `
   <div
     className="field"
   >
-    <label
-      className="label"
-      htmlFor="name"
-    >
-      Email
-    </label>
-    <input
-      className="input"
+    <TextInput
       id="email"
+      isInvalid={false}
+      label="Email"
+      marginless={true}
       onChange={[Function]}
-      type="text"
       value=""
     />
   </div>
   <div
     className="field"
   >
-    <label
-      className="label"
-      htmlFor="password"
-    >
-      Password
-    </label>
-    <input
-      className="input"
+    <TextInput
       id="password"
+      isInvalid={false}
+      label="Password"
+      marginless={true}
       onChange={[Function]}
       type="password"
       value=""
@@ -44,6 +35,7 @@ exports[`Login component should render 1`] = `
   >
     <Button
       disabled={true}
+      marginless={true}
       type="submit"
     >
       Login

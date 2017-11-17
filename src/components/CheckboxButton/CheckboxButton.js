@@ -9,21 +9,27 @@ import styles from "./CheckboxButton.scss";
 type Props = {
   onChange: (event: SyntheticInputEvent<*>) => void,
   color?: "red" | "yellow" | "green",
+  size?: "small" | "big" | "full",
+  marginless?: boolean,
   value: string,
   label: string,
-  checked: boolean,
-  className?: string
+  checked: boolean
 };
 
 const CheckboxButton = ({
   value,
   checked,
   onChange,
-  color,
-  className,
+  color = "default",
+  size = "auto",
+  marginless,
   label
 }: Props) => (
-  <div className={styles.root}>
+  <div
+    className={classnames(styles.root, styles[size], {
+      [styles.marginless]: marginless
+    })}
+  >
     <input
       type="checkbox"
       id={value}
@@ -32,14 +38,7 @@ const CheckboxButton = ({
       onChange={onChange}
       className={styles.input}
     />
-    <label
-      htmlFor={value}
-      className={classnames(
-        styles.label,
-        styles[color || "default"],
-        className
-      )}
-    >
+    <label htmlFor={value} className={classnames(styles.label, styles[color])}>
       {label}
     </label>
   </div>

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { observable, action, computed, runInAction } from "mobx";
 import { observer } from "mobx-react";
 import classnames from "classnames";
+import TextInput from "../TextInput";
 import Button from "../Button";
 import Spinner from "./spinner.svg";
 import styles from "./Login.scss";
@@ -58,27 +59,24 @@ class Login extends Component<Props> {
         onSubmit={this.handleLogin}
       >
         <div className={styles.field}>
-          <label className={styles.label} htmlFor="name">
-            Email
-          </label>
-          <input
+          <TextInput
             id="email"
-            className={styles.input}
-            type="text"
             value={this.email}
+            label="Email"
             onChange={this.handleEmailChange}
+            isInvalid={this.isError}
+            marginless
           />
         </div>
         <div className={styles.field}>
-          <label className={styles.label} htmlFor="password">
-            Password
-          </label>
-          <input
+          <TextInput
             id="password"
-            className={styles.input}
             type="password"
             value={this.password}
+            label="Password"
             onChange={this.handlePasswordChange}
+            isInvalid={this.isError}
+            marginless
           />
         </div>
         {this.isError && (
@@ -87,7 +85,11 @@ class Login extends Component<Props> {
           </div>
         )}
         <div className={styles.submit}>
-          <Button type="submit" disabled={!this.isFormReady || this.isLoading}>
+          <Button
+            type="submit"
+            disabled={!this.isFormReady || this.isLoading}
+            marginless
+          >
             {this.isLoading && <Spinner />}
             Login
           </Button>

@@ -3,30 +3,21 @@
 exports[`AddUser component should render with button disabled 1`] = `
 <div>
   <div>
-    <input
+    <TextInput
       id="name"
+      label="Name"
       onChange={[Function]}
-      type="text"
       value=""
     />
-    <label
-      htmlFor="name"
-    >
-      Name
-    </label>
-    <input
+    <TextInput
       id="email"
+      isInvalid={false}
+      label="Email"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      type="text"
       value=""
     />
-    <label
-      htmlFor="email"
-    >
-      Email
-    </label>
     <CheckboxButton
       checked={false}
       label="Doctor"
@@ -54,30 +45,21 @@ exports[`AddUser component should render with button disabled 1`] = `
 exports[`AddUser component should render with button enabled 1`] = `
 <div>
   <div>
-    <input
+    <TextInput
       id="name"
+      label="Name"
       onChange={[Function]}
-      type="text"
       value="Marty McFly"
     />
-    <label
-      htmlFor="name"
-    >
-      Name
-    </label>
-    <input
+    <TextInput
       id="email"
+      isInvalid={false}
+      label="Email"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
-      type="text"
       value="marty@mcfly.com"
     />
-    <label
-      htmlFor="email"
-    >
-      Email
-    </label>
     <CheckboxButton
       checked={false}
       label="Doctor"
