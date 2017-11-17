@@ -35,8 +35,10 @@ class App extends Component<null> {
 
     return (
       <div className={styles.root}>
-        <h2 className={styles.header}>On Duty</h2>
-        {isLoggedIn && <Button onClick={handleLogout}>Logout</Button>}
+        <header className={styles.header}>
+          {isLoggedIn && <Button onClick={handleLogout}>Logout</Button>}
+          <h1 className={styles.heading}>On Duty</h1>
+        </header>
         {!isLoggedIn && <Login onLogin={handleLogin} />}
         {isLoggedIn &&
           user &&
