@@ -35,10 +35,10 @@ class AdminPanel extends Component<*> {
         </div>
         <div>
           <h2>Shift Calendar</h2>
+          {!isReady && <div>Add more users to create calendar</div>}
           <Button onClick={fillCalendar} disabled={!isReady}>
             Create
           </Button>
-          {!isReady && <span>Add more users to create calendar</span>}
           {calendar && (
             <Shifts
               calendar={calendar}
