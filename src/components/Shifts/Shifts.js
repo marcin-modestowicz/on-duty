@@ -14,11 +14,16 @@ type Props = {
 
 const Shifts = ({ calendar, summary, users }: Props) => (
   <div>
-    <header>
+    <div>
       <h3>Shifts</h3>
-    </header>
-    <ShiftsCalendar calendar={calendar} users={users} />
-    {summary && <ShiftsStatistics summary={summary} />}
+      <ShiftsCalendar calendar={calendar} users={users} />
+    </div>
+    {summary && (
+      <div>
+        <h3>Statistics</h3>
+        <ShiftsStatistics summary={summary} />
+      </div>
+    )}
   </div>
 );
 
