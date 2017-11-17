@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import classnames from "classnames";
 import TextInput from "../TextInput";
 import Button from "../Button";
+import Alert from "../Alert";
 import Spinner from "./spinner.svg";
 import styles from "./Login.scss";
 
@@ -81,11 +82,7 @@ class Login extends Component<Props> {
             marginless
           />
         </div>
-        {this.isError && (
-          <div className={classnames(styles.field, styles.errorMessage)}>
-            Invalid credentials, please try again.
-          </div>
-        )}
+        {this.isError && <Alert>Invalid credentials, please try again.</Alert>}
         <div className={styles.submit}>
           <Button
             type="submit"

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { observable, action, computed } from "mobx";
 import { observer } from "mobx-react";
 import Button from "../Button";
+import Alert from "../Alert";
 import TextInput from "../TextInput";
 import CheckboxButton from "../CheckboxButton";
 
@@ -126,7 +127,7 @@ class AddUser extends Component<Props> {
           />
         </div>
         {this.isEmailAvailable === false && (
-          <div>User with email address provided already exists</div>
+          <Alert>User with this email address already exists.</Alert>
         )}
         <div>
           <Button

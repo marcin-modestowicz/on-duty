@@ -7,6 +7,7 @@ import User from "../../models/User";
 import Button from "../Button";
 import AddUser from "../AddUser";
 import ShowUser from "../ShowUser";
+import Alert from "../Alert";
 import Shifts from "../Shifts";
 
 @observer
@@ -35,7 +36,7 @@ class AdminPanel extends Component<*> {
         </div>
         <div>
           <h2>Shift Calendar</h2>
-          {!isReady && <div>Add more users to create calendar</div>}
+          {!isReady && <Alert>Add more users to create calendar.</Alert>}
           <Button onClick={fillCalendar} disabled={!isReady}>
             Create
           </Button>
