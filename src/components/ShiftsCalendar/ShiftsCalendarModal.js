@@ -7,6 +7,7 @@ import {
 } from "../../models/Availability";
 import type User from "../../models/User";
 import type Shift from "../../models/Shift";
+import Button from "../Button";
 import CheckboxButton from "../CheckboxButton";
 import styles from "./ShiftsCalendarModal.scss";
 
@@ -62,9 +63,9 @@ class ShiftsCalendarModal extends Component {
       <div className={styles.root}>
         <div className={styles.modal}>
           <div className={styles.header}>
-            <div role="button" className={styles.button} onClick={onClose}>
+            <Button onClick={onClose} marginless>
               Close
-            </div>
+            </Button>
           </div>
           <div className={styles.content}>
             {users.map(user => this.renderUser(user))}

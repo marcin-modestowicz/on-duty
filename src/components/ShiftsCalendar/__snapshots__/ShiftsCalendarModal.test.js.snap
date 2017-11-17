@@ -10,13 +10,12 @@ exports[`ShiftsCalendarModal component should render 1`] = `
     <div
       className="header"
     >
-      <div
-        className="button"
+      <Button
+        marginless={true}
         onClick={[Function]}
-        role="button"
       >
         Close
-      </div>
+      </Button>
     </div>
     <div
       className="content"
