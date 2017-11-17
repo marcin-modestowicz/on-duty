@@ -16,7 +16,8 @@ type Props = {
   marginless?: boolean,
   onChange?: (event: SyntheticInputEvent<*>) => void,
   onBlur?: () => void,
-  onFocus?: () => void
+  onFocus?: () => void,
+  autoCorrect?: boolean
 };
 
 const TextInput = ({
@@ -29,7 +30,8 @@ const TextInput = ({
   marginless,
   onChange,
   onBlur,
-  onFocus
+  onFocus,
+  autoCorrect
 }: Props) => (
   <div
     className={classnames(
@@ -48,6 +50,10 @@ const TextInput = ({
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
+      autoComplete={autoCorrect !== false ? "on" : "off"}
+      autoCapitalize={autoCorrect !== false ? "on" : "off"}
+      autoCorrect={autoCorrect !== false ? "on" : "off"}
+      spellCheck={autoCorrect !== false}
     />
   </div>
 );

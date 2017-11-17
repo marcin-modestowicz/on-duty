@@ -10,6 +10,7 @@ exports[`AddUser component should render with button disabled 1`] = `
       value=""
     />
     <TextInput
+      autoCorrect={false}
       id="email"
       isInvalid={false}
       label="Email"
@@ -52,6 +53,7 @@ exports[`AddUser component should render with button enabled 1`] = `
       value="Marty McFly"
     />
     <TextInput
+      autoCorrect={false}
       id="email"
       isInvalid={false}
       label="Email"

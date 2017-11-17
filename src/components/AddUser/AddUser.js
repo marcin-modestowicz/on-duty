@@ -110,6 +110,7 @@ class AddUser extends Component<Props> {
             onBlur={this.handleEmailBlur}
             onFocus={this.handleEmailFocus}
             isInvalid={this.isEmailAvailable === false}
+            autoCorrect={false}
           />
           <CheckboxButton
             value="isDoctor"

@@ -65,6 +65,7 @@ class Login extends Component<Props> {
             label="Email"
             onChange={this.handleEmailChange}
             isInvalid={this.isError}
+            autoCorrect={false}
             marginless
           />
         </div>
@@ -76,6 +77,7 @@ class Login extends Component<Props> {
             label="Password"
             onChange={this.handlePasswordChange}
             isInvalid={this.isError}
+            autoCorrect={false}
             marginless
           />
         </div>
