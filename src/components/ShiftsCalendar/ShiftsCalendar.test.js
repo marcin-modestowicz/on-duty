@@ -27,7 +27,11 @@ describe("ShiftsCalendar component", () => {
     ];
     calendar.fillCalendar(users);
     shiftsCalendar = shallow(
-      <ShiftsCalendar calendar={calendar} users={users} />
+      <ShiftsCalendar
+        calendar={calendar}
+        users={users}
+        onToggleUser={jest.fn()}
+      />
     );
   });
 

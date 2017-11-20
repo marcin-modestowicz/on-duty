@@ -8,7 +8,7 @@ import {
   MINIMUM_REST_DAYS
 } from "../models/Calendar";
 import { AVAILABILITY_STATUSES } from "../models/Availability";
-import { USERS_PER_SHIFT } from "../models/Shift";
+import Shift, { USERS_PER_SHIFT } from "../models/Shift";
 import UserStore from "./UserStore";
 
 class AdminStore {
@@ -89,7 +89,40 @@ class AdminStore {
     if (this.isReady) {
       this.calendar = new ShiftsCalendar();
       this.calendar.fillCalendar(this.users.map(({ user }) => user));
+      this.setAllDaysStatus();
     }
+  };
+
+  setDayStatus = (date: Date, shift: Shift) => {
+    const users = shift.onDuty.reduce((sum, current) => {
+      sum[current.id] = true;
+
+      return sum;
+    }, {});
+
+    firebase
+      .database()
+      .ref(`/centers/spsk2/shiftCalendar/${date.getTime()}`)
+      .set(users);
+  };
+
+  setAllDaysStatus = () => {
+    const shiftCalendar = this.calendar.days.reduce((sum, day) => {
+      const users = day.shift.onDuty.reduce((sum, current) => {
+        sum[current.id] = true;
+
+        return sum;
+      }, {});
+
+      sum[day.date.getTime()] = users;
+
+      return sum;
+    }, {});
+
+    firebase
+      .database()
+      .ref("/centers/spsk2/shiftCalendar")
+      .set(shiftCalendar);
   };
 
   @computed

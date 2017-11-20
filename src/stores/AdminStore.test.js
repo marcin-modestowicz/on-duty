@@ -1,5 +1,7 @@
 // @flow
 import firebase from "../firebase";
+import Shift from "../models/Shift";
+import User from "../models/User";
 import AdminStore from "./AdminStore";
 
 describe("AdminStore store", () => {
@@ -62,6 +64,26 @@ describe("AdminStore store", () => {
     test("should set email key", () => {
       expect(refMock).toHaveBeenCalledWith("/emailToUserId/super@man%2Ecom");
       expect(setMock).toHaveBeenCalledWith("testUserId");
+    });
+  });
+
+  describe("setDayStatus method", () => {
+    test("should update ref", () => {
+      const shift = new Shift([
+        new User("a2", "Homer Simpson"),
+        new User("a3", "Bart Simpson")
+      ]);
+      const date = new Date();
+
+      adminStore.setDayStatus(date, shift);
+
+      expect(refMock).toHaveBeenCalledWith(
+        `/centers/spsk2/shiftCalendar/${date.getTime()}`
+      );
+      expect(setMock).toHaveBeenCalledWith({
+        a2: true,
+        a3: true
+      });
     });
   });
 });

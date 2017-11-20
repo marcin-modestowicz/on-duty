@@ -16,6 +16,7 @@ import styles from "./ShiftsCalendarModal.scss";
 type Props = {
   users: User[],
   day: { date: Date, shift: Shift },
+  onToggleUser: (date: Date, shift: Shift) => void,
   onClose: () => void
 };
 
@@ -27,6 +28,7 @@ class ShiftsCalendarModal extends Component {
 
     if (user) {
       this.props.day.shift.toggleUser(user);
+      this.props.onToggleUser(this.props.day.date, this.props.day.shift);
     }
   };
 

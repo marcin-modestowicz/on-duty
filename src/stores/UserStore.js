@@ -55,11 +55,8 @@ class UserStore {
   setDayStatus = (date: Date, status: AvailabilityStatus) => {
     firebase
       .database()
-      .ref()
-      .update({
-        [`/users/${this.user
-          .id}/availabilityCalendar/${date.getTime()}`]: status
-      });
+      .ref(`/users/${this.user.id}/availabilityCalendar/${date.getTime()}`)
+      .set(status);
   };
 
   setAllDaysStatus = (

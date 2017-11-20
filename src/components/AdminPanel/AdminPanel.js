@@ -18,6 +18,7 @@ class AdminPanel extends Component<*> {
     const {
       addUser,
       fillCalendar,
+      setDayStatus,
       checkEmailAvailability,
       users,
       calendar,
@@ -45,6 +46,7 @@ class AdminPanel extends Component<*> {
               calendar={calendar}
               summary={summary}
               users={users.map(({ user }) => user)}
+              onToggleUser={setDayStatus}
             />
           )}
         </div>

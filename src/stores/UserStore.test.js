@@ -111,10 +111,10 @@ describe("UserStore store", () => {
 
       userStore.setDayStatus(date, status);
 
-      expect(updateMock).toHaveBeenCalledWith({
-        [`/users/${userStore.user
-          .id}/availabilityCalendar/${date.getTime()}`]: status
-      });
+      expect(refMock).toHaveBeenCalledWith(
+        `/users/${userStore.user.id}/availabilityCalendar/${date.getTime()}`
+      );
+      expect(setMock).toHaveBeenCalledWith(status);
     });
   });
 

@@ -11,7 +11,8 @@ import styles from "./ShiftsCalendar.scss";
 
 type Props = {
   calendar: ShiftsCalendarModel,
-  users: User[]
+  users: User[],
+  onToggleUser: (date: Date, shift: Shift) => void
 };
 
 @observer
@@ -46,6 +47,7 @@ class ShiftsCalendar extends Component<Props> {
           <ShiftsCalendar.Modal
             users={this.props.users}
             day={this.activeDay}
+            onToggleUser={this.props.onToggleUser}
             onClose={this.handleModalClose}
           />
         )}

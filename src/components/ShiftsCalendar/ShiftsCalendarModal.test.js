@@ -32,7 +32,12 @@ describe("ShiftsCalendarModal component", () => {
     };
 
     shiftsCalendarModal = shallow(
-      <ShiftsCalendarModal day={day} users={users} onClose={jest.fn()} />
+      <ShiftsCalendarModal
+        day={day}
+        users={users}
+        onClose={jest.fn()}
+        onToggleUser={jest.fn()}
+      />
     );
   });
 
