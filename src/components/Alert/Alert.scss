@@ -1,8 +1,8 @@
-@import '../../styles/colors.scss';
+@import '../../styles/globals.scss';
 
 .root {
-  line-height: 2.5em;
-  margin-bottom: .5em;
+  line-height: $base-height;
+  margin-bottom: $base-margin;
   font-size: .75em;
   color: $red;
 }

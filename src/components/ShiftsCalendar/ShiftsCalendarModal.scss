@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@import '../../styles/globals.scss';
 
 .root {
   position: fixed;
@@ -15,18 +15,17 @@
     min-width: 15em;
     background-color: white;
 
+    .header,
+    .content {
+      padding: 2 * $base-margin;
+    }
+
     .header {
-      padding: 1em;
       text-align: right;
     }
-    .content {
-      padding: 1em;
 
-      .user {
-        margin-bottom: .5em;
-      }
+    .user {
+      margin-bottom: $base-margin;
     }
-
-    
   }
 }

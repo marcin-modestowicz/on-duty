@@ -1,16 +1,18 @@
+@import '../../styles/globals.scss';
+
 .root {
   border-collapse: collapse;
-  border: 1px solid #4a4a4a;
+  border: 1px solid $gray-darker;
 
   .header {
     font-size: .8em;
-    color: #4a4a4a;
+    color: $gray-darker;
   }
   .body {
     font-size: .7em;
 
     tr {
-      border-top: 1px solid #4a4a4a;
+      border-top: 1px solid $gray-darker;
     }
   }
 

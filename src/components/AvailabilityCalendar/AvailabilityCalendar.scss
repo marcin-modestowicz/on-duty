@@ -1,7 +1,9 @@
+@import '../../styles/globals.scss';
+
 .root {
   .calendar {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -.5em;
+    margin-right: -$base-margin;
   }
 }

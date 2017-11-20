@@ -1,0 +1,26 @@
+$base-width: 5em;
+$base-height: 2.5em;
+$base-margin: .5em;
+$base-padding: .75em;
+$base-border-radius: .25em;
+
+@mixin base-width {
+  width: $base-width;
+}
+
+@mixin base-margin {
+  margin: 0 $base-margin $base-margin 0;
+}
+
+@mixin base-sizes {
+  box-sizing: border-box;
+  height: $base-height;
+  margin: 0 $base-margin $base-margin 0;
+  padding: $base-padding;
+}
+
+@mixin base-border {
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-radius: $base-border-radius;
+}

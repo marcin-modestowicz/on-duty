@@ -1,8 +1,9 @@
-@import '../../styles/colors.scss';
+@import '../../styles/globals.scss';
 
 .root {
+  @include base-margin;
+
   display: inline-block;
-  margin: 0 .5em .5em 0;
 
   &.marginless {
     margin: 0;
@@ -17,14 +18,12 @@
   }
 
   .input {
-    height: 2.5em;
-    padding: .75em;
+    @include base-sizes;
+
+    margin: ($base-margin / 2) 0 0;
     font-size: 1em;
-    margin-top: .25em;
-    box-sizing: border-box;
-    margin: 0;
     border: 1px solid $gray;
-    border-radius: .25em;
+    border-radius: $base-border-radius;
   }
 
   &.error .input {

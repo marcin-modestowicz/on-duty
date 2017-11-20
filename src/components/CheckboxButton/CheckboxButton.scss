@@ -1,8 +1,9 @@
-@import '../../styles/colors.scss';
+@import '../../styles/globals.scss';
 
 .root {
+  @include base-margin;
+
   display: inline-block;
-  margin: 0 .5em .5em 0;
 
   &.small {
     width: 5em;
@@ -25,13 +26,11 @@
   }
 
   .label {
+    @include base-sizes;
+    @include base-border;
+
+    margin: 0;
     display: block;
-    box-sizing: border-box;
-    height: 2.5em;
-    padding: .75em;
-    border-width: 0 1px 1px 0;
-    border-style: solid;
-    border-radius: .25em;
     cursor: pointer;
     user-select: none;
     text-align: center;
