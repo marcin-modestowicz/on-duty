@@ -2,17 +2,17 @@
 
 .root {
   border-collapse: collapse;
-  border: 1px solid $gray-darker;
+  border: 1px solid black;
 
   .header {
     font-size: .8em;
-    color: $gray-darker;
+    color: black;
   }
   .body {
     font-size: .7em;
 
     tr {
-      border-top: 1px solid $gray-darker;
+      border-top: 1px solid black;
     }
   }
 
